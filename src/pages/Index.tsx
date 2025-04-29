@@ -15,13 +15,14 @@ import TrustSignals from '../components/TrustSignals';
 import InvestmentPackages from '../components/InvestmentPackages';
 import SuccessStories from '../components/SuccessStories';
 import TrustedPartners from '../components/TrustedPartners';
+import MeetOurBrokers from '../components/MeetOurBrokers';
 
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>NovaTrust Invest | Expert-Curated Cryptocurrency Investment Platform</title>
-        <meta name="description" content="Grow your wealth faster with expert-curated crypto investments. Average returns 25% higher than market. Start with just $100 and access AI-powered investment strategies." />
+        <title>NovaTrust Invest | Expert-Curated Cryptocurrency Investment Platform with Personal Brokers</title>
+        <meta name="description" content="Grow your wealth with dedicated personal broker assistance. Expert-curated crypto investments with average returns 25% higher than market. Start with just $100." />
       </Helmet>
       
       <Header />
@@ -31,11 +32,12 @@ const Index = () => {
         <Hero />
         <TrustSignals />
         <Features />
-        <TrustedPartners />
+        <MeetOurBrokers />
+        <HowItWorks />
         <SuccessStories />
         <InvestmentPackages />
+        <TrustedPartners />
         <AboutUs />
-        <HowItWorks />
         <Testimonials />
         <AIChat />
         <RegisterForm />
