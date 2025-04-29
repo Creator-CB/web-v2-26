@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bot, CircleCheck, CircleDollarSign, Brain, ArrowRight, PieChart, LineChart } from "lucide-react";
+import { PieChart, CircleCheck, Brain, ArrowRight, LineChart } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 
 const HowItWorks = () => {
@@ -12,7 +12,7 @@ const HowItWorks = () => {
       title: t("aiConsultation"),
       description: t("aiConsultationDesc"),
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
-      image: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=90&w=400&h=300",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=90&w=400&h=300",
     },
     {
       icon: <Brain className="h-10 w-10 text-white" />,
@@ -66,16 +66,17 @@ const HowItWorks = () => {
         </div>
         
         <div className="relative">
-          {/* Enhanced connection line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-pink-500/20 via-purple-500/30 to-blue-400/20 hidden md:block" style={{transform: 'translateY(-50%)'}}></div>
+          {/* Improved connection line that goes through the middle */}
+          <div className="absolute top-1/2 left-0 right-0 h-1.5 bg-gradient-to-r from-pink-500/30 via-purple-500/40 to-blue-400/30 hidden md:block" style={{transform: 'translateY(-50%)'}}></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center group">
-                <div className="relative z-10">
-                  <div className={`${step.color} rounded-full p-5 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 relative`}>
+              <div key={index} className="flex flex-col items-center group relative">
+                {/* Improved step indicators */}
+                <div className="relative z-20">
+                  <div className={`${step.color} rounded-full p-5 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 relative transform group-hover:scale-105`}>
                     {step.icon}
-                    <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white flex items-center justify-center text-pink-500 font-bold shadow-md text-sm border border-gray-50">
+                    <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center text-pink-500 font-bold shadow-md text-sm border border-gray-50">
                       {index + 1}
                     </span>
                   </div>
@@ -96,6 +97,13 @@ const HowItWorks = () => {
                     </div>
                   </div>
                 </div>
+                
+                {/* Add connecting dots for the steps */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-28 z-10">
+                    <div className="w-4 h-4 rounded-full bg-white border-2 border-pink-500 shadow-md"></div>
+                  </div>
+                )}
               </div>
             ))}
           </div>

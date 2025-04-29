@@ -1,5 +1,5 @@
 
-import React, { useState, createContext, useContext, ReactNode } from 'react';
+import React, { useState, createContext, useContext, ReactNode, useEffect } from 'react';
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useToast } from "@/components/ui/use-toast";
 
 // Create a context for language
 type LanguageContextType = {
@@ -43,7 +44,16 @@ const translations = {
     "pathToGrowth": "Your Path to Financial Growth",
     "continuousSupport": "From your first consultation to ongoing portfolio management, our platform provides continuous support and optimization to maximize your investment returns in European markets.",
     "startInvesting": "Start investing with €100",
-    "setupTime": "Average setup time: 10 minutes"
+    "setupTime": "Average setup time: 10 minutes",
+    
+    // Language toggle
+    "languageChanged": "Language changed to English",
+    
+    // Buttons
+    "submit": "Submit",
+    "sendMessage": "Send Message",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us"
   },
   it: {
     // Navbar
@@ -68,7 +78,16 @@ const translations = {
     "pathToGrowth": "Il Tuo Percorso verso la Crescita Finanziaria",
     "continuousSupport": "Dalla prima consulenza alla gestione continua del portafoglio, la nostra piattaforma fornisce supporto continuo e ottimizzazione per massimizzare i rendimenti dei tuoi investimenti nei mercati europei.",
     "startInvesting": "Inizia a investire con €100",
-    "setupTime": "Tempo medio di configurazione: 10 minuti"
+    "setupTime": "Tempo medio di configurazione: 10 minuti",
+    
+    // Language toggle
+    "languageChanged": "Lingua cambiata in Italiano",
+    
+    // Buttons
+    "submit": "Invia",
+    "sendMessage": "Invia Messaggio",
+    "learnMore": "Scopri di Più",
+    "contactUs": "Contattaci"
   }
 };
 
@@ -81,7 +100,17 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState(defaultLanguage);
+  // Try to load language from localStorage if available
+  const initialLanguage = typeof window !== 'undefined' && localStorage.getItem('preferredLanguage') 
+    ? localStorage.getItem('preferredLanguage') as string
+    : defaultLanguage;
+    
+  const [language, setLanguage] = useState(initialLanguage);
+  
+  // Save language preference to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('preferredLanguage', language);
+  }, [language]);
   
   const t = (key: string) => {
     return translations[language as keyof typeof translations]?.[key as keyof typeof translations[keyof typeof translations]] || key;
@@ -95,17 +124,27 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 };
 
 const LanguageSelector = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
+  const { toast } = useToast();
 
   const handleLanguageChange = (lang: string) => {
     setLanguage(lang);
-    console.log(`Language changed to ${lang}`);
+    
+    // Show toast notification
+    toast({
+      title: t("languageChanged"),
+      description: lang === 'en' ? "English" : "Italiano",
+      variant: "default",
+    });
+    
+    // Force re-render of all components by triggering a DOM update
+    document.documentElement.setAttribute('lang', lang);
   };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="flex items-center gap-1 bg-white/90">
+        <Button variant="outline" size="sm" className="flex items-center gap-1 bg-white/90 hover:bg-pink-50 border-pink-100">
           <Globe className="h-4 w-4" />
           <span>{language === 'en' ? 'EN' : 'IT'}</span>
         </Button>

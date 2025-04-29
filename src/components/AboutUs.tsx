@@ -23,7 +23,7 @@ const AboutUs = () => {
       name: "Claire Dubois",
       role: "Portfolio Manager",
       location: "Paris",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
       bio: "Previously managed €2.8B in assets at BNP Paribas. Specializes in sustainable European investments with consistent above-market returns.",
       specialty: "ESG investments"
     },
@@ -39,7 +39,7 @@ const AboutUs = () => {
       name: "Elena Petrova",
       role: "Cryptocurrency Specialist",
       location: "Prague",
-      image: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
       bio: "Early blockchain adopter who has guided institutional investors through digital asset integration since 2017. Expert in crypto regulation across EU markets.",
       specialty: "Digital assets"
     },
