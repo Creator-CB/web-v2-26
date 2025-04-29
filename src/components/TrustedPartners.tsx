@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Globe, Award, Shield, Bitcoin } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
@@ -96,56 +97,6 @@ const TrustedPartners = () => {
           </p>
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-amber-500 rounded-full"></div>
-          </div>
-        </div>
-        
-        {/* Italian Banking Partners - Premium Showcase */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-            <span className="inline-flex items-center">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/1200px-Flag_of_Italy.svg.png" alt="Italian Flag" className="w-6 h-4 mr-2" />
-              Italian Banking Partners
-            </span>
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {bankingPartners.map((partner, index) => (
-              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
-                <div className="p-6 flex flex-col items-center">
-                  <div className="w-40 h-20 flex items-center justify-center mb-6">
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name} 
-                      className="h-full object-contain"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold mb-2 text-gray-800">{partner.name}</h4>
-                  <p className="text-sm text-gray-500 mb-1">{partner.location}</p>
-                  <p className="text-base text-gray-600 text-center mb-4">{partner.description}</p>
-                  
-                  {partner.services && (
-                    <div className="flex items-center justify-center mt-2 mb-1">
-                      <span className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full">{partner.services}</span>
-                    </div>
-                  )}
-                  
-                  {partner.highlight && (
-                    <div className="mt-4 pt-4 border-t border-gray-100 w-full">
-                      <p className="text-sm text-amber-600 font-medium text-center">
-                        {partner.highlight}
-                      </p>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="bg-gradient-to-r from-blue-500/5 to-amber-500/5 px-6 py-4 border-t border-gray-100">
-                  <div className="flex items-center justify-center">
-                    <Shield className="h-4 w-4 text-blue-500 mr-2" />
-                    <span className="text-xs text-gray-500">Regulated Financial Institution</span>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
         
