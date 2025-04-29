@@ -128,19 +128,19 @@ const Hero = () => {
           <div 
             className={`hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 space-y-7 w-72 transition-all duration-1000 delay-700 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
           >
-            <div className="glass-card p-5 animate-float [animation-delay:0ms] shadow-lg border border-pink-100">
+            <div className="glass-card p-5 animate-float shadow-lg border border-pink-100 bg-white/90 backdrop-blur-md">
               <div className="text-sm font-medium text-gray-500">Annual Returns</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">+16.4%</div>
               <div className="text-xs text-gray-400 mt-1">Average for European portfolios</div>
             </div>
             
-            <div className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-pink-100">
+            <div className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-pink-100 bg-white/90 backdrop-blur-md">
               <div className="text-sm font-medium text-gray-500">Algorithm Precision</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent">94.2%</div>
               <div className="text-xs text-gray-400 mt-1">European market prediction accuracy</div>
             </div>
             
-            <div className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-pink-100">
+            <div className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-pink-100 bg-white/90 backdrop-blur-md">
               <div className="text-sm font-medium text-gray-500">Client Satisfaction</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">98.7%</div>
               <div className="text-xs text-gray-400 mt-1">Across 18 European countries</div>

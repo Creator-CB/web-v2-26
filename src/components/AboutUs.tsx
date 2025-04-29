@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star, Award, TrendingUp, Globe, Users, Briefcase, Trophy } from "lucide-react";
+import { Star, Award, TrendingUp, Globe, Users, Briefcase, Trophy, Building, Check, BarChart } from "lucide-react";
 
 const AboutUs = () => {
   const experts = [
@@ -8,7 +8,7 @@ const AboutUs = () => {
       name: "Dr. Sophia Lindström",
       role: "Chief Investment Strategist",
       location: "Stockholm",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300&crop=faces&faceindex=1",
       bio: "Former advisor to the Swedish Central Bank with 15+ years experience in European markets and algorithmic trading systems.",
       specialty: "Nordic market analysis"
     },
@@ -16,7 +16,7 @@ const AboutUs = () => {
       name: "Marco Bianchi",
       role: "AI Research Director",
       location: "Milan",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300&h=300",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300&h=300&crop=faces&faceindex=1",
       bio: "PhD in Computational Finance from ETH Zurich with expertise in predictive modeling and pattern recognition in financial markets.",
       specialty: "Quantitative analysis"
     },
@@ -24,7 +24,7 @@ const AboutUs = () => {
       name: "Claire Dubois",
       role: "Portfolio Manager",
       location: "Paris",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300&h=300",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300&h=300&crop=faces&faceindex=1",
       bio: "Previously managed €2.8B in assets at BNP Paribas. Specializes in sustainable European investments with consistent above-market returns.",
       specialty: "ESG investments"
     },
@@ -32,7 +32,7 @@ const AboutUs = () => {
       name: "Alexander Müller",
       role: "Risk Assessment Director",
       location: "Frankfurt",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300&h=300",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300&h=300&crop=faces&faceindex=1",
       bio: "Former Deutsche Bank executive with expertise in risk modeling and portfolio optimization for volatile market conditions.",
       specialty: "Market volatility"
     },
@@ -40,7 +40,7 @@ const AboutUs = () => {
       name: "Elena Petrova",
       role: "Cryptocurrency Specialist",
       location: "Prague",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=300&h=300",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=300&h=300&crop=faces&faceindex=1",
       bio: "Early blockchain adopter who has guided institutional investors through digital asset integration since 2017. Expert in crypto regulation across EU markets.",
       specialty: "Digital assets"
     },
@@ -48,7 +48,7 @@ const AboutUs = () => {
       name: "Jean-Pierre Laurent",
       role: "Wealth Management Director",
       location: "Geneva",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300&h=300",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300&h=300&crop=faces&faceindex=1",
       bio: "Over 20 years experience managing private wealth for UHNW clients across Europe. Specializes in tax-efficient investment structures and family office services.",
       specialty: "Private wealth"
     }
@@ -79,6 +79,33 @@ const AboutUs = () => {
       quote: "The AI identified investment opportunities I would have never found on my own. My portfolio has grown by 18.7% in just 6 months.",
       author: "Miguel Hernandez, Restaurant Owner",
       company: "Barcelona, Spain"
+    }
+  ];
+
+  const partners = [
+    {
+      name: "Banco Italiano di Investimento",
+      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3603?auto=format&fit=crop&q=80&w=300&h=200",
+      type: "Financial Institution",
+      description: "Leading Italian investment bank with €18.4B in assets under management."
+    },
+    {
+      name: "EuroVenture Capital",
+      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=300&h=200",
+      type: "Venture Capital Fund",
+      description: "Premier early-stage investment fund focused on European fintech startups."
+    },
+    {
+      name: "Milan Innovations Group",
+      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=300&h=200",
+      type: "Technology Incubator",
+      description: "Pioneering tech hub that bridges financial expertise with cutting-edge innovation."
+    },
+    {
+      name: "RomeFinance Partners",
+      logo: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=80&w=300&h=200",
+      type: "Investment Consortium",
+      description: "Consortium of Italy's leading financial institutions focused on international growth."
     }
   ];
   
@@ -230,6 +257,87 @@ const AboutUs = () => {
               <p className="text-gray-600">
                 We believe in the power of augmented intelligence—combining the computational power of AI with the nuanced judgment of experienced European market specialists.
               </p>
+            </div>
+          </div>
+        </div>
+        
+        {/* NEW SECTION: Italian Partners */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Our Italian Investment Partners</h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {partners.map((partner, index) => (
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group border border-pink-100/20">
+                <div className="h-40 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/50 to-purple-500/50 opacity-80 z-10"></div>
+                  <img 
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <div className="flex flex-col items-center">
+                      <Building className="h-10 w-10 text-white mb-2" />
+                      <h4 className="text-xl font-bold text-white text-center px-4">{partner.name}</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-pink-500 text-sm font-medium mb-2">{partner.type}</p>
+                  <p className="text-gray-600 text-sm">{partner.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white p-8 rounded-xl shadow-lg relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-pink-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <h4 className="text-xl font-bold mb-4 text-gray-800">Italian Investment Partnership Benefits</h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-500/10">
+                    <Check className="h-4 w-4 text-pink-500" />
+                  </div>
+                </div>
+                <div className="ml-3">
+                  <h5 className="font-medium text-gray-800 mb-1">Exclusive Access</h5>
+                  <p className="text-sm text-gray-600">Direct access to Italian private market opportunities typically reserved for institutional investors</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-500/10">
+                    <Check className="h-4 w-4 text-pink-500" />
+                  </div>
+                </div>
+                <div className="ml-3">
+                  <h5 className="font-medium text-gray-800 mb-1">Reduced Fees</h5>
+                  <p className="text-sm text-gray-600">Preferential fee structures and lower commission rates through our institutional partnerships</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-500/10">
+                    <Check className="h-4 w-4 text-pink-500" />
+                  </div>
+                </div>
+                <div className="ml-3">
+                  <h5 className="font-medium text-gray-800 mb-1">Market Intelligence</h5>
+                  <p className="text-sm text-gray-600">Proprietary research and insights from Italy's leading financial institutions</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-500/10">
+                    <Check className="h-4 w-4 text-pink-500" />
+                  </div>
+                </div>
+                <div className="ml-3">
+                  <h5 className="font-medium text-gray-800 mb-1">Investment Security</h5>
+                  <p className="text-sm text-gray-600">Enhanced due diligence and investor protections through our established partner network</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
