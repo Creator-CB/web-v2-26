@@ -12,7 +12,7 @@ const SuccessStories = () => {
       name: 'Robert M.',
       initialInvestment: '$500',
       currentValue: '$5,300',
-      period: '14 months',
+      period: '6 months',
       story: t('successStory1'),
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&h=256&q=80'
     },
@@ -20,7 +20,7 @@ const SuccessStories = () => {
       name: 'Laura K.',
       initialInvestment: '$1,000',
       currentValue: '$8,800',
-      period: '11 months',
+      period: '3 months',
       story: t('successStory2'),
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&h=256&q=80'
     }
