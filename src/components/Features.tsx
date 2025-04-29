@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLineUp, HandCoins, Award } from "lucide-react";
+import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from './LanguageSelector';
 
@@ -73,7 +72,7 @@ const Features = () => {
                 <li className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/10 shadow-sm">
-                      <ChartLineUp className="h-4 w-4 text-amber-500" />
+                      <ChartLine className="h-4 w-4 text-amber-500" />
                     </div>
                   </div>
                   <span className="ml-3 text-gray-600">{t("marketVolatility")}</span>

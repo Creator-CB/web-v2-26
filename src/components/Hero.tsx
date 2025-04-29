@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bitcoin, Wallet, ChartLineUp, Shield, Zap } from "lucide-react";
+import { ArrowRight, Bitcoin, Wallet, ChartLine, Shield, Zap } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 import { Badge } from "@/components/ui/badge";
 
@@ -102,7 +101,7 @@ const Hero = () => {
 
               <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
                 <div className="flex items-center text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
-                  <ChartLineUp className="h-4 w-4 mr-1" />
+                  <ChartLine className="h-4 w-4 mr-1" />
                   <span>{t("averagePerformance")}</span> <span className="font-bold ml-1">+24.8%</span>
                 </div>
                 <div className="flex items-center text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-medium mb-2">

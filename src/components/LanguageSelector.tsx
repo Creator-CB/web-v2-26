@@ -25,7 +25,6 @@ const translations = {
     intelligentCrypto: "Intelligent Crypto",
     forModernInvestors: "for Modern Investors",
     heroPlatformDescription: "NovaTrust Invest combines AI technology with human expertise to optimize cryptocurrency investment potential in today's volatile digital asset markets.",
-    startInvesting: "Start Investing",
     tryAiAssistant: "Try AI Assistant",
     annualReturns: "Annual Returns",
     averageCryptoReturns: "Average crypto portfolio returns",
@@ -70,7 +69,7 @@ const translations = {
     cryptoRiskManagementDesc: "Advanced risk assessment tools help protect your crypto investments during market volatility and maximize returns.",
     aiCryptoTrading: "AI Crypto Trading",
     aiCryptoTradingDesc: "Our platform continuously monitors the crypto market and provides AI-driven recommendations for optimal entry and exit points.",
-    cryptoDiversificationDesc: "Spread risk across carefully curated baskets of cryptocurrencies, stablecoins, and DeFi assets for optimal returns.",
+    // Removed duplicate cryptoDiversificationDesc
     whyNowIsBest: "Why Now Is The Best Time For Crypto Investment",
     marketVolatility: "Market volatility creates unique opportunities for significant gains",
     institutionalAdoption: "Increasing institutional adoption driving crypto market growth",
@@ -127,7 +126,8 @@ const translations = {
     minimum: "minimum",
     projectedReturns: "Projected Returns",
     mostPopular: "Most Popular",
-    startInvesting: "Start Investing",
+    // Removed duplicate startInvesting
+    investNow: "Start Investing",
     customPackage: "Need a Custom Package?",
     customPackageDesc: "We offer personalized investment strategies for larger investments or specific needs.",
     contactUs: "Contact Us",
@@ -143,6 +143,7 @@ const translations = {
     period: "Period",
     startYourSuccess: "Ready to start your own success story?",
     startMyJourney: "Start My Investment Journey",
+    startInvesting: "Start Investing",
   },
   it: {
     cryptoMarkets: "Mercati Crypto",
@@ -157,7 +158,6 @@ const translations = {
     intelligentCrypto: "Crypto Intelligente",
     forModernInvestors: "per Investitori Moderni",
     heroPlatformDescription: "NovaTrust Invest combina tecnologia AI con esperienza umana per ottimizzare il potenziale di investimento in criptovalute nei volatili mercati di asset digitali di oggi.",
-    startInvesting: "Inizia a Investire",
     tryAiAssistant: "Prova l'Assistente AI",
     annualReturns: "Rendimenti Annuali",
     averageCryptoReturns: "Rendimenti medi del portafoglio crypto",
@@ -202,7 +202,7 @@ const translations = {
     cryptoRiskManagementDesc: "Strumenti avanzati di valutazione del rischio aiutano a proteggere i tuoi investimenti crypto durante la volatilità del mercato e massimizzare i rendimenti.",
     aiCryptoTrading: "Trading Crypto con AI",
     aiCryptoTradingDesc: "La nostra piattaforma monitora continuamente il mercato crypto e fornisce raccomandazioni basate sull'AI per punti di entrata e uscita ottimali.",
-    cryptoDiversificationDesc: "Distribuisci il rischio su panieri accuratamente selezionati di criptovalute, stablecoin e asset DeFi per rendimenti ottimali.",
+    // Removed duplicate cryptoDiversificationDesc
     whyNowIsBest: "Perché Ora è il Momento Migliore per l'Investimento Crypto",
     marketVolatility: "La volatilità del mercato crea opportunità uniche per guadagni significativi",
     institutionalAdoption: "La crescente adozione istituzionale guida la crescita del mercato crypto",
@@ -259,7 +259,8 @@ const translations = {
     minimum: "minimo",
     projectedReturns: "Rendimenti Previsti",
     mostPopular: "Più Popolare",
-    startInvesting: "Inizia a Investire",
+    // Removed duplicate startInvesting
+    investNow: "Inizia a Investire",
     customPackage: "Hai Bisogno di un Pacchetto Personalizzato?",
     customPackageDesc: "Offriamo strategie di investimento personalizzate per investimenti più grandi o esigenze specifiche.",
     contactUs: "Contattaci",
@@ -275,6 +276,7 @@ const translations = {
     period: "Periodo",
     startYourSuccess: "Pronto a iniziare la tua storia di successo?",
     startMyJourney: "Inizia il Mio Viaggio di Investimento",
+    startInvesting: "Inizia a Investire",
   }
 };
 
