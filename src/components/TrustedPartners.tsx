@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Globe, Award, Shield } from "lucide-react";
+import { Globe, Award, Shield, Bitcoin } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 
 const TrustedPartners = () => {
