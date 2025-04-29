@@ -1,0 +1,223 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-invest-purple to-invest-blue bg-clip-text text-transparent;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl backdrop-blur-sm;
+  }
+  
+  .button-gradient {
+    @apply bg-gradient-to-r from-invest-purple to-invest-blue text-white hover:opacity-90 transition-opacity shadow-md;
+  }
+  
+  .futuristic-border {
+    @apply border border-invest-blue/20 rounded-xl backdrop-blur-sm relative overflow-hidden shadow-md;
+  }
+  
+  .futuristic-border::before {
+    content: "";
+    @apply absolute -inset-1 bg-gradient-to-r from-invest-purple/10 to-invest-blue/10 blur-md;
+    z-index: -1;
+  }
+  
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md rounded-xl border border-white/50 shadow-md;
+  }
+
+  .neon-border {
+    @apply relative;
+  }
+  
+  .neon-border::after {
+    content: "";
+    @apply absolute inset-0 rounded-xl border border-invest-blue/30;
+    z-index: -1;
+  }
+}
+
+/* Custom animations */
+.animate-typing {
+  width: 0;
+  animation: typing 1.5s steps(20, end) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.animate-float {
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Glowing dots animation for AI typing */
+.typing-dot {
+  @apply h-2 w-2 rounded-full;
+  animation: dot-flashing 1s infinite alternate;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dot-flashing {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Additional animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* SVG path animations for charts */
+.animate-draw-path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawPath 2s ease-in-out forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Enhanced scrollbar for European audience */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(126, 105, 171, 0.4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 105, 171, 0.6);
+}
