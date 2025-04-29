@@ -102,7 +102,7 @@ const Hero = () => {
               <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
                 <div className="flex items-center text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
                   <ChartLine className="h-4 w-4 mr-1" />
-                  <span>{t("averagePerformance")}</span> <span className="font-bold ml-1">+24.8%</span>
+                  <span>{t("averagePerformance")}</span> <span className="font-bold ml-1">+206.4%</span>
                 </div>
                 <div className="flex items-center text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
                   <Shield className="h-4 w-4 mr-1" />
@@ -110,7 +110,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center text-purple-600 bg-purple-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
                   <Zap className="h-4 w-4 mr-1" />
-                  <span>{t("startWithJust")} $100</span>
+                  <span>{t("startWithJust")} $300</span>
                 </div>
               </div>
               
