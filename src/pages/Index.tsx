@@ -15,7 +15,6 @@ import TrustSignals from '../components/TrustSignals';
 import InvestmentPackages from '../components/InvestmentPackages';
 import SuccessStories from '../components/SuccessStories';
 import TrustedPartners from '../components/TrustedPartners';
-import MeetOurBrokers from '../components/MeetOurBrokers';
 
 const Index = () => {
   return (
@@ -30,7 +29,6 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero />
-        <MeetOurBrokers />
         <TrustSignals />
         <Features />
         <HowItWorks />

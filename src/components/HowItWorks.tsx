@@ -44,6 +44,24 @@ const HowItWorks = () => {
     }
   ];
 
+  // Featured brokers section integrated into How It Works
+  const topBrokers = [
+    {
+      name: "Michael Thompson",
+      title: t("seniorInvestmentAdvisor") || "Senior Investment Advisor",
+      specialty: t("cryptoSpecialist") || "Crypto Specialist",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80",
+      experience: "15+ years"
+    },
+    {
+      name: "Sarah Johnson",
+      title: t("wealthManager") || "Wealth Manager",
+      specialty: t("portfolioDiversification") || "Portfolio Diversification",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80",
+      experience: "12+ years"
+    }
+  ];
+
   return (
     <section id="how-it-works" className="py-24 relative overflow-hidden">
       {/* Background elements */}
@@ -63,7 +81,7 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 sm:text-5xl mb-4">
-            {t("howItWorks") || "Your Journey with a Personal Broker"}
+            {t("howItWorks") || "Your Investment Journey with Expert Guidance"}
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
             {t("brokerJourneyDesc") || "Experience wealth growth with the personal touch of expert financial guidance at every step."}
@@ -71,6 +89,74 @@ const HowItWorks = () => {
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-24 bg-gradient-to-r from-invest-purple to-invest-blue rounded-full"></div>
           </div>
+        </div>
+        
+        {/* Featured brokers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {topBrokers.map((broker, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-1/3 relative">
+                  <img 
+                    src={broker.image} 
+                    alt={broker.name}
+                    className="w-full h-full object-cover aspect-square"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/70 to-transparent md:via-black/30 md:to-transparent flex items-end md:items-center p-4">
+                    <div className="md:hidden">
+                      <h3 className="text-xl font-bold text-white">{broker.name}</h3>
+                      <p className="text-white/90">{broker.title}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6 md:w-2/3 flex flex-col justify-between">
+                  <div>
+                    <div className="hidden md:block mb-4">
+                      <h3 className="text-xl font-bold text-gray-800">{broker.name}</h3>
+                      <p className="text-invest-purple font-medium">{broker.title}</p>
+                    </div>
+                    
+                    <div className="flex items-center mb-4">
+                      <span className="bg-invest-purple/10 text-invest-purple px-3 py-1 rounded-full text-sm font-medium mr-3">
+                        {broker.experience} {t("experience") || "Experience"}
+                      </span>
+                      <span className="text-gray-600 text-sm">
+                        {broker.specialty}
+                      </span>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6">
+                      {t("brokerDescription") || "Specialized in creating personalized investment strategies that align with clients' unique financial goals and risk tolerance."}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center justify-between">
+                    <Button 
+                      variant="outline" 
+                      className="text-invest-purple border-invest-purple/20 hover:bg-invest-purple/5"
+                    >
+                      <MessageCircle className="h-4 w-4 mr-2" />
+                      {t("message") || "Message"}
+                    </Button>
+                    
+                    <Button 
+                      className="bg-invest-purple hover:bg-invest-purple/90 ml-3"
+                    >
+                      <Calendar className="h-4 w-4 mr-2" />
+                      {t("bookConsultation") || "Book Consultation"}
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
         
         {/* Interactive process flow */}
@@ -123,14 +209,20 @@ const HowItWorks = () => {
           
           {/* Right side - Visual representation */}
           <div className="relative h-[500px] rounded-2xl overflow-hidden">
-            <div className="absolute inset-0">
+            <motion.div
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              key={activeStep}
+              className="absolute inset-0"
+            >
               <img 
                 src={steps[activeStep].image}
                 alt={steps[activeStep].title}
                 className="w-full h-full object-cover transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-            </div>
+            </motion.div>
             
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
               <div className="mb-4 flex space-x-2">
@@ -143,8 +235,15 @@ const HowItWorks = () => {
                 ))}
               </div>
               
-              <h3 className="text-3xl font-bold mb-3">{steps[activeStep].title}</h3>
-              <p className="text-white/90 text-lg mb-6">{steps[activeStep].description}</p>
+              <motion.div
+                key={`content-${activeStep}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="text-3xl font-bold mb-3">{steps[activeStep].title}</h3>
+                <p className="text-white/90 text-lg mb-6">{steps[activeStep].description}</p>
+              </motion.div>
               
               <div className="flex space-x-4">
                 <div className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-3">
