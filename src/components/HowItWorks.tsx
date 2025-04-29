@@ -9,28 +9,28 @@ const HowItWorks = () => {
       title: "AI Consultation",
       description: "Engage with our intelligent assistant to explore investment options tailored to European markets.",
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
-      image: "public/lovable-uploads/0d7e6679-8c8c-4234-9bbc-197b47255ae7.png"
+      image: "https://images.unsplash.com/photo-1677442135136-760c813dce93?auto=format&fit=crop&q=90&w=400&h=300"
     },
     {
       icon: <Brain className="h-10 w-10 text-white" />,
       title: "Portfolio Analysis",
       description: "Our AI analyzes your investment preferences and generates a customized European strategy.",
       color: "bg-gradient-to-r from-purple-500 to-blue-400",
-      image: "public/lovable-uploads/e5935133-039a-4ebd-9a8a-03b1d9b297b5.png"
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=90&w=400&h=300"
     },
     {
       icon: <CircleCheck className="h-10 w-10 text-white" />,
       title: "Account Setup",
       description: "Complete your profile with our streamlined registration process for European investors.",
       color: "bg-gradient-to-r from-blue-400 to-cyan-300",
-      image: "public/lovable-uploads/1180208c-91b1-449b-983e-2c05ee2096a9.png"
+      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=90&w=400&h=300"
     },
     {
       icon: <CircleDollarSign className="h-10 w-10 text-white" />,
       title: "Expert Review",
       description: "Speak with our local investment advisors who specialize in your regional market.",
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
-      image: "public/lovable-uploads/f78957a9-7cf5-4c5a-8f15-2d47b9407c39.png"
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=90&w=400&h=300"
     }
   ];
 

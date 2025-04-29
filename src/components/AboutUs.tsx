@@ -16,7 +16,7 @@ const AboutUs = () => {
       name: "Marco Bianchi",
       role: "AI Research Director",
       location: "Milan",
-      image: "public/lovable-uploads/1180208c-91b1-449b-983e-2c05ee2096a9.png",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
       bio: "PhD in Computational Finance from ETH Zurich with expertise in predictive modeling and pattern recognition in financial markets.",
       specialty: "Quantitative analysis"
     },
@@ -24,7 +24,7 @@ const AboutUs = () => {
       name: "Claire Dubois",
       role: "Portfolio Manager",
       location: "Paris",
-      image: "public/lovable-uploads/f78957a9-7cf5-4c5a-8f15-2d47b9407c39.png",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
       bio: "Previously managed €2.8B in assets at BNP Paribas. Specializes in sustainable European investments with consistent above-market returns.",
       specialty: "ESG investments"
     },
@@ -85,19 +85,19 @@ const AboutUs = () => {
   const partners = [
     {
       name: "Banco Italiano di Investimento",
-      logo: "public/lovable-uploads/e5935133-039a-4ebd-9a8a-03b1d9b297b5.png",
+      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=90&w=400&h=300",
       type: "Financial Institution",
       description: "Leading Italian investment bank with €18.4B in assets under management."
     },
     {
       name: "EuroVenture Capital",
-      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=90&w=400&h=300",
+      logo: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=90&w=400&h=300",
       type: "Venture Capital Fund",
       description: "Premier early-stage investment fund focused on European fintech startups."
     },
     {
       name: "Milan Innovations Group",
-      logo: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=90&w=400&h=300",
+      logo: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=90&w=400&h=300",
       type: "Technology Incubator",
       description: "Pioneering tech hub that bridges financial expertise with cutting-edge innovation."
     },
