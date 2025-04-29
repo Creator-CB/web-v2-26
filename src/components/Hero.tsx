@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bitcoin } from "lucide-react";
+import { ArrowRight, Bitcoin, Wallet, ChartLineUp, Shield, Zap } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
+import { Badge } from "@/components/ui/badge";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -76,19 +77,18 @@ const Hero = () => {
               <div 
                 className={`flex items-center justify-center lg:justify-start mb-6 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-orange-500/10 to-blue-500/10 mr-3 shadow-sm">
-                  <Bitcoin className="h-5 w-5 text-orange-500" />
-                </span>
-                <span className="text-sm font-medium uppercase tracking-wider text-blue-600">{t("cryptoInvestmentPlatform")}</span>
+                <Badge className="rounded-full bg-gradient-to-r from-amber-400/10 to-amber-500/20 text-amber-600 border-amber-200 px-3 py-1">
+                  <Bitcoin className="h-4 w-4 mr-1" /> {t("cryptoInvestmentPlatform")}
+                </Badge>
               </div>
               
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl md:leading-tight">
                 <span 
                   className={`block text-gray-800 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 >
-                  {t("intelligentCrypto")}
+                  {t("growWealthFaster")}
                 </span>
-                <span className="block bg-gradient-to-r from-orange-500 via-purple-500 to-blue-400 bg-clip-text text-transparent mt-3 overflow-hidden h-[1.2em]">
+                <span className="block bg-gradient-to-r from-orange-500 via-amber-500 to-blue-400 bg-clip-text text-transparent mt-3 overflow-hidden h-[1.2em]">
                   {typingText}
                   <span className={`animate-pulse inline-block w-1 h-[1em] bg-orange-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
                 </span>
@@ -97,19 +97,34 @@ const Hero = () => {
               <p 
                 className={`mt-6 text-base text-gray-600 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               >
-                {t("heroPlatformDescription")}
+                {t("cryptoReturnsHigher")}
               </p>
+
+              <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
+                <div className="flex items-center text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
+                  <ChartLineUp className="h-4 w-4 mr-1" />
+                  <span>{t("averagePerformance")}</span> <span className="font-bold ml-1">+24.8%</span>
+                </div>
+                <div className="flex items-center text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
+                  <Shield className="h-4 w-4 mr-1" />
+                  <span>{t("securedInvestments")}</span>
+                </div>
+                <div className="flex items-center text-purple-600 bg-purple-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
+                  <Zap className="h-4 w-4 mr-1" />
+                  <span>{t("startWithJust")} $100</span>
+                </div>
+              </div>
               
               <div 
-                className={`mt-10 flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                className={`mt-8 flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               >
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 rounded-md px-8 py-6 text-base font-medium shadow-md relative overflow-hidden button-hover group"
+                  className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-md px-8 py-6 text-base font-medium shadow-md relative overflow-hidden button-hover group"
                   onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <span className="relative z-10 flex items-center">
-                    {t("startInvesting")}
+                    {t("growMyWealthNow")}
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Button>
@@ -117,11 +132,22 @@ const Hero = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="rounded-md px-8 py-6 text-base font-medium border-blue-500 text-blue-500 hover:bg-blue-500/5 shadow-sm"
-                  onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="rounded-md px-8 py-6 text-base font-medium border-amber-500 text-amber-500 hover:bg-amber-500/5 shadow-sm"
+                  onClick={() => document.getElementById('investment-packages')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  {t("tryAiAssistant")}
+                  {t("seeInvestmentOpportunities")}
                 </Button>
+              </div>
+
+              <div className={`mt-10 text-sm text-gray-500 flex items-center justify-center lg:justify-start gap-5 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <div className="flex items-center">
+                  <Shield className="h-4 w-4 mr-1 text-gray-400" />
+                  {t("regulatedPlatform")}
+                </div>
+                <div className="flex items-center">
+                  <Wallet className="h-4 w-4 mr-1 text-gray-400" />
+                  {t("cryptoInsured")}
+                </div>
               </div>
             </div>
           </main>
@@ -132,21 +158,30 @@ const Hero = () => {
           >
             <div className="glass-card p-5 animate-float shadow-lg border border-blue-100 bg-white/90 backdrop-blur-md z-10 relative">
               <div className="text-sm font-medium text-gray-500">{t("annualReturns")}</div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-blue-500 bg-clip-text text-transparent">+24.8%</div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">+24.8%</div>
               <div className="text-xs text-gray-400 mt-1">{t("averageCryptoReturns")}</div>
             </div>
             
             <div className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-blue-100 bg-white/90 backdrop-blur-md z-10 relative">
               <div className="text-sm font-medium text-gray-500">{t("algorithmPrecision")}</div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent">93.5%</div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent">93.5%</div>
               <div className="text-xs text-gray-400 mt-1">{t("cryptoMarketPrediction")}</div>
             </div>
             
             <div className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-blue-100 bg-white/90 backdrop-blur-md z-10 relative">
               <div className="text-sm font-medium text-gray-500">{t("clientSatisfaction")}</div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-orange-300 bg-clip-text text-transparent">98.2%</div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">98.2%</div>
               <div className="text-xs text-gray-400 mt-1">{t("globalCryptoInvestors")}</div>
             </div>
+          </div>
+
+          {/* Active investors counter */}
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex items-center gap-3 border border-gray-100">
+            <div className="relative">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            </div>
+            <span className="font-medium">{t("activeInvestors")}: <span className="text-amber-500">783</span></span>
           </div>
         </div>
       </div>

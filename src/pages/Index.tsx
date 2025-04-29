@@ -10,13 +10,17 @@ import HowItWorks from '../components/HowItWorks';
 import AIChat from '../components/AIChat';
 import RegisterForm from '../components/RegisterForm';
 import Footer from '../components/Footer';
+import Testimonials from '../components/Testimonials';
+import TrustSignals from '../components/TrustSignals';
+import InvestmentPackages from '../components/InvestmentPackages';
+import SuccessStories from '../components/SuccessStories';
 
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>NovaTrust Invest | AI-Powered Cryptocurrency Investment Platform</title>
-        <meta name="description" content="NovaTrust Invest combines AI technology with human expertise to optimize cryptocurrency investment potential in today's volatile digital asset markets." />
+        <title>NovaTrust Invest | Expert-Curated Cryptocurrency Investment Platform</title>
+        <meta name="description" content="Grow your wealth faster with expert-curated crypto investments. Average returns 25% higher than market. Start with just $100 and access AI-powered investment strategies." />
       </Helmet>
       
       <Header />
@@ -24,9 +28,13 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero />
+        <TrustSignals />
         <Features />
+        <SuccessStories />
+        <InvestmentPackages />
         <AboutUs />
         <HowItWorks />
+        <Testimonials />
         <AIChat />
         <RegisterForm />
       </main>

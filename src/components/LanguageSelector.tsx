@@ -1,195 +1,299 @@
 
-import React, { useState, createContext, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useToast } from "@/components/ui/use-toast";
 
-// Create a context for language
 type LanguageContextType = {
   language: string;
-  setLanguage: (lang: string) => void;
+  setLanguage: (language: string) => void;
   t: (key: string) => string;
 };
 
-const defaultLanguage = 'en';
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Translation dictionary
 const translations = {
   en: {
-    // Navbar
-    "features": "Features",
-    "howItWorks": "How It Works",
-    "aiAssistant": "AI Assistant",
-    "getStarted": "Get Started",
+    cryptoMarkets: "Crypto Markets",
+    marketUpdates: "Market Updates",
+    research: "Research",
+    contact: "Contact",
+    features: "Features",
+    howItWorks: "How It Works",
+    aiAssistant: "AI Assistant",
+    getStarted: "Get Started",
+    cryptoInvestmentPlatform: "Crypto Investment Platform",
+    intelligentCrypto: "Intelligent Crypto",
+    forModernInvestors: "for Modern Investors",
+    heroPlatformDescription: "NovaTrust Invest combines AI technology with human expertise to optimize cryptocurrency investment potential in today's volatile digital asset markets.",
+    startInvesting: "Start Investing",
+    tryAiAssistant: "Try AI Assistant",
+    annualReturns: "Annual Returns",
+    averageCryptoReturns: "Average crypto portfolio returns",
+    algorithmPrecision: "Algorithm Precision",
+    cryptoMarketPrediction: "Crypto market prediction accuracy",
+    clientSatisfaction: "Client Satisfaction",
+    globalCryptoInvestors: "Global crypto investors satisfaction",
+    ourApproach: "Our Approach",
+    sophisticatedCrypto: "Sophisticated Crypto Investment Tools",
+    precisionTools: "Precision tools for navigating the complex world of cryptocurrency with confidence",
+    intelligentAnalysis: "Intelligent Analysis",
+    intelligentAnalysisDesc: "Our AI algorithms analyze market trends, social sentiment, and technical indicators to identify promising investment opportunities.",
+    riskManagement: "Risk Management",
+    riskManagementDesc: "Advanced risk assessment tools help protect your investments during market volatility and maximize returns in favorable conditions.",
+    aiAssistedInvesting: "AI-Assisted Investing",
+    aiAssistedInvestingDesc: "Our platform continuously monitors the market and provides AI-driven recommendations tailored to your investment goals.",
+    cryptoDiversification: "Crypto Diversification",
+    cryptoDiversificationDesc: "Spread risk across curated baskets of cryptocurrencies, stablecoins, and tokenized assets for optimal balance.",
+    advancedTechnology: "Why Our Technology Gives You The Edge",
+    specializedAlgorithms: "Specialized algorithms built for volatile crypto markets",
+    globalInfrastructure: "Global infrastructure for 24/7 market monitoring",
+    expertTeam: "Expert team of crypto analysts and data scientists",
+    regulatoryMonitoring: "Continuous regulatory monitoring for compliance",
     
-    // HowItWorks
-    "ourProcess": "Our Process",
-    "howPlatformWorks": "How Our Platform Works",
-    "sophisticatedApproach": "A sophisticated approach to crypto investing",
-    "aiConsultation": "AI Consultation",
-    "aiConsultationDesc": "Engage with our intelligent assistant to explore cryptocurrency investment options tailored to market conditions.",
-    "portfolioAnalysis": "Portfolio Analysis",
-    "portfolioAnalysisDesc": "Our AI analyzes your preferences and generates a customized crypto strategy.",
-    "accountSetup": "Account Setup",
-    "accountSetupDesc": "Complete your profile with our streamlined registration process for crypto investors.",
-    "expertReview": "Expert Review",
-    "expertReviewDesc": "Speak with our experienced crypto advisors who specialize in digital asset markets.",
-    "startJourney": "Start your crypto investment journey today",
-    "pathToGrowth": "Your Path to Financial Growth",
-    "continuousSupport": "From your first consultation to ongoing portfolio management, our platform provides continuous support and optimization to maximize your cryptocurrency investment returns.",
-    "startInvesting": "Start investing with €100",
-    "setupTime": "Average setup time: 10 minutes",
+    // New translations
+    growWealthFaster: "Grow Your Wealth Faster with Expert-Curated Crypto Investments",
+    cryptoReturnsHigher: "Our AI-powered platform delivers crypto returns 25% higher than market average. Start with just $100 and get access to investment strategies previously only available to institutions.",
+    averagePerformance: "Average Performance",
+    securedInvestments: "Secured Investments",
+    startWithJust: "Start with just",
+    growMyWealthNow: "Grow My Wealth Now",
+    seeInvestmentOpportunities: "See Investment Opportunities",
+    regulatedPlatform: "Regulated Platform",
+    cryptoInsured: "Crypto Insured up to $1M",
+    activeInvestors: "Active Investors",
+    hotMarket: "HOT MARKET",
+    whyChooseUs: "Why Choose Us",
+    cryptoAdvantages: "Take advantage of cryptocurrency market opportunities with our advanced AI and expert guidance",
+    intelligentCryptoAnalysis: "Intelligent Crypto Analysis",
+    intelligentCryptoAnalysisDesc: "Our AI algorithms analyze market trends, social sentiment, and on-chain data to identify promising crypto assets.",
+    cryptoRiskManagement: "Crypto Risk Management",
+    cryptoRiskManagementDesc: "Advanced risk assessment tools help protect your crypto investments during market volatility and maximize returns.",
+    aiCryptoTrading: "AI Crypto Trading",
+    aiCryptoTradingDesc: "Our platform continuously monitors the crypto market and provides AI-driven recommendations for optimal entry and exit points.",
+    cryptoDiversificationDesc: "Spread risk across carefully curated baskets of cryptocurrencies, stablecoins, and DeFi assets for optimal returns.",
+    whyNowIsBest: "Why Now Is The Best Time For Crypto Investment",
+    marketVolatility: "Market volatility creates unique opportunities for significant gains",
+    institutionalAdoption: "Increasing institutional adoption driving crypto market growth",
+    aiAdvantage: "AI-driven analysis gives our clients a significant edge",
+    cryptoRegulation: "Evolving regulatory clarity creating a more stable market",
     
-    // Language toggle
-    "languageChanged": "Language changed to English",
+    regulated: "Licensed & Regulated",
+    regulatedDesc: "European-licensed crypto investment provider",
+    awardWinning: "Award-Winning",
+    awardWinningDesc: "2023 Fintech Innovation Award Winner",
+    topRated: "Top Rated Platform",
+    asSeenIn: "As Seen In",
     
-    // Buttons
-    "submit": "Submit",
-    "sendMessage": "Send Message",
-    "learnMore": "Learn More",
-    "contactUs": "Contact Us",
+    happyInvestors: "Happy Investors",
+    whatClientsSay: "What Our Clients Say",
+    testimonialsSubheading: "Join thousands of satisfied investors who trust our platform for their cryptocurrency investments",
+    retailInvestor: "Retail Investor",
+    techProfessional: "Tech Professional",
+    businessOwner: "Business Owner",
+    testimonial1: "I started with just $500 and I've seen my portfolio grow 45% in 9 months. The AI recommendations are spot-on!",
+    testimonial2: "The platform's risk management tools helped me navigate the crypto winter successfully while others lost significantly.",
+    testimonial3: "NovaTrust's diversification strategies have allowed me to enter the crypto market with confidence despite my initial skepticism.",
+    ratedExcellent: "Rated Excellent on TrustPilot",
+    from: "from",
+    reviews: "reviews",
     
-    // Header
-    "marketUpdates": "Market Updates",
-    "research": "Research",
-    "contact": "Contact",
-    "cryptoMarkets": "Crypto Markets",
+    investmentOptions: "Investment Options",
+    tailoredPackages: "Tailored Investment Packages",
+    packagesSubheading: "Choose the investment package that fits your goals and budget - all managed by our AI-powered platform",
+    starterPackage: "Crypto Starter",
+    starterDesc: "Perfect for beginners looking to enter the crypto market with minimal risk",
+    feature1Starter: "Start with just $100",
+    feature2Starter: "Access to 5 top cryptocurrencies",
+    feature3Starter: "Weekly market reports",
+    feature4Starter: "Basic risk management",
     
-    // Hero
-    "intelligentCrypto": "Intelligent Crypto Investing",
-    "forModernInvestors": "For Modern Investors",
-    "cryptoInvestmentPlatform": "Crypto Investment Platform",
-    "heroPlatformDescription": "Leveraging AI algorithms with expert human analysis to optimize your cryptocurrency investment potential in today's volatile digital asset markets.",
-    "tryAiAssistant": "Try AI Assistant",
-    "annualReturns": "Annual Returns",
-    "averageCryptoReturns": "Average for crypto portfolios",
-    "algorithmPrecision": "Algorithm Precision",
-    "cryptoMarketPrediction": "Crypto market prediction accuracy",
-    "clientSatisfaction": "Client Satisfaction",
-    "globalCryptoInvestors": "From global crypto investors",
+    growthPackage: "Crypto Growth",
+    growthDesc: "Designed for investors ready to accelerate their crypto portfolio growth",
+    feature1Growth: "Minimum investment $500",
+    feature2Growth: "Access to 15+ cryptocurrencies",
+    feature3Growth: "AI-powered trading signals",
+    feature4Growth: "Advanced risk management",
+    feature5Growth: "Monthly strategy call",
     
-    // Features
-    "ourApproach": "Our Approach",
-    "sophisticatedCrypto": "Sophisticated Crypto Investment Technology",
-    "precisionTools": "Precision tools designed for the dynamic cryptocurrency landscape",
-    "intelligentAnalysis": "Intelligent Analysis",
-    "intelligentAnalysisDesc": "Our algorithms analyze cryptocurrency trends across global exchanges, identifying opportunities before they become mainstream.",
-    "riskManagement": "Risk Management",
-    "riskManagementDesc": "Advanced risk assessment tools that adapt to high volatility in cryptocurrency markets to protect your digital asset portfolio.",
-    "aiAssistedInvesting": "AI-Assisted Investing",
-    "aiAssistedInvestingDesc": "Get personalized cryptocurrency recommendations based on your financial goals and risk tolerance profile.",
-    "cryptoDiversification": "Crypto Diversification",
-    "cryptoDiversificationDesc": "Smart allocation across major and emerging cryptocurrencies to optimize returns while minimizing exposure to market volatility.",
-    "advancedTechnology": "Advanced Technology, Crypto Expertise",
-    "specializedAlgorithms": "Specialized algorithms trained on cryptocurrency data since 2017",
-    "globalInfrastructure": "Global computational infrastructure for rapid crypto market analysis",
-    "expertTeam": "Team of experts with deep experience in blockchain and digital assets",
-    "regulatoryMonitoring": "Continuous monitoring of regulatory developments across all major crypto markets"
+    premiumPackage: "Crypto Premium",
+    premiumDesc: "Our comprehensive solution for serious crypto investors seeking maximum returns",
+    feature1Premium: "Minimum investment $2,000",
+    feature2Premium: "Access to 30+ cryptocurrencies & DeFi",
+    feature3Premium: "Custom portfolio construction",
+    feature4Premium: "Premium risk management",
+    feature5Premium: "Weekly strategy calls",
+    feature6Premium: "Early access to new features",
+    
+    minimum: "minimum",
+    projectedReturns: "Projected Returns",
+    mostPopular: "Most Popular",
+    startInvesting: "Start Investing",
+    customPackage: "Need a Custom Package?",
+    customPackageDesc: "We offer personalized investment strategies for larger investments or specific needs.",
+    contactUs: "Contact Us",
+    
+    realResults: "Real Results",
+    successStories: "Success Stories",
+    successStoriesSubheading: "Real investors who transformed their financial future with our crypto investment platform",
+    successStory1: "I was skeptical about crypto, but NovaTrust's approach changed my mind. Their AI tools helped me identify optimal entry points and their risk management protected my capital.",
+    successStory2: "As a busy professional, I don't have time to monitor markets. NovaTrust's platform does the heavy lifting while I focus on my career. The results speak for themselves.",
+    returnOnInvestment: "Return on Investment",
+    initial: "Initial",
+    currentValue: "Current",
+    period: "Period",
+    startYourSuccess: "Ready to start your own success story?",
+    startMyJourney: "Start My Investment Journey",
   },
   it: {
-    // Navbar
-    "features": "Caratteristiche",
-    "howItWorks": "Come Funziona",
-    "aiAssistant": "Assistente IA",
-    "getStarted": "Inizia Ora",
+    cryptoMarkets: "Mercati Crypto",
+    marketUpdates: "Aggiornamenti di Mercato",
+    research: "Ricerca",
+    contact: "Contatti",
+    features: "Caratteristiche",
+    howItWorks: "Come Funziona",
+    aiAssistant: "Assistente AI",
+    getStarted: "Inizia Ora",
+    cryptoInvestmentPlatform: "Piattaforma di Investimento Crypto",
+    intelligentCrypto: "Crypto Intelligente",
+    forModernInvestors: "per Investitori Moderni",
+    heroPlatformDescription: "NovaTrust Invest combina tecnologia AI con esperienza umana per ottimizzare il potenziale di investimento in criptovalute nei volatili mercati di asset digitali di oggi.",
+    startInvesting: "Inizia a Investire",
+    tryAiAssistant: "Prova l'Assistente AI",
+    annualReturns: "Rendimenti Annuali",
+    averageCryptoReturns: "Rendimenti medi del portafoglio crypto",
+    algorithmPrecision: "Precisione Algoritmica",
+    cryptoMarketPrediction: "Precisione nella previsione del mercato crypto",
+    clientSatisfaction: "Soddisfazione Clienti",
+    globalCryptoInvestors: "Soddisfazione degli investitori crypto globali",
+    ourApproach: "Il Nostro Approccio",
+    sophisticatedCrypto: "Strumenti di Investimento Crypto Sofisticati",
+    precisionTools: "Strumenti di precisione per navigare con fiducia nel complesso mondo delle criptovalute",
+    intelligentAnalysis: "Analisi Intelligente",
+    intelligentAnalysisDesc: "I nostri algoritmi AI analizzano tendenze di mercato, sentiment sociale e indicatori tecnici per identificare opportunità di investimento promettenti.",
+    riskManagement: "Gestione del Rischio",
+    riskManagementDesc: "Strumenti avanzati di valutazione del rischio aiutano a proteggere i tuoi investimenti durante la volatilità del mercato e massimizzare i rendimenti in condizioni favorevoli.",
+    aiAssistedInvesting: "Investimenti Assistiti dall'AI",
+    aiAssistedInvestingDesc: "La nostra piattaforma monitora continuamente il mercato e fornisce raccomandazioni basate sull'AI adattate ai tuoi obiettivi di investimento.",
+    cryptoDiversification: "Diversificazione Crypto",
+    cryptoDiversificationDesc: "Distribuisci il rischio su panieri selezionati di criptovalute, stablecoin e asset tokenizzati per un equilibrio ottimale.",
+    advancedTechnology: "Perché La Nostra Tecnologia Ti Dà Un Vantaggio",
+    specializedAlgorithms: "Algoritmi specializzati creati per mercati crypto volatili",
+    globalInfrastructure: "Infrastruttura globale per il monitoraggio del mercato 24/7",
+    expertTeam: "Team esperto di analisti crypto e data scientist",
+    regulatoryMonitoring: "Monitoraggio normativo continuo per la conformità",
     
-    // HowItWorks
-    "ourProcess": "Il Nostro Processo",
-    "howPlatformWorks": "Come Funziona La Nostra Piattaforma",
-    "sophisticatedApproach": "Un approccio sofisticato agli investimenti in criptovalute",
-    "aiConsultation": "Consulenza IA",
-    "aiConsultationDesc": "Interagisci con il nostro assistente intelligente per esplorare opzioni di investimento in criptovalute adattate alle condizioni di mercato.",
-    "portfolioAnalysis": "Analisi del Portafoglio",
-    "portfolioAnalysisDesc": "La nostra IA analizza le tue preferenze e genera una strategia personalizzata per le criptovalute.",
-    "accountSetup": "Configurazione Account",
-    "accountSetupDesc": "Completa il tuo profilo con il nostro processo di registrazione semplificato per investitori in criptovalute.",
-    "expertReview": "Revisione Esperta",
-    "expertReviewDesc": "Parla con i nostri consulenti esperti di criptovalute specializzati nei mercati di asset digitali.",
-    "startJourney": "Inizia oggi il tuo percorso di investimento in criptovalute",
-    "pathToGrowth": "Il Tuo Percorso verso la Crescita Finanziaria",
-    "continuousSupport": "Dalla prima consulenza alla gestione continua del portafoglio, la nostra piattaforma fornisce supporto continuo e ottimizzazione per massimizzare i rendimenti dei tuoi investimenti in criptovalute.",
-    "startInvesting": "Inizia a investire con €100",
-    "setupTime": "Tempo medio di configurazione: 10 minuti",
+    // New translations
+    growWealthFaster: "Fai Crescere la Tua Ricchezza Più Velocemente con Investimenti Crypto Curati da Esperti",
+    cryptoReturnsHigher: "La nostra piattaforma alimentata dall'AI offre rendimenti crypto superiori del 25% rispetto alla media di mercato. Inizia con soli €100 e accedi a strategie di investimento precedentemente disponibili solo per le istituzioni.",
+    averagePerformance: "Performance Media",
+    securedInvestments: "Investimenti Sicuri",
+    startWithJust: "Inizia con soli",
+    growMyWealthNow: "Fai Crescere la Mia Ricchezza Ora",
+    seeInvestmentOpportunities: "Vedi Opportunità di Investimento",
+    regulatedPlatform: "Piattaforma Regolamentata",
+    cryptoInsured: "Crypto Assicurate fino a €1M",
+    activeInvestors: "Investitori Attivi",
+    hotMarket: "MERCATO CALDO",
+    whyChooseUs: "Perché Sceglierci",
+    cryptoAdvantages: "Approfitta delle opportunità del mercato delle criptovalute con la nostra AI avanzata e la guida di esperti",
+    intelligentCryptoAnalysis: "Analisi Crypto Intelligente",
+    intelligentCryptoAnalysisDesc: "I nostri algoritmi AI analizzano tendenze di mercato, sentiment sociale e dati on-chain per identificare asset crypto promettenti.",
+    cryptoRiskManagement: "Gestione del Rischio Crypto",
+    cryptoRiskManagementDesc: "Strumenti avanzati di valutazione del rischio aiutano a proteggere i tuoi investimenti crypto durante la volatilità del mercato e massimizzare i rendimenti.",
+    aiCryptoTrading: "Trading Crypto con AI",
+    aiCryptoTradingDesc: "La nostra piattaforma monitora continuamente il mercato crypto e fornisce raccomandazioni basate sull'AI per punti di entrata e uscita ottimali.",
+    cryptoDiversificationDesc: "Distribuisci il rischio su panieri accuratamente selezionati di criptovalute, stablecoin e asset DeFi per rendimenti ottimali.",
+    whyNowIsBest: "Perché Ora è il Momento Migliore per l'Investimento Crypto",
+    marketVolatility: "La volatilità del mercato crea opportunità uniche per guadagni significativi",
+    institutionalAdoption: "La crescente adozione istituzionale guida la crescita del mercato crypto",
+    aiAdvantage: "L'analisi basata sull'AI offre ai nostri clienti un vantaggio significativo",
+    cryptoRegulation: "L'evoluzione della chiarezza normativa crea un mercato più stabile",
     
-    // Language toggle
-    "languageChanged": "Lingua cambiata in Italiano",
+    regulated: "Autorizzato e Regolamentato",
+    regulatedDesc: "Fornitore di investimenti crypto con licenza europea",
+    awardWinning: "Premiato",
+    awardWinningDesc: "Vincitore del Premio Innovazione Fintech 2023",
+    topRated: "Piattaforma Più Votata",
+    asSeenIn: "Come Visto Su",
     
-    // Buttons
-    "submit": "Invia",
-    "sendMessage": "Invia Messaggio",
-    "learnMore": "Scopri di Più",
-    "contactUs": "Contattaci",
+    happyInvestors: "Investitori Soddisfatti",
+    whatClientsSay: "Cosa Dicono i Nostri Clienti",
+    testimonialsSubheading: "Unisciti a migliaia di investitori soddisfatti che si fidano della nostra piattaforma per i loro investimenti in criptovalute",
+    retailInvestor: "Investitore al Dettaglio",
+    techProfessional: "Professionista Tech",
+    businessOwner: "Imprenditore",
+    testimonial1: "Ho iniziato con soli €500 e ho visto il mio portafoglio crescere del 45% in 9 mesi. I consigli dell'AI sono perfetti!",
+    testimonial2: "Gli strumenti di gestione del rischio della piattaforma mi hanno aiutato a navigare con successo l'inverno crypto mentre altri hanno perso significativamente.",
+    testimonial3: "Le strategie di diversificazione di NovaTrust mi hanno permesso di entrare nel mercato crypto con fiducia nonostante il mio scetticismo iniziale.",
+    ratedExcellent: "Valutato Eccellente su TrustPilot",
+    from: "da",
+    reviews: "recensioni",
     
-    // Header
-    "marketUpdates": "Aggiornamenti di Mercato",
-    "research": "Ricerca",
-    "contact": "Contatto",
-    "cryptoMarkets": "Mercati Crypto",
+    investmentOptions: "Opzioni di Investimento",
+    tailoredPackages: "Pacchetti di Investimento Personalizzati",
+    packagesSubheading: "Scegli il pacchetto di investimento che si adatta ai tuoi obiettivi e al tuo budget - tutti gestiti dalla nostra piattaforma alimentata dall'AI",
+    starterPackage: "Crypto Starter",
+    starterDesc: "Perfetto per principianti che vogliono entrare nel mercato crypto con un rischio minimo",
+    feature1Starter: "Inizia con soli €100",
+    feature2Starter: "Accesso a 5 principali criptovalute",
+    feature3Starter: "Report di mercato settimanali",
+    feature4Starter: "Gestione del rischio di base",
     
-    // Hero
-    "intelligentCrypto": "Investimenti Intelligenti in Crypto",
-    "forModernInvestors": "Per Investitori Moderni",
-    "cryptoInvestmentPlatform": "Piattaforma di Investimento Crypto",
-    "heroPlatformDescription": "Utilizziamo algoritmi di IA con analisi di esperti umani per ottimizzare il potenziale dei tuoi investimenti in criptovalute nei volatili mercati di asset digitali odierni.",
-    "tryAiAssistant": "Prova l'Assistente IA",
-    "annualReturns": "Rendimenti Annuali",
-    "averageCryptoReturns": "Media per portafogli crypto",
-    "algorithmPrecision": "Precisione Algoritmica",
-    "cryptoMarketPrediction": "Precisione nelle previsioni del mercato crypto",
-    "clientSatisfaction": "Soddisfazione dei Clienti",
-    "globalCryptoInvestors": "Da investitori crypto globali",
+    growthPackage: "Crypto Growth",
+    growthDesc: "Progettato per investitori pronti ad accelerare la crescita del loro portafoglio crypto",
+    feature1Growth: "Investimento minimo €500",
+    feature2Growth: "Accesso a più di 15 criptovalute",
+    feature3Growth: "Segnali di trading alimentati dall'AI",
+    feature4Growth: "Gestione avanzata del rischio",
+    feature5Growth: "Chiamata strategica mensile",
     
-    // Features
-    "ourApproach": "Il Nostro Approccio",
-    "sophisticatedCrypto": "Tecnologia Sofisticata per Investimenti Crypto",
-    "precisionTools": "Strumenti di precisione progettati per il dinamico panorama delle criptovalute",
-    "intelligentAnalysis": "Analisi Intelligente",
-    "intelligentAnalysisDesc": "I nostri algoritmi analizzano le tendenze delle criptovalute su tutti gli exchange globali, identificando opportunità prima che diventino mainstream.",
-    "riskManagement": "Gestione del Rischio",
-    "riskManagementDesc": "Strumenti avanzati di valutazione del rischio che si adattano all'alta volatilità nei mercati delle criptovalute per proteggere il tuo portafoglio di asset digitali.",
-    "aiAssistedInvesting": "Investimenti Assistiti da IA",
-    "aiAssistedInvestingDesc": "Ottieni raccomandazioni personalizzate sulle criptovalute in base ai tuoi obiettivi finanziari e al tuo profilo di tolleranza al rischio.",
-    "cryptoDiversification": "Diversificazione Crypto",
-    "cryptoDiversificationDesc": "Allocazione intelligente tra criptovalute principali ed emergenti per ottimizzare i rendimenti minimizzando l'esposizione alla volatilità del mercato.",
-    "advancedTechnology": "Tecnologia Avanzata, Esperienza Crypto",
-    "specializedAlgorithms": "Algoritmi specializzati addestrati su dati di criptovalute dal 2017",
-    "globalInfrastructure": "Infrastruttura computazionale globale per analisi rapide del mercato crypto",
-    "expertTeam": "Team di esperti con profonda esperienza in blockchain e asset digitali",
-    "regulatoryMonitoring": "Monitoraggio continuo degli sviluppi normativi in tutti i principali mercati crypto"
+    premiumPackage: "Crypto Premium",
+    premiumDesc: "La nostra soluzione completa per investitori crypto seri alla ricerca di rendimenti massimi",
+    feature1Premium: "Investimento minimo €2.000",
+    feature2Premium: "Accesso a più di 30 criptovalute e DeFi",
+    feature3Premium: "Costruzione personalizzata del portafoglio",
+    feature4Premium: "Gestione premium del rischio",
+    feature5Premium: "Chiamate strategiche settimanali",
+    feature6Premium: "Accesso anticipato alle nuove funzionalità",
+    
+    minimum: "minimo",
+    projectedReturns: "Rendimenti Previsti",
+    mostPopular: "Più Popolare",
+    startInvesting: "Inizia a Investire",
+    customPackage: "Hai Bisogno di un Pacchetto Personalizzato?",
+    customPackageDesc: "Offriamo strategie di investimento personalizzate per investimenti più grandi o esigenze specifiche.",
+    contactUs: "Contattaci",
+    
+    realResults: "Risultati Reali",
+    successStories: "Storie di Successo",
+    successStoriesSubheading: "Investitori reali che hanno trasformato il loro futuro finanziario con la nostra piattaforma di investimento crypto",
+    successStory1: "Ero scettico sulle crypto, ma l'approccio di NovaTrust mi ha fatto cambiare idea. I loro strumenti AI mi hanno aiutato a identificare punti di ingresso ottimali e la loro gestione del rischio ha protetto il mio capitale.",
+    successStory2: "Come professionista impegnato, non ho tempo per monitorare i mercati. La piattaforma di NovaTrust fa il lavoro pesante mentre io mi concentro sulla mia carriera. I risultati parlano da soli.",
+    returnOnInvestment: "Ritorno sull'Investimento",
+    initial: "Iniziale",
+    currentValue: "Attuale",
+    period: "Periodo",
+    startYourSuccess: "Pronto a iniziare la tua storia di successo?",
+    startMyJourney: "Inizia il Mio Viaggio di Investimento",
   }
 };
 
-const LanguageContext = createContext<LanguageContextType>({
-  language: defaultLanguage,
-  setLanguage: () => {},
-  t: (key: string) => key,
-});
-
-export const useLanguage = () => useContext(LanguageContext);
-
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  // Try to load language from localStorage if available
-  const initialLanguage = typeof window !== 'undefined' && localStorage.getItem('preferredLanguage') 
-    ? localStorage.getItem('preferredLanguage') as string
-    : defaultLanguage;
-    
-  const [language, setLanguage] = useState(initialLanguage);
+export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
+  const [language, setLanguage] = useState<string>(() => {
+    // Try to get saved language from localStorage
+    const savedLang = localStorage.getItem('preferredLanguage');
+    return savedLang || 'en';
+  });
   
-  // Save language preference to localStorage when it changes
   useEffect(() => {
+    // Save language preference to localStorage when it changes
     localStorage.setItem('preferredLanguage', language);
   }, [language]);
-  
-  const t = (key: string) => {
-    return translations[language as keyof typeof translations]?.[key as keyof typeof translations[keyof typeof translations]] || key;
+
+  const t = (key: string): string => {
+    return translations[language as keyof typeof translations]?.[key as keyof (typeof translations)['en']] || key;
   };
-  
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
@@ -197,41 +301,42 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const LanguageSelector = () => {
-  const { language, setLanguage, t } = useLanguage();
-  const { toast } = useToast();
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
 
-  const handleLanguageChange = (lang: string) => {
-    setLanguage(lang);
-    
-    // Show toast notification
-    toast({
-      title: t("languageChanged"),
-      description: lang === 'en' ? "English" : "Italiano",
-      variant: "default",
-    });
-    
-    // Force re-render of all components by triggering a DOM update
-    document.documentElement.setAttribute('lang', lang);
-  };
+const LanguageSelector = () => {
+  const { language, setLanguage } = useLanguage();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="flex items-center gap-1 bg-white/90 hover:bg-blue-50 border-blue-100">
-          <Globe className="h-4 w-4" />
-          <span>{language === 'en' ? 'EN' : 'IT'}</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-white/95 backdrop-blur-md border border-gray-100 shadow-lg">
-        <DropdownMenuItem onClick={() => handleLanguageChange('en')} className="cursor-pointer">
-          <span className="mr-2">🇬🇧</span> English
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleLanguageChange('it')} className="cursor-pointer">
-          <span className="mr-2">🇮🇹</span> Italiano
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Select value={language} onValueChange={setLanguage}>
+      <SelectTrigger className="w-[70px] bg-transparent border-none focus:ring-0 focus:ring-offset-0">
+        <SelectValue>
+          <div className="flex items-center">
+            <Globe className="h-4 w-4 mr-2" />
+            {language.toUpperCase()}
+          </div>
+        </SelectValue>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="en">
+          <div className="flex items-center">
+            <span className="mr-2">🇬🇧</span>
+            English
+          </div>
+        </SelectItem>
+        <SelectItem value="it">
+          <div className="flex items-center">
+            <span className="mr-2">🇮🇹</span>
+            Italiano
+          </div>
+        </SelectItem>
+      </SelectContent>
+    </Select>
   );
 };
 

@@ -1,0 +1,58 @@
+
+import React from 'react';
+import { Shield, Award, Star } from "lucide-react";
+import { useLanguage } from './LanguageSelector';
+
+const TrustSignals = () => {
+  const { t } = useLanguage();
+
+  return (
+    <section className="py-8 bg-white border-t border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+          <div className="flex flex-col justify-center items-center">
+            <div className="inline-flex items-center mb-2">
+              <Shield className="h-5 w-5 text-amber-500 mr-2" />
+              <span className="text-lg font-semibold">{t("regulated")}</span>
+            </div>
+            <p className="text-sm text-gray-500 text-center">{t("regulatedDesc")}</p>
+          </div>
+          
+          <div className="flex flex-col justify-center items-center">
+            <div className="inline-flex items-center mb-2">
+              <Award className="h-5 w-5 text-amber-500 mr-2" />
+              <span className="text-lg font-semibold">{t("awardWinning")}</span>
+            </div>
+            <p className="text-sm text-gray-500 text-center">{t("awardWinningDesc")}</p>
+          </div>
+          
+          <div className="flex flex-col justify-center items-center">
+            <div className="inline-flex items-center mb-2">
+              <Star className="h-5 w-5 text-amber-500 mr-2" />
+              <span className="text-lg font-semibold">{t("topRated")}</span>
+            </div>
+            <div className="flex items-center">
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="h-3 w-3 text-amber-400" fill="#FBBF24" />
+                ))}
+              </div>
+              <span className="ml-1 text-sm text-gray-500">4.9/5</span>
+            </div>
+          </div>
+          
+          <div className="flex flex-col justify-center items-center">
+            <span className="text-sm text-gray-500 mb-2">{t("asSeenIn")}</span>
+            <div className="flex items-center space-x-4">
+              <div className="text-gray-400 font-serif font-bold text-sm">Forbes</div>
+              <div className="text-gray-400 font-sans font-bold text-sm">TechCrunch</div>
+              <div className="text-gray-400 font-sans font-bold text-sm">Bloomberg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TrustSignals;
