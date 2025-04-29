@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star, Award, TrendingUp, Globe } from "lucide-react";
+import { Star, Award, TrendingUp, Globe, Users, Briefcase, Trophy } from "lucide-react";
 
 const AboutUs = () => {
   const experts = [
@@ -35,6 +35,22 @@ const AboutUs = () => {
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300&h=300",
       bio: "Former Deutsche Bank executive with expertise in risk modeling and portfolio optimization for volatile market conditions.",
       specialty: "Market volatility"
+    },
+    {
+      name: "Elena Petrova",
+      role: "Cryptocurrency Specialist",
+      location: "Prague",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=300&h=300",
+      bio: "Early blockchain adopter who has guided institutional investors through digital asset integration since 2017. Expert in crypto regulation across EU markets.",
+      specialty: "Digital assets"
+    },
+    {
+      name: "Jean-Pierre Laurent",
+      role: "Wealth Management Director",
+      location: "Geneva",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300&h=300",
+      bio: "Over 20 years experience managing private wealth for UHNW clients across Europe. Specializes in tax-efficient investment structures and family office services.",
+      specialty: "Private wealth"
     }
   ];
   
@@ -54,6 +70,16 @@ const AboutUs = () => {
       author: "Pierre Laurent, Financial Consultant",
       company: "Lyon, France"
     },
+    {
+      quote: "I've tried several investment platforms, but this is the only one that truly understands European markets and regulations. The returns speak for themselves.",
+      author: "Kristina Johansson, Retail Investor",
+      company: "Gothenburg, Sweden"
+    },
+    {
+      quote: "The AI identified investment opportunities I would have never found on my own. My portfolio has grown by 18.7% in just 6 months.",
+      author: "Miguel Hernandez, Restaurant Owner",
+      company: "Barcelona, Spain"
+    }
   ];
   
   return (
@@ -71,62 +97,111 @@ const AboutUs = () => {
       </div>
       
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-[10%] w-64 h-64 bg-invest-purple/5 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/3 right-[5%] w-80 h-80 bg-invest-blue/5 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
+      <div className="absolute top-1/4 left-[10%] w-64 h-64 bg-pink-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-1/3 right-[5%] w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
     
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center rounded-full bg-invest-purple/5 px-3 py-1 mb-4">
-            <span className="text-sm font-medium uppercase tracking-wider text-invest-purple">About Us</span>
+          <div className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 px-3 py-1 mb-4">
+            <span className="text-sm font-medium uppercase tracking-wider text-pink-600">About Us</span>
           </div>
           <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl mb-4">European Investment Excellence</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
             Our platform combines advanced AI technologies with decades of European market expertise
           </p>
           <div className="mt-6 flex justify-center">
-            <div className="h-1 w-20 bg-gradient-to-r from-invest-purple to-invest-blue rounded-full"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+          </div>
+        </div>
+        
+        {/* Why Choose Our Platform - NEW SECTION */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Why Our Platform Generates Profits</h3>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100 relative overflow-hidden group">
+              <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full group-hover:scale-150 transition-all duration-500"></div>
+              <div className="relative z-10">
+                <div className="mb-4 text-pink-500">
+                  <Trophy className="h-8 w-8" />
+                </div>
+                <h4 className="text-lg font-semibold mb-3 text-gray-800">Market-Beating Returns</h4>
+                <p className="text-gray-600">
+                  Our AI systems have consistently outperformed traditional investment approaches with up to 24% annual returns for aggressive portfolios.
+                </p>
+                <p className="mt-3 text-sm font-medium text-pink-500">Average return: 16.4%</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100 relative overflow-hidden group">
+              <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full group-hover:scale-150 transition-all duration-500"></div>
+              <div className="relative z-10">
+                <div className="mb-4 text-pink-500">
+                  <Users className="h-8 w-8" />
+                </div>
+                <h4 className="text-lg font-semibold mb-3 text-gray-800">Expert-Backed Strategies</h4>
+                <p className="text-gray-600">
+                  Every AI-generated recommendation is reviewed by our team of European financial experts, combining technology with human insight.
+                </p>
+                <p className="mt-3 text-sm font-medium text-pink-500">98.7% client satisfaction</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100 relative overflow-hidden group">
+              <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full group-hover:scale-150 transition-all duration-500"></div>
+              <div className="relative z-10">
+                <div className="mb-4 text-pink-500">
+                  <Briefcase className="h-8 w-8" />
+                </div>
+                <h4 className="text-lg font-semibold mb-3 text-gray-800">Diverse Asset Classes</h4>
+                <p className="text-gray-600">
+                  From traditional stocks and bonds to cryptocurrencies and alternative investments, our platform provides access to multiple wealth-building opportunities.
+                </p>
+                <p className="mt-3 text-sm font-medium text-pink-500">2,800+ investment options</p>
+              </div>
+            </div>
           </div>
         </div>
         
         {/* Company stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-invest-purple/10 flex items-center justify-center">
-                <Globe className="h-6 w-6 text-invest-purple" />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Globe className="h-6 w-6 text-pink-500" />
               </div>
             </div>
-            <div className="text-3xl font-bold text-invest-purple mb-1">18</div>
+            <div className="text-3xl font-bold text-pink-500 mb-1">18</div>
             <p className="text-sm text-gray-500">European Markets</p>
           </div>
           
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-invest-purple/10 flex items-center justify-center">
-                <TrendingUp className="h-6 w-6 text-invest-purple" />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <TrendingUp className="h-6 w-6 text-pink-500" />
               </div>
             </div>
-            <div className="text-3xl font-bold text-invest-purple mb-1">16.4%</div>
+            <div className="text-3xl font-bold text-pink-500 mb-1">16.4%</div>
             <p className="text-sm text-gray-500">Average Returns</p>
           </div>
           
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-invest-purple/10 flex items-center justify-center">
-                <Award className="h-6 w-6 text-invest-purple" />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Award className="h-6 w-6 text-pink-500" />
               </div>
             </div>
-            <div className="text-3xl font-bold text-invest-purple mb-1">11+</div>
+            <div className="text-3xl font-bold text-pink-500 mb-1">11+</div>
             <p className="text-sm text-gray-500">Industry Awards</p>
           </div>
           
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-invest-purple/10 flex items-center justify-center">
-                <Star className="h-6 w-6 text-invest-purple" />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Star className="h-6 w-6 text-pink-500" />
               </div>
             </div>
-            <div className="text-3xl font-bold text-invest-purple mb-1">98.7%</div>
+            <div className="text-3xl font-bold text-pink-500 mb-1">98.7%</div>
             <p className="text-sm text-gray-500">Client Satisfaction</p>
           </div>
         </div>
@@ -137,21 +212,21 @@ const AboutUs = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg font-semibold mb-3 text-invest-purple">European Market Focus</h4>
+              <h4 className="text-lg font-semibold mb-3 text-pink-600">European Market Focus</h4>
               <p className="text-gray-600">
                 Our AI algorithms are specifically trained on European markets, considering regional regulations, economic patterns, and cultural factors that global platforms often miss.
               </p>
             </div>
             
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg font-semibold mb-3 text-invest-purple">Quantum AI Technology</h4>
+              <h4 className="text-lg font-semibold mb-3 text-pink-600">Quantum AI Technology</h4>
               <p className="text-gray-600">
                 Unlike traditional investment platforms, our proprietary quantum computing algorithms can process vastly more variables to identify opportunities with remarkable precision.
               </p>
             </div>
             
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg font-semibold mb-3 text-invest-purple">Human + AI Collaboration</h4>
+              <h4 className="text-lg font-semibold mb-3 text-pink-600">Human + AI Collaboration</h4>
               <p className="text-gray-600">
                 We believe in the power of augmented intelligence—combining the computational power of AI with the nuanced judgment of experienced European market specialists.
               </p>
@@ -162,7 +237,7 @@ const AboutUs = () => {
         {/* Our Experts */}
         <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Meet Our European Experts</h3>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {experts.map((expert, index) => (
             <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
               <div className="relative overflow-hidden h-48">
@@ -178,7 +253,7 @@ const AboutUs = () => {
               
               <div className="p-5">
                 <h4 className="text-lg font-semibold text-gray-800">{expert.name}</h4>
-                <p className="text-invest-purple text-sm mb-3">{expert.role}</p>
+                <p className="text-pink-500 text-sm mb-3">{expert.role}</p>
                 <p className="text-gray-600 text-sm mb-3">{expert.bio}</p>
                 <div className="flex items-center">
                   <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
@@ -194,9 +269,9 @@ const AboutUs = () => {
         <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">What Our Clients Say</h3>
         
         <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-md relative">
-              <div className="text-invest-purple text-4xl absolute right-6 top-4 opacity-20">"</div>
+          {testimonials.slice(0, 3).map((testimonial, index) => (
+            <div key={index} className="bg-white rounded-xl p-6 shadow-md relative group hover:shadow-xl transition-all duration-300">
+              <div className="text-pink-500 text-4xl absolute right-6 top-4 opacity-20">"</div>
               <p className="text-gray-600 italic mb-6 relative z-10">{testimonial.quote}</p>
               <div className="border-t border-gray-100 pt-4">
                 <p className="font-medium text-gray-800">{testimonial.author}</p>
