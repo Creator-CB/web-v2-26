@@ -120,11 +120,7 @@ const HowItWorks = () => {
             </a>
           </div>
           
-          <div className="mt-12 p-6 bg-gradient-to-r from-pink-500/5 to-purple-500/5 rounded-xl border border-pink-500/10 max-w-3xl mx-auto">
-            <h4 className="text-lg font-semibold mb-3 text-gray-800">{t("pathToGrowth")}</h4>
-            <p className="text-gray-600">
-              {t("continuousSupport")}
-            </p>
+          
             <div className="mt-4 flex justify-center">
               <div className="flex items-center space-x-6 text-sm">
                 <div className="flex items-center">
