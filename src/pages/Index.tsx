@@ -9,10 +9,16 @@ import HowItWorks from '../components/HowItWorks';
 import AIChat from '../components/AIChat';
 import RegisterForm from '../components/RegisterForm';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet';
 
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <Helmet>
+        <title>NovaTrust Invest | European AI-Powered Investment Platform</title>
+        <meta name="description" content="NovaTrust Invest combines AI technology with human expertise to optimize investment potential in Europe's dynamic markets." />
+      </Helmet>
+      
       <Header />
       <Navbar />
       

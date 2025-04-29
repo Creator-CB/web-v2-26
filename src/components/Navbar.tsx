@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Logo from './Logo';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +32,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-xl font-bold gradient-text">AI Invest</span>
+            <Logo />
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -49,9 +51,11 @@ const Navbar = () => {
             >
               Get Started
             </Button>
+            <LanguageSelector />
           </div>
           
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSelector />
             <button
               onClick={toggleMobileMenu}
               className="text-gray-600 hover:text-invest-purple focus:outline-none"
