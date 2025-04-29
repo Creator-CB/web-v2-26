@@ -15,8 +15,8 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>NovaTrust Invest | European AI-Powered Investment Platform</title>
-        <meta name="description" content="NovaTrust Invest combines AI technology with human expertise to optimize investment potential in Europe's dynamic markets." />
+        <title>NovaTrust Invest | AI-Powered Cryptocurrency Investment Platform</title>
+        <meta name="description" content="NovaTrust Invest combines AI technology with human expertise to optimize cryptocurrency investment potential in today's volatile digital asset markets." />
       </Helmet>
       
       <Header />
