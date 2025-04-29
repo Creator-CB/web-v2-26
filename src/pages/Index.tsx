@@ -14,6 +14,7 @@ import Testimonials from '../components/Testimonials';
 import TrustSignals from '../components/TrustSignals';
 import InvestmentPackages from '../components/InvestmentPackages';
 import SuccessStories from '../components/SuccessStories';
+import TrustedPartners from '../components/TrustedPartners';
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
         <Hero />
         <TrustSignals />
         <Features />
+        <TrustedPartners />
         <SuccessStories />
         <InvestmentPackages />
         <AboutUs />

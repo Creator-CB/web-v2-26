@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Award, Star } from "lucide-react";
+import { Shield, Award, Star, Globe } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 
 const TrustSignals = () => {
@@ -9,7 +9,7 @@ const TrustSignals = () => {
   return (
     <section className="py-8 bg-white border-t border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
           <div className="flex flex-col justify-center items-center">
             <div className="inline-flex items-center mb-2">
               <Shield className="h-5 w-5 text-amber-500 mr-2" />
@@ -44,9 +44,20 @@ const TrustSignals = () => {
           <div className="flex flex-col justify-center items-center">
             <span className="text-sm text-gray-500 mb-2">{t("asSeenIn")}</span>
             <div className="flex items-center space-x-4">
-              <div className="text-gray-400 font-serif font-bold text-sm">Forbes</div>
-              <div className="text-gray-400 font-sans font-bold text-sm">TechCrunch</div>
-              <div className="text-gray-400 font-sans font-bold text-sm">Bloomberg</div>
+              <div className="text-gray-800 font-serif font-bold text-sm">Financial Times</div>
+              <div className="text-gray-800 font-sans font-bold text-sm">Reuters</div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col justify-center items-center">
+            <div className="inline-flex items-center mb-2">
+              <Globe className="h-5 w-5 text-amber-500 mr-2" />
+              <span className="text-lg font-semibold">Banking Partners</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-sm font-medium text-gray-700">Intesa Sanpaolo</span>
+              <span className="text-gray-400">•</span>
+              <span className="text-sm font-medium text-gray-700">Mediobanca</span>
             </div>
           </div>
         </div>

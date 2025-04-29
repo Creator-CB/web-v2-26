@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
