@@ -101,9 +101,9 @@ const AboutUs = () => {
                 </div>
                 <h4 className="text-lg font-semibold mb-3 text-gray-800">Market-Beating Returns</h4>
                 <p className="text-gray-600">
-                  Our AI systems have consistently outperformed traditional investment approaches with up to 24% annual returns for aggressive portfolios.
+                  Our AI systems have consistently outperformed traditional investment approaches with up to 500% annual returns for aggressive portfolios.
                 </p>
-                <p className="mt-3 text-sm font-medium text-pink-500">Average return: 16.4%</p>
+                <p className="mt-3 text-sm font-medium text-pink-500">Average return: 206.4%</p>
               </div>
             </div>
             
