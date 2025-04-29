@@ -120,17 +120,15 @@ const HowItWorks = () => {
             </a>
           </div>
           
-          
-            <div className="mt-4 flex justify-center">
-              <div className="flex items-center space-x-6 text-sm">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
-                  <span className="text-gray-600">{t("startInvesting")}</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
-                  <span className="text-gray-600">{t("setupTime")}</span>
-                </div>
+          <div className="mt-4 flex justify-center">
+            <div className="flex items-center space-x-6 text-sm">
+              <div className="flex items-center">
+                <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
+                <span className="text-gray-600">{t("startInvesting")}</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                <span className="text-gray-600">{t("setupTime")}</span>
               </div>
             </div>
           </div>
