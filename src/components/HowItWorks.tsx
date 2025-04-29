@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bot, CircleCheck, CircleDollarSign, Brain, ArrowRight } from "lucide-react";
+import { Bot, CircleCheck, CircleDollarSign, Brain, ArrowRight, PieChart, LineChart } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 
 const HowItWorks = () => {
@@ -8,11 +8,11 @@ const HowItWorks = () => {
 
   const steps = [
     {
-      icon: <Bot className="h-10 w-10 text-white" />,
+      icon: <PieChart className="h-10 w-10 text-white" />,
       title: t("aiConsultation"),
       description: t("aiConsultationDesc"),
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
-      image: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=90&w=400&h=300" // Updated EuroVenture Capital image
+      image: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=90&w=400&h=300",
     },
     {
       icon: <Brain className="h-10 w-10 text-white" />,
@@ -29,11 +29,11 @@ const HowItWorks = () => {
       image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=90&w=400&h=300"
     },
     {
-      icon: <CircleDollarSign className="h-10 w-10 text-white" />,
+      icon: <LineChart className="h-10 w-10 text-white" />,
       title: t("expertReview"),
       description: t("expertReviewDesc"),
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=90&w=400&h=300"
+      image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=90&w=400&h=300"
     }
   ];
 
@@ -67,13 +67,13 @@ const HowItWorks = () => {
         
         <div className="relative">
           {/* Enhanced connection line */}
-          <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-4/5 h-2 bg-gradient-to-r from-pink-500/20 via-purple-500/30 to-blue-400/20 rounded-full hidden md:block"></div>
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-pink-500/20 via-purple-500/30 to-blue-400/20 hidden md:block" style={{transform: 'translateY(-50%)'}}></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center group">
-                <div className="relative">
-                  <div className={`${step.color} rounded-full p-5 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 z-10 relative`}>
+                <div className="relative z-10">
+                  <div className={`${step.color} rounded-full p-5 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 relative`}>
                     {step.icon}
                     <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white flex items-center justify-center text-pink-500 font-bold shadow-md text-sm border border-gray-50">
                       {index + 1}
