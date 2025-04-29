@@ -1,34 +1,37 @@
 
 import React from 'react';
 import { Bot, CircleCheck, CircleDollarSign, Brain, ArrowRight } from "lucide-react";
+import { useLanguage } from './LanguageSelector';
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
+
   const steps = [
     {
       icon: <Bot className="h-10 w-10 text-white" />,
-      title: "AI Consultation",
-      description: "Engage with our intelligent assistant to explore investment options tailored to European markets.",
+      title: t("aiConsultation"),
+      description: t("aiConsultationDesc"),
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
-      image: "https://images.unsplash.com/photo-1677442135136-760c813dce93?auto=format&fit=crop&q=90&w=400&h=300"
+      image: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=90&w=400&h=300" // Updated EuroVenture Capital image
     },
     {
       icon: <Brain className="h-10 w-10 text-white" />,
-      title: "Portfolio Analysis",
-      description: "Our AI analyzes your investment preferences and generates a customized European strategy.",
+      title: t("portfolioAnalysis"),
+      description: t("portfolioAnalysisDesc"),
       color: "bg-gradient-to-r from-purple-500 to-blue-400",
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=90&w=400&h=300"
     },
     {
       icon: <CircleCheck className="h-10 w-10 text-white" />,
-      title: "Account Setup",
-      description: "Complete your profile with our streamlined registration process for European investors.",
+      title: t("accountSetup"),
+      description: t("accountSetupDesc"),
       color: "bg-gradient-to-r from-blue-400 to-cyan-300",
       image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=90&w=400&h=300"
     },
     {
       icon: <CircleDollarSign className="h-10 w-10 text-white" />,
-      title: "Expert Review",
-      description: "Speak with our local investment advisors who specialize in your regional market.",
+      title: t("expertReview"),
+      description: t("expertReviewDesc"),
       color: "bg-gradient-to-r from-pink-500 to-purple-500",
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=90&w=400&h=300"
     }
@@ -51,11 +54,11 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 px-3 py-1 mb-4 shadow-sm">
-            <span className="text-sm font-medium uppercase tracking-wider text-pink-600">Our Process</span>
+            <span className="text-sm font-medium uppercase tracking-wider text-pink-600">{t("ourProcess")}</span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500">How Our Platform Works</h2>
+          <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500">{t("howPlatformWorks")}</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-            A sophisticated approach to European investing
+            {t("sophisticatedApproach")}
           </p>
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
@@ -104,25 +107,25 @@ const HowItWorks = () => {
               href="#register" 
               className="relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 group"
             >
-              <span className="relative z-10">Start your investment journey today</span>
+              <span className="relative z-10">{t("startJourney")}</span>
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform"/>
             </a>
           </div>
           
           <div className="mt-12 p-6 bg-gradient-to-r from-pink-500/5 to-purple-500/5 rounded-xl border border-pink-500/10 max-w-3xl mx-auto">
-            <h4 className="text-lg font-semibold mb-3 text-gray-800">Your Path to Financial Growth</h4>
+            <h4 className="text-lg font-semibold mb-3 text-gray-800">{t("pathToGrowth")}</h4>
             <p className="text-gray-600">
-              From your first consultation to ongoing portfolio management, our platform provides continuous support and optimization to maximize your investment returns in European markets.
+              {t("continuousSupport")}
             </p>
             <div className="mt-4 flex justify-center">
               <div className="flex items-center space-x-6 text-sm">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
-                  <span className="text-gray-600">Start investing with €100</span>
+                  <span className="text-gray-600">{t("startInvesting")}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
-                  <span className="text-gray-600">Average setup time: 10 minutes</span>
+                  <span className="text-gray-600">{t("setupTime")}</span>
                 </div>
               </div>
             </div>

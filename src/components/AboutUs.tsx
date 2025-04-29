@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Award, TrendingUp, Globe, Users, Briefcase, Trophy, Building, Check, BarChart, ArrowRight } from "lucide-react";
 
@@ -24,7 +23,7 @@ const AboutUs = () => {
       name: "Claire Dubois",
       role: "Portfolio Manager",
       location: "Paris",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
+      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?auto=format&fit=crop&q=90&w=400&h=400&crop=faces&faceindex=1",
       bio: "Previously managed €2.8B in assets at BNP Paribas. Specializes in sustainable European investments with consistent above-market returns.",
       specialty: "ESG investments"
     },
@@ -103,7 +102,7 @@ const AboutUs = () => {
     },
     {
       name: "RomeFinance Partners",
-      logo: "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=90&w=400&h=300",
+      logo: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=90&w=400&h=300",
       type: "Investment Consortium",
       description: "Consortium of Italy's leading financial institutions focused on international growth."
     }

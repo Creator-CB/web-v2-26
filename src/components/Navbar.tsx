@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Logo from './Logo';
-import LanguageSelector from './LanguageSelector';
+import LanguageSelector, { useLanguage } from './LanguageSelector';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,19 +38,19 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-gray-700 hover:text-invest-purple transition-colors font-medium">
-              Features
+              {t("features")}
             </a>
             <a href="#how-it-works" className="text-gray-700 hover:text-invest-purple transition-colors font-medium">
-              How It Works
+              {t("howItWorks")}
             </a>
             <a href="#ai-assistant" className="text-gray-700 hover:text-invest-purple transition-colors font-medium">
-              AI Assistant
+              {t("aiAssistant")}
             </a>
             <Button 
               className="bg-gradient-to-r from-invest-purple to-invest-blue text-white hover:opacity-90 shadow-md" 
               onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Get Started
+              {t("getStarted")}
             </Button>
             <LanguageSelector />
           </div>
@@ -74,21 +75,21 @@ const Navbar = () => {
               className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-invest-purple hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
+              {t("features")}
             </a>
             <a
               href="#how-it-works" 
               className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-invest-purple hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              How It Works
+              {t("howItWorks")}
             </a>
             <a
               href="#ai-assistant"
               className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-invest-purple hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              AI Assistant
+              {t("aiAssistant")}
             </a>
             <div className="px-4 py-2">
               <Button 
@@ -98,7 +99,7 @@ const Navbar = () => {
                   setMobileMenuOpen(false);
                 }}
               >
-                Get Started
+                {t("getStarted")}
               </Button>
             </div>
           </div>
