@@ -84,6 +84,7 @@ type TranslationKey =
   | 'secure'
   | 'support'
   | 'regulated'
+  | 'regulatedDesc'
   | 'insured'
   | 'step1Title'
   | 'step1Desc'
