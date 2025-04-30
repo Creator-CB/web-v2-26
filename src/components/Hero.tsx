@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon } from "lucide-react";
@@ -84,7 +83,7 @@ const Hero = () => {
               
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl md:leading-tight">
                 <span 
-                  className={`block text-gradient transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                  className={`block text-gradient bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 >
                   {typingText}
                   <span className={`animate-pulse inline-block w-1 h-[1em] bg-amber-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
