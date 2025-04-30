@@ -9,25 +9,25 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: 'Alexandru M.',
-      role: 'Antreprenor',
-      content: 'Am început cu 270€, acum am portofoliu de 3.500€ în 2 luni. Nu credeam că este posibil să obțin astfel de rezultate într-un timp atât de scurt!',
+      name: t('testimonialUser1'),
+      role: t('testimonialRole1'),
+      content: t('testimonialText1'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&h=256&q=80',
       flag: '🇷🇴'
     },
     {
-      name: 'Maria L.',
-      role: 'Specialist IT',
-      content: 'Experiența cu brokerul meu a fost excepțională. Mi-a explicat fiecare pas și strategiile AI au funcționat exact cum mi-a promis. Randament de 18% în prima lună.',
+      name: t('testimonialUser2'),
+      role: t('testimonialRole2'),
+      content: t('testimonialText2'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&h=256&q=80',
       flag: '🇮🇹'
     },
     {
-      name: 'David K.',
-      role: 'Profesionist în Finanțe',
-      content: 'Fiind specialist în domeniu, eram sceptic. Dar după ce am văzut cum funcționează algoritmii lor și cum se construiește portofoliul, am fost convins să investesc mai mult.',
+      name: t('testimonialUser3'),
+      role: t('testimonialRole3'),
+      content: t('testimonialText3'),
       rating: 5,
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&h=256&q=80',
       flag: '🇬🇧'
@@ -39,11 +39,11 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center rounded-full bg-amber-500/10 px-3 py-1 mb-4 shadow-sm">
-            <span className="text-sm font-medium uppercase tracking-wider text-amber-400">Testimoniale</span>
+            <span className="text-sm font-medium uppercase tracking-wider text-amber-400">Testimonials</span>
           </div>
-          <h2 className="text-3xl font-bold sm:text-4xl mb-2 text-gradient">Ce spun clienții noștri</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl mb-2 text-gradient">{t('testimonialTitle')}</h2>
           <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Descoperă experiențele reale ale investitorilor care au ales platforma noastră
+            {t('testimonialSubtitle')}
           </p>
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
@@ -98,15 +98,15 @@ const Testimonials = () => {
           
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <div className="bg-white/5 backdrop-blur-sm rounded-lg px-5 py-3 border border-white/10">
-              <p className="text-amber-400 font-semibold">Profit mediu</p>
+              <p className="text-amber-400 font-semibold">{t('avgProfit')}</p>
               <p className="text-2xl font-bold text-white">+19.4%</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-lg px-5 py-3 border border-white/10">
-              <p className="text-green-400 font-semibold">Clienți profitabili</p>
+              <p className="text-green-400 font-semibold">{t('profitableClients')}</p>
               <p className="text-2xl font-bold text-white">96.3%</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-lg px-5 py-3 border border-white/10">
-              <p className="text-blue-400 font-semibold">Timpul mediu până la profit</p>
+              <p className="text-blue-400 font-semibold">{t('avgTimeToProfit')}</p>
               <p className="text-2xl font-bold text-white">12 zile</p>
             </div>
           </div>

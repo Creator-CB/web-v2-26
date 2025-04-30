@@ -10,44 +10,44 @@ const HowItWorks = () => {
   const steps = [
     {
       number: "1",
-      title: "Te înscrii cu 270 €",
-      description: "Investiția ta inițială îți deschide accesul la platforma noastră completă de tranzacționare automată.",
+      title: t('step1Title'),
+      description: t('step1Desc'),
       icon: "📝"
     },
     {
       number: "2",
-      title: "Primești broker personal + activăm strategia AI",
-      description: "Brokerul tău analizează profilul tău financiar și configurează strategia personalizată AI.",
+      title: t('step2Title'),
+      description: t('step2Desc'),
       icon: "🤝"
     },
     {
       number: "3",
-      title: "Botul investește — tu urmărești creșterea",
-      description: "Sistemul nostru automat lucrează 24/7 pentru a-ți maximiza investițiile în timp ce tu îți monitorizezi progresul.",
+      title: t('step3Title'),
+      description: t('step3Desc'),
       icon: "📈"
     }
   ];
 
   const benefits = [
     {
-      title: "Personal broker real",
-      description: "Fiecare client primește un broker certificat cu experiență în piețe financiare."
+      title: t('benefit1Title'),
+      description: t('benefit1Desc')
     },
     {
-      title: "AI + strategie testată",
-      description: "Algoritmi avansați dezvoltați și testați cu precizie de 93.5% pe piețele globale."
+      title: t('benefit2Title'),
+      description: t('benefit2Desc')
     },
     {
-      title: "Bot trading 24/7",
-      description: "Sistemul nostru automat lucrează non-stop pentru a identifica cele mai bune oportunități."
+      title: t('benefit3Title'),
+      description: t('benefit3Desc')
     },
     {
-      title: "Transparență și profit estimat",
-      description: "Acces la dashboard-ul tău cu rapoarte în timp real și previziuni de câștig."
+      title: t('benefit4Title'),
+      description: t('benefit4Desc')
     },
     {
-      title: "Garanții și suport în timp real",
-      description: "Asistență tehnică și consultanță financiară permanentă pentru investiția ta."
+      title: t('benefit5Title'),
+      description: t('benefit5Desc')
     }
   ];
 
@@ -69,10 +69,10 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold sm:text-5xl mb-4 text-gradient">
-            Cum funcționează
+            {t('howItWorks')}
           </h2>
           <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-            Trei pași simpli pentru a începe călătoria ta spre profit automat
+            {t('packagesSubheading')}
           </p>
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
@@ -112,7 +112,7 @@ const HowItWorks = () => {
         {/* Benefits Section */}
         <div className="pt-12 border-t border-white/10">
           <h2 className="text-3xl font-bold text-center mb-16">
-            De ce să alegi platforma noastră?
+            {t('whyChooseTitle')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -146,10 +146,9 @@ const HowItWorks = () => {
                   <Check className="h-6 w-6 text-amber-400" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-center mb-4">Platformă reglementată și sigură</h3>
+              <h3 className="text-2xl font-bold text-center mb-4">{t('secureTitle')}</h3>
               <p className="text-center text-gray-300">
-                Toate tranzacțiile sunt procesate prin intermediul partenerilor noștri reglementați la nivel global.
-                Fondurile tale sunt păstrate în siguranță și poți retrage oricând dorești.
+                {t('secureDesc')}
               </p>
             </div>
           </div>

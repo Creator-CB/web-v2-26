@@ -18,7 +18,7 @@ const Hero = () => {
     }, 300);
     
     // Typing animation effect for the headline
-    const fullText = "Investi cu încredere. Broker personal + AI = profit rapid.";
+    const fullText = t('title');
     let i = 0;
     const typeInterval = setInterval(() => {
       if (i < fullText.length) {
@@ -34,7 +34,7 @@ const Hero = () => {
       clearTimeout(timer);
       clearInterval(typeInterval);
     };
-  }, []);
+  }, [t]);
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 py-24 min-h-[90vh] flex items-center text-white">
@@ -78,7 +78,7 @@ const Hero = () => {
                 className={`flex items-center justify-center lg:justify-start mb-6 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               >
                 <Badge className="rounded-full bg-gradient-to-r from-amber-400/20 to-amber-500/30 text-amber-300 border-amber-600/20 px-3 py-1">
-                  <EuroIcon className="h-4 w-4 mr-1" /> Platforma de Investiții
+                  <EuroIcon className="h-4 w-4 mr-1" /> {t('investmentPlatform')}
                 </Badge>
               </div>
               
@@ -90,7 +90,7 @@ const Hero = () => {
                   <span className={`animate-pulse inline-block w-1 h-[1em] bg-amber-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
                 </span>
                 <span className="block text-xl font-normal mt-6 text-gray-300">
-                  De la doar 270 € începi să câștigi cu strategie.
+                  {t('subheadline')}
                 </span>
               </h1>
               
@@ -99,35 +99,35 @@ const Hero = () => {
                   <div className="p-3 rounded-full bg-amber-500/20 mb-4">
                     <Users className="h-8 w-8 text-amber-400" />
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">Personal Broker</h3>
-                  <p className="text-gray-300 text-center lg:text-left">Expert dedicat pentru călătoria ta investițională</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">{t('personalBroker')}</h3>
+                  <p className="text-gray-300 text-center lg:text-left">{t('personalBrokerDesc')}</p>
                 </div>
                 
                 <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/30 hover:bg-white/10 transition-all">
                   <div className="p-3 rounded-full bg-blue-500/20 mb-4">
                     <Bot className="h-8 w-8 text-blue-400" />
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">AI Algorithm</h3>
-                  <p className="text-gray-300 text-center lg:text-left">Strategii inteligente de tranzacționare pentru maximizarea câștigurilor</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">{t('aiAlgorithm')}</h3>
+                  <p className="text-gray-300 text-center lg:text-left">{t('aiAlgorithmDesc')}</p>
                 </div>
                 
                 <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-green-500/30 hover:bg-white/10 transition-all">
                   <div className="p-3 rounded-full bg-green-500/20 mb-4">
                     <ChartLine className="h-8 w-8 text-green-400" />
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">Fast Growth</h3>
-                  <p className="text-gray-300 text-center lg:text-left">Bot automatizat pentru profituri rapide și constante</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">{t('fastGrowth')}</h3>
+                  <p className="text-gray-300 text-center lg:text-left">{t('fastGrowthDesc')}</p>
                 </div>
               </div>
 
               <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">
                 <div className="flex items-center text-green-400 bg-green-900/30 rounded-full px-3 py-1 text-sm font-medium">
                   <Shield className="h-4 w-4 mr-1" />
-                  <span>Secure & Regulated</span>
+                  <span>{t('secure')}</span>
                 </div>
                 <div className="flex items-center text-blue-400 bg-blue-900/30 rounded-full px-3 py-1 text-sm font-medium">
                   <Headphones className="h-4 w-4 mr-1" />
-                  <span>24/7 Support</span>
+                  <span>{t('support')}</span>
                 </div>
               </div>
               
@@ -141,7 +141,7 @@ const Hero = () => {
                 >
                   <span className="relative z-10 flex items-center">
                     <EuroIcon className="mr-2 h-5 w-5" />
-                    Începe acum cu 270 €
+                    {t('startNow')}
                   </span>
                 </Button>
                 
@@ -151,18 +151,18 @@ const Hero = () => {
                   className="rounded-md px-8 py-6 text-base font-medium border-amber-400/30 text-amber-400 hover:bg-amber-500/10 shadow-sm"
                   onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Book un call
+                  {t('bookCall')}
                 </Button>
               </div>
 
               <div className={`mt-10 text-sm text-gray-400 flex items-center justify-center lg:justify-start gap-5 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 <div className="flex items-center">
                   <Shield className="h-4 w-4 mr-1 text-gray-500" />
-                  Platformă reglementată
+                  {t('regulated')}
                 </div>
                 <div className="flex items-center">
                   <EuroIcon className="h-4 w-4 mr-1 text-gray-500" />
-                  Investiții asigurate
+                  {t('insured')}
                 </div>
               </div>
             </div>
@@ -173,21 +173,21 @@ const Hero = () => {
             className={`hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 space-y-7 w-72 transition-all duration-1000 delay-700 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
           >
             <div className="glass-card p-5 animate-float shadow-lg border border-white/10 bg-white/5 backdrop-blur-md z-10 relative">
-              <div className="text-sm font-medium text-gray-400">Randamente anuale</div>
+              <div className="text-sm font-medium text-gray-400">{t('annualReturns')}</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">+24.8%</div>
-              <div className="text-xs text-gray-500 mt-1">Randamente medii investiții</div>
+              <div className="text-xs text-gray-500 mt-1">{t('averageCryptoReturns')}</div>
             </div>
             
             <div className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-white/10 bg-white/5 backdrop-blur-md z-10 relative">
-              <div className="text-sm font-medium text-gray-400">Precizie Algoritm</div>
+              <div className="text-sm font-medium text-gray-400">{t('algorithmPrecision')}</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent">93.5%</div>
-              <div className="text-xs text-gray-500 mt-1">Predicție piață</div>
+              <div className="text-xs text-gray-500 mt-1">{t('cryptoMarketPrediction')}</div>
             </div>
             
             <div className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-white/10 bg-white/5 backdrop-blur-md z-10 relative">
-              <div className="text-sm font-medium text-gray-400">Satisfacția Clienților</div>
+              <div className="text-sm font-medium text-gray-400">{t('clientSatisfaction')}</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">98.2%</div>
-              <div className="text-xs text-gray-500 mt-1">Investitori globali</div>
+              <div className="text-xs text-gray-500 mt-1">{t('globalCryptoInvestors')}</div>
             </div>
           </div>
 
@@ -197,7 +197,7 @@ const Hero = () => {
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
             </div>
-            <span className="font-medium text-gray-300">Investitori activi: <span className="text-amber-400">783</span></span>
+            <span className="font-medium text-gray-300">{t('activeInvestors')}: <span className="text-amber-400">783</span></span>
           </div>
         </div>
       </div>

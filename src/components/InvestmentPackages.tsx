@@ -11,14 +11,14 @@ const InvestmentPackages = () => {
   
   const packages = [
     {
-      name: 'Start',
+      name: t('startPackage'),
       price: '270 €',
-      description: 'Perfect pentru începători care doresc să exploreze oportunități de investiții',
+      description: t('startPackageDesc'),
       features: [
-        'Broker personal',
-        'Strategie AI de bază',
-        'Actualizări săptămânale ale pieței',
-        'Suport prin email'
+        t('personalBroker'),
+        t('aiAlgorithm'),
+        t('marketUpdates'),
+        t('contact')
       ],
       recommended: false,
       icon: <EuroIcon className="h-8 w-8 text-amber-400" />,
@@ -26,15 +26,15 @@ const InvestmentPackages = () => {
       bgClass: 'bg-white/5 border-white/10 hover:border-amber-500/20'
     },
     {
-      name: 'Grow',
+      name: t('growPackage'),
       price: '549 €',
-      description: 'Ideal pentru investitori care doresc să maximizeze câștigurile',
+      description: t('growPackageDesc'),
       features: [
-        'Broker personal dedicat',
-        'Strategii AI avansate',
+        t('personalBroker'),
+        t('aiAlgorithm'),
         '+ Bot auto-trading',
-        'Analize zilnice de piață',
-        'Suport prioritar prin email și chat'
+        t('marketUpdates'),
+        t('contact')
       ],
       recommended: true,
       icon: <Users className="h-8 w-8 text-purple-400" />,
@@ -42,16 +42,16 @@ const InvestmentPackages = () => {
       bgClass: 'bg-amber-900/10 border-amber-500/30 hover:border-amber-500/50'
     },
     {
-      name: 'Elite',
+      name: t('elitePackage'),
       price: '999 €',
-      description: 'Pentru investitorii serioși care doresc performanțe maxime',
+      description: t('elitePackageDesc'),
       features: [
-        'Broker senior dedicat',
-        'Algoritmi AI premium',
-        '+ Bot auto-trading avansat',
-        '+ Apeluri lunare 1-la-1',
-        'Planuri țintă de profit',
-        'Suport 24/7 prioritar'
+        t('personalBroker'),
+        t('aiAlgorithm'),
+        '+ Bot auto-trading',
+        '+ 1-on-1',
+        t('marketUpdates'),
+        t('support')
       ],
       recommended: false,
       icon: <Bot className="h-8 w-8 text-blue-400" />,
@@ -67,9 +67,9 @@ const InvestmentPackages = () => {
           <div className="inline-flex items-center justify-center rounded-full bg-amber-500/10 px-3 py-1 mb-4 shadow-sm">
             <span className="text-sm font-medium uppercase tracking-wider text-amber-400">{t('investmentOptions')}</span>
           </div>
-          <h2 className="text-3xl font-bold sm:text-4xl mb-2 text-gradient">Pachete de investiții personalizate</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl mb-2 text-gradient">{t('tailoredPackages')}</h2>
           <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Alege pachetul de investiții care se potrivește cel mai bine obiectivelor tale financiare
+            {t('packagesSubheading')}
           </p>
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
@@ -128,7 +128,7 @@ const InvestmentPackages = () => {
                     onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     <span className="flex items-center">
-                      {pkg.recommended ? t('startInvesting') : `Începe cu ${pkg.price}`}
+                      {pkg.recommended ? t('startInvesting') : `${t('startNow')}`}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </span>
                   </Button>
@@ -139,8 +139,8 @@ const InvestmentPackages = () => {
         </div>
         
         <div className="mt-12 bg-white/5 backdrop-blur-md p-6 rounded-lg border border-white/10 text-center">
-          <h3 className="text-xl font-semibold mb-3">Ai nevoie de un pachet personalizat?</h3>
-          <p className="text-gray-300 mb-4">Contactează-ne pentru o soluție de investiții personalizată adaptată nevoilor tale specifice</p>
+          <h3 className="text-xl font-semibold mb-3">{t('customPackageTitle')}</h3>
+          <p className="text-gray-300 mb-4">{t('customPackageDesc')}</p>
           <div className="flex justify-center gap-4">
             <Button 
               variant="outline"
@@ -153,7 +153,7 @@ const InvestmentPackages = () => {
               className="bg-blue-600 hover:bg-blue-700"
               onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Parla con il tuo broker personale
+              {t('talkToBroker')}
             </Button>
           </div>
         </div>
