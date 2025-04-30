@@ -291,7 +291,6 @@ export const useLanguage = () => {
       elitePackage: "Elite",
       elitePackageDesc: "For serious investors who want maximum performance",
       customPackageTitle: "Need a custom package?",
-      customPackageDesc: "Contact us for a personalized investment solution tailored to your specific needs",
       testimonialTitle: "What our clients say",
       testimonialSubtitle: "Discover the real experiences of investors who have chosen our platform",
       testimonialUser1: "Alexandru M.",
