@@ -146,7 +146,15 @@ type TranslationKey =
   | 'freeConsultation'
   | 'fastRegistration'
   | 'instantBroker'
-  | 'sameDay';
+  | 'sameDay'
+  | 'seniorInvestmentAdvisor'
+  | 'wealthManager'
+  | 'investmentStrategist'
+  | 'clientRelationshipManager'
+  | 'cryptoSpecialist'
+  | 'portfolioDiversification'
+  | 'emergingMarkets'
+  | 'sustainableInvesting';
 
 // Create the context with proper typing and default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -310,7 +318,15 @@ export const useLanguage = () => {
       freeConsultation: "Free consultation",
       fastRegistration: "Registration in under 3 minutes",
       instantBroker: "Personal broker assigned instantly",
-      sameDay: "Strategy setup on the same day"
+      sameDay: "Strategy setup on the same day",
+      seniorInvestmentAdvisor: "Senior Investment Advisor",
+      wealthManager: "Wealth Manager",
+      investmentStrategist: "Investment Strategist",
+      clientRelationshipManager: "Client Relationship Manager",
+      cryptoSpecialist: "Crypto Specialist",
+      portfolioDiversification: "Portfolio Diversification",
+      emergingMarkets: "Emerging Markets",
+      sustainableInvesting: "Sustainable Investing"
     },
     it: {
       combineHumanAI: "Combiniamo intelligenza umana e artificiale per far crescere il tuo patrimonio",
@@ -450,7 +466,15 @@ export const useLanguage = () => {
       freeConsultation: "Consulenza gratuita",
       fastRegistration: "Registrazione in meno di 3 minuti",
       instantBroker: "Broker personale assegnato istantaneamente",
-      sameDay: "Configurazione strategia lo stesso giorno"
+      sameDay: "Configurazione strategia lo stesso giorno",
+      seniorInvestmentAdvisor: "Consulente Senior d'Investimento",
+      wealthManager: "Wealth Manager",
+      investmentStrategist: "Stratega d'Investimento",
+      clientRelationshipManager: "Responsabile Relazioni Clienti",
+      cryptoSpecialist: "Specialista Crypto",
+      portfolioDiversification: "Diversificazione del Portafoglio",
+      emergingMarkets: "Mercati Emergenti",
+      sustainableInvesting: "Investimenti Sostenibili"
     }
   };
 
@@ -487,4 +511,3 @@ const LanguageSelector = () => {
 };
 
 export default LanguageSelector;
-
