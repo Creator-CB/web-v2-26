@@ -31,6 +31,18 @@ const Index = () => {
       <Navbar />
       
       <main className="flex-grow">
+        {/* Website Title Section - Added at the beginning */}
+        <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white py-12 text-center">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+              {t('websiteTitle')}
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+              {t('websiteSubtitle')}
+            </p>
+          </div>
+        </div>
+        
         <Hero />
         <TrustSignals />
         <HowItWorks />
