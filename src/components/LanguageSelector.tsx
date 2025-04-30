@@ -173,7 +173,9 @@ type TranslationKey =
   | 'period'
   | 'contactBroker'
   | 'startYourSuccess'
-  | 'connectWithBroker';
+  | 'connectWithBroker'
+  | 'pageTitle'
+  | 'pageTitleDescription';
 
 // Create the context with proper typing and default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -196,7 +198,8 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 };
 
 export const useLanguage = () => {
-  const { language } = useContext(LanguageContext);
+  const context = useContext(LanguageContext);
+  const { language } = context;
 
   const translations: Record<string, Record<TranslationKey, string>> = {
     en: {
@@ -303,6 +306,7 @@ export const useLanguage = () => {
       elitePackage: "Elite",
       elitePackageDesc: "For serious investors who want maximum performance",
       customPackageTitle: "Need a custom package?",
+      customPackageDesc: "Contact us for a personalized investment solution tailored to your specific needs",
       testimonialTitle: "What our clients say",
       testimonialSubtitle: "Discover the real experiences of investors who have chosen our platform",
       testimonialUser1: "Alexandru M.",
@@ -363,7 +367,9 @@ export const useLanguage = () => {
       period: "Period",
       contactBroker: "Contact Broker",
       startYourSuccess: "Ready to start your success story?",
-      connectWithBroker: "Connect with a broker today"
+      connectWithBroker: "Connect with a broker today",
+      pageTitle: "NovaTrust Invest | Elite Crypto Investment Platform with AI-Powered Strategies",
+      pageTitleDescription: "Transform your financial future with NovaTrust Invest. Expert brokers and AI algorithms working together to maximize your crypto investments."
     },
     it: {
       combineHumanAI: "Combiniamo intelligenza umana e artificiale per far crescere il tuo patrimonio",
@@ -530,7 +536,9 @@ export const useLanguage = () => {
       period: "Periodo",
       contactBroker: "Contatta Broker",
       startYourSuccess: "Pronto a iniziare la tua storia di successo?",
-      connectWithBroker: "Connettiti con un broker oggi"
+      connectWithBroker: "Connettiti con un broker oggi",
+      pageTitle: "NovaTrust Invest | Piattaforma d'Elite per Investimenti Crypto con Strategie Potenziate dall'AI",
+      pageTitleDescription: "Trasforma il tuo futuro finanziario con NovaTrust Invest. Broker esperti e algoritmi AI che lavorano insieme per massimizzare i tuoi investimenti crypto."
     }
   };
 

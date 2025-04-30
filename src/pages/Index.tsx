@@ -15,13 +15,16 @@ import FAQ from '../components/FAQ';
 import BottomCTA from '../components/BottomCTA';
 import Partners from '../components/Partners';
 import SuccessStories from '../components/SuccessStories';
+import { useLanguage } from '../components/LanguageSelector';
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>NovaTrust Invest | Expert-Curated Cryptocurrency Investment Platform with Personal Brokers</title>
-        <meta name="description" content="Investi cu încredere. Broker personal + AI = profit rapid. Începe cu doar 270€ și beneficiază de strategii AI personalizate." />
+        <title>{t('pageTitle')}</title>
+        <meta name="description" content={t('pageTitleDescription')} />
       </Helmet>
       
       <Header />
