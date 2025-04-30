@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Robot, ChartLine, Shield, Headphones, EuroIcon } from "lucide-react";
+import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 import { Badge } from "@/components/ui/badge";
 

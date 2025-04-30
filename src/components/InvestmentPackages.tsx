@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, ArrowRight, EuroIcon, Users, Robot, Shield } from 'lucide-react';
+import { Check, ArrowRight, EuroIcon, Users, Bot, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from './LanguageSelector';
@@ -51,7 +50,7 @@ const InvestmentPackages = () => {
         t('feature6Premium')
       ],
       recommended: false,
-      icon: <Robot className="h-8 w-8 text-blue-500" />,
+      icon: <Bot className="h-8 w-8 text-blue-500" />,
       returnRate: '22-28%'
     }
   ];
