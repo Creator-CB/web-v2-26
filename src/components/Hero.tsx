@@ -10,7 +10,6 @@ const Hero = () => {
   const [typingText, setTypingText] = useState("");
   const [typingComplete, setTypingComplete] = useState(false);
   const { t } = useLanguage();
-  const fullText = t("combineHumanAI");
   
   useEffect(() => {
     // Show content with a slight delay for better loading effect
@@ -18,7 +17,8 @@ const Hero = () => {
       setIsVisible(true);
     }, 300);
     
-    // Typing animation effect
+    // Typing animation effect for the headline
+    const fullText = "Investi cu încredere. Broker personal + AI = profit rapid.";
     let i = 0;
     const typeInterval = setInterval(() => {
       if (i < fullText.length) {
@@ -34,21 +34,21 @@ const Hero = () => {
       clearTimeout(timer);
       clearInterval(typeInterval);
     };
-  }, [fullText]);
+  }, []);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-slate-100 py-24 min-h-[90vh] flex items-center">
+    <div className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 py-24 min-h-[90vh] flex items-center text-white">
       {/* Enhanced subtle grid background */}
-      <div className="absolute inset-0 bg-grid-lines bg-[length:30px_30px] opacity-[0.04]"></div>
+      <div className="absolute inset-0 bg-grid-lines bg-[length:30px_30px] opacity-[0.05]"></div>
       
       {/* Refined gradient orbs */}
-      <div className="absolute top-1/4 right-[10%] w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
+      <div className="absolute top-1/4 right-[10%] w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-amber-500/10 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
       
       {/* Enhanced circular element */}
       <div className="absolute bottom-[10%] right-[5%] w-96 h-96 opacity-20">
         <div className="absolute inset-0 rounded-full border-2 border-dashed border-blue-500/30 animate-spin-slow"></div>
-        <div className="absolute inset-8 rounded-full border border-purple-500/20 animate-spin-slow [animation-direction:reverse]"></div>
+        <div className="absolute inset-8 rounded-full border border-amber-500/20 animate-spin-slow [animation-direction:reverse]"></div>
         <div className="absolute inset-16 rounded-full border border-orange-400/10 animate-spin-slow [animation-duration:10s]"></div>
       </div>
       
@@ -77,64 +77,62 @@ const Hero = () => {
               <div 
                 className={`flex items-center justify-center lg:justify-start mb-6 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               >
-                <Badge className="rounded-full bg-gradient-to-r from-amber-400/10 to-amber-500/20 text-amber-600 border-amber-200 px-3 py-1">
-                  <EuroIcon className="h-4 w-4 mr-1" /> {t("investmentPlatform")}
+                <Badge className="rounded-full bg-gradient-to-r from-amber-400/20 to-amber-500/30 text-amber-300 border-amber-600/20 px-3 py-1">
+                  <EuroIcon className="h-4 w-4 mr-1" /> Platforma de Investiții
                 </Badge>
               </div>
               
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl md:leading-tight">
                 <span 
-                  className={`block text-gray-800 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                  className={`block text-gradient transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 >
-                  Ogni utente ha il proprio broker personale e strategie AI per guadagni rapidi
-                </span>
-                <span className="block text-base font-normal mt-2 text-gray-600">Each user gets a personal broker and AI strategies for fast income</span>
-                <span className="block bg-gradient-to-r from-orange-500 via-amber-500 to-blue-400 bg-clip-text text-transparent mt-4 overflow-hidden h-[1.2em]">
                   {typingText}
-                  <span className={`animate-pulse inline-block w-1 h-[1em] bg-orange-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
+                  <span className={`animate-pulse inline-block w-1 h-[1em] bg-amber-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
                 </span>
-                <span className="block text-base font-normal mt-2 text-gray-600">We combine human and artificial intelligence to grow your wealth.</span>
+                <span className="block text-xl font-normal mt-6 text-gray-300">
+                  De la doar 270 € începi să câștigi cu strategie.
+                </span>
               </h1>
               
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
-                <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
-                  <div className="p-2 rounded-full bg-amber-100">
-                    <Users className="h-8 w-8 text-amber-600" />
+              <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
+                <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-amber-500/30 hover:bg-white/10 transition-all">
+                  <div className="p-3 rounded-full bg-amber-500/20 mb-4">
+                    <Users className="h-8 w-8 text-amber-400" />
                   </div>
-                  <h3 className="font-bold mt-3 text-gray-800">Personal Broker</h3>
-                  <p className="text-sm text-gray-600 text-center lg:text-left">Dedicated expert to guide your investment journey</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">Personal Broker</h3>
+                  <p className="text-gray-300 text-center lg:text-left">Expert dedicat pentru călătoria ta investițională</p>
                 </div>
                 
-                <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
-                  <div className="p-2 rounded-full bg-blue-100">
-                    <Bot className="h-8 w-8 text-blue-600" />
+                <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/30 hover:bg-white/10 transition-all">
+                  <div className="p-3 rounded-full bg-blue-500/20 mb-4">
+                    <Bot className="h-8 w-8 text-blue-400" />
                   </div>
-                  <h3 className="font-bold mt-3 text-gray-800">AI Algorithm</h3>
-                  <p className="text-sm text-gray-600 text-center lg:text-left">Intelligent trading strategies to maximize returns</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">AI Algorithm</h3>
+                  <p className="text-gray-300 text-center lg:text-left">Strategii inteligente de tranzacționare pentru maximizarea câștigurilor</p>
                 </div>
                 
-                <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
-                  <div className="p-2 rounded-full bg-green-100">
-                    <ChartLine className="h-8 w-8 text-green-600" />
+                <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-green-500/30 hover:bg-white/10 transition-all">
+                  <div className="p-3 rounded-full bg-green-500/20 mb-4">
+                    <ChartLine className="h-8 w-8 text-green-400" />
                   </div>
-                  <h3 className="font-bold mt-3 text-gray-800">Fast Growth</h3>
-                  <p className="text-sm text-gray-600 text-center lg:text-left">Automated bot for quick and consistent profits</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">Fast Growth</h3>
+                  <p className="text-gray-300 text-center lg:text-left">Bot automatizat pentru profituri rapide și constante</p>
                 </div>
               </div>
 
               <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">
-                <div className="flex items-center text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-medium">
+                <div className="flex items-center text-green-400 bg-green-900/30 rounded-full px-3 py-1 text-sm font-medium">
                   <Shield className="h-4 w-4 mr-1" />
-                  <span>Secure & Compliant</span>
+                  <span>Secure & Regulated</span>
                 </div>
-                <div className="flex items-center text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-medium">
+                <div className="flex items-center text-blue-400 bg-blue-900/30 rounded-full px-3 py-1 text-sm font-medium">
                   <Headphones className="h-4 w-4 mr-1" />
                   <span>24/7 Support</span>
                 </div>
               </div>
               
               <div 
-                className={`mt-8 flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                className={`mt-10 flex justify-center lg:justify-start gap-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               >
                 <Button 
                   size="lg"
@@ -143,28 +141,28 @@ const Hero = () => {
                 >
                   <span className="relative z-10 flex items-center">
                     <EuroIcon className="mr-2 h-5 w-5" />
-                    Inizia con 270 €
+                    Începe acum cu 270 €
                   </span>
                 </Button>
                 
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="rounded-md px-8 py-6 text-base font-medium border-amber-500 text-amber-500 hover:bg-amber-500/5 shadow-sm"
+                  className="rounded-md px-8 py-6 text-base font-medium border-amber-400/30 text-amber-400 hover:bg-amber-500/10 shadow-sm"
                   onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Parla con il tuo broker personale
+                  Book un call
                 </Button>
               </div>
 
-              <div className={`mt-10 text-sm text-gray-500 flex items-center justify-center lg:justify-start gap-5 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className={`mt-10 text-sm text-gray-400 flex items-center justify-center lg:justify-start gap-5 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 <div className="flex items-center">
-                  <Shield className="h-4 w-4 mr-1 text-gray-400" />
-                  {t("regulatedPlatform")}
+                  <Shield className="h-4 w-4 mr-1 text-gray-500" />
+                  Platformă reglementată
                 </div>
                 <div className="flex items-center">
-                  <EuroIcon className="h-4 w-4 mr-1 text-gray-400" />
-                  {t("cryptoInsured")}
+                  <EuroIcon className="h-4 w-4 mr-1 text-gray-500" />
+                  Investiții asigurate
                 </div>
               </div>
             </div>
@@ -174,32 +172,32 @@ const Hero = () => {
           <div 
             className={`hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 space-y-7 w-72 transition-all duration-1000 delay-700 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
           >
-            <div className="glass-card p-5 animate-float shadow-lg border border-blue-100 bg-white/90 backdrop-blur-md z-10 relative">
-              <div className="text-sm font-medium text-gray-500">{t("annualReturns")}</div>
+            <div className="glass-card p-5 animate-float shadow-lg border border-white/10 bg-white/5 backdrop-blur-md z-10 relative">
+              <div className="text-sm font-medium text-gray-400">Randamente anuale</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">+24.8%</div>
-              <div className="text-xs text-gray-400 mt-1">{t("averageCryptoReturns")}</div>
+              <div className="text-xs text-gray-500 mt-1">Randamente medii investiții</div>
             </div>
             
-            <div className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-blue-100 bg-white/90 backdrop-blur-md z-10 relative">
-              <div className="text-sm font-medium text-gray-500">{t("algorithmPrecision")}</div>
+            <div className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-white/10 bg-white/5 backdrop-blur-md z-10 relative">
+              <div className="text-sm font-medium text-gray-400">Precizie Algoritm</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent">93.5%</div>
-              <div className="text-xs text-gray-400 mt-1">{t("cryptoMarketPrediction")}</div>
+              <div className="text-xs text-gray-500 mt-1">Predicție piață</div>
             </div>
             
-            <div className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-blue-100 bg-white/90 backdrop-blur-md z-10 relative">
-              <div className="text-sm font-medium text-gray-500">{t("clientSatisfaction")}</div>
+            <div className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-white/10 bg-white/5 backdrop-blur-md z-10 relative">
+              <div className="text-sm font-medium text-gray-400">Satisfacția Clienților</div>
               <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">98.2%</div>
-              <div className="text-xs text-gray-400 mt-1">{t("globalCryptoInvestors")}</div>
+              <div className="text-xs text-gray-500 mt-1">Investitori globali</div>
             </div>
           </div>
 
           {/* Active investors counter */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex items-center gap-3 border border-gray-100">
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white/5 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex items-center gap-3 border border-white/10">
             <div className="relative">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
             </div>
-            <span className="font-medium">{t("activeInvestors")}: <span className="text-amber-500">783</span></span>
+            <span className="font-medium text-gray-300">Investitori activi: <span className="text-amber-400">783</span></span>
           </div>
         </div>
       </div>
@@ -207,7 +205,7 @@ const Hero = () => {
       {/* Bottom wave shape */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
-          <path fill="#ffffff" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          <path fill="#0f172a" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
     </div>

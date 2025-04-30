@@ -4,8 +4,6 @@ import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Features from '../components/Features';
-import AboutUs from '../components/AboutUs';
 import HowItWorks from '../components/HowItWorks';
 import AIChat from '../components/AIChat';
 import RegisterForm from '../components/RegisterForm';
@@ -13,15 +11,15 @@ import Footer from '../components/Footer';
 import Testimonials from '../components/Testimonials';
 import TrustSignals from '../components/TrustSignals';
 import InvestmentPackages from '../components/InvestmentPackages';
-import SuccessStories from '../components/SuccessStories';
-import TrustedPartners from '../components/TrustedPartners';
+import FAQ from '../components/FAQ';
+import BottomCTA from '../components/BottomCTA';
 
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
         <title>NovaTrust Invest | Expert-Curated Cryptocurrency Investment Platform with Personal Brokers</title>
-        <meta name="description" content="Grow your wealth with dedicated personal broker assistance. Expert-curated crypto investments with average returns 25% higher than market. Start with just €270." />
+        <meta name="description" content="Investi cu încredere. Broker personal + AI = profit rapid. Începe cu doar 270€ și beneficiază de strategii AI personalizate." />
       </Helmet>
       
       <Header />
@@ -31,13 +29,11 @@ const Index = () => {
         <Hero />
         <TrustSignals />
         <HowItWorks />
-        <Features />
         <InvestmentPackages />
-        <SuccessStories />
-        <AboutUs />
         <Testimonials />
-        <TrustedPartners />
+        <FAQ />
         <AIChat />
+        <BottomCTA />
         <RegisterForm />
       </main>
       

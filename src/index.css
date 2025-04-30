@@ -55,10 +55,12 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
+    background-color: #0f172a; /* Slate-900 background */
+    color: #f8fafc; /* Slate-50 text */
   }
   
-  .gradient-text {
-    @apply bg-gradient-to-r from-invest-purple to-invest-blue bg-clip-text text-transparent;
+  .text-gradient {
+    @apply bg-gradient-to-r from-orange-500 via-amber-500 to-amber-300 bg-clip-text text-transparent;
   }
   
   .section-padding {
@@ -66,26 +68,26 @@
   }
   
   .card-shadow {
-    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
     @apply shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl backdrop-blur-sm;
   }
   
   .button-gradient {
-    @apply bg-gradient-to-r from-invest-purple to-invest-blue text-white hover:opacity-90 transition-opacity shadow-md;
+    @apply bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:opacity-90 transition-opacity shadow-md;
   }
   
   .futuristic-border {
-    @apply border border-invest-blue/20 rounded-xl backdrop-blur-sm relative overflow-hidden shadow-md;
+    @apply border border-amber-500/20 rounded-xl backdrop-blur-sm relative overflow-hidden shadow-md;
   }
   
   .futuristic-border::before {
     content: "";
-    @apply absolute -inset-1 bg-gradient-to-r from-invest-purple/10 to-invest-blue/10 blur-md;
+    @apply absolute -inset-1 bg-gradient-to-r from-amber-500/10 to-orange-500/10 blur-md;
     z-index: -1;
   }
   
   .glass-card {
-    @apply bg-white/90 backdrop-blur-md rounded-xl border border-white/50 shadow-md;
+    @apply bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-md;
   }
 
   .neon-border {
@@ -94,8 +96,13 @@
   
   .neon-border::after {
     content: "";
-    @apply absolute inset-0 rounded-xl border border-invest-blue/30;
+    @apply absolute inset-0 rounded-xl border border-amber-500/30;
     z-index: -1;
+  }
+
+  /* Override accordion colors to match dark theme */
+  .accordion-content[data-state='open'] {
+    @apply text-gray-300;
   }
 }
 
@@ -140,13 +147,22 @@
   }
 }
 
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-hover:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Glowing dots animation for AI typing */
@@ -203,21 +219,30 @@
   }
 }
 
-/* Enhanced scrollbar for European audience */
+/* Enhanced scrollbar for better visibility on dark backgrounds */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1e293b; /* Slate-800 */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(126, 105, 171, 0.4);
+  background: rgba(245, 158, 11, 0.4); /* Amber-500 with opacity */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(126, 105, 171, 0.6);
+  background: rgba(245, 158, 11, 0.6); /* Amber-500 with higher opacity on hover */
+}
+
+/* Override UI components for dark mode */
+.ui-card {
+  @apply bg-slate-800 border-slate-700 text-white;
+}
+
+.ui-button {
+  @apply text-white;
 }
