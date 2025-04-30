@@ -14,6 +14,7 @@ import InvestmentPackages from '../components/InvestmentPackages';
 import FAQ from '../components/FAQ';
 import BottomCTA from '../components/BottomCTA';
 import Partners from '../components/Partners';
+import SuccessStories from '../components/SuccessStories';
 
 const Index = () => {
   return (
@@ -32,6 +33,7 @@ const Index = () => {
         <HowItWorks />
         <InvestmentPackages />
         <Partners />
+        <SuccessStories />
         <Testimonials />
         <FAQ />
         <AIChat />

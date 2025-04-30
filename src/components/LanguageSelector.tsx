@@ -161,7 +161,19 @@ type TranslationKey =
   | 'topRated'
   | 'asSeenIn'
   | 'ourPartners'
-  | 'trustedPartners';
+  | 'trustedPartners'
+  | 'realResults'
+  | 'successStories'
+  | 'successStoriesSubheading'
+  | 'successStory1'
+  | 'successStory2'
+  | 'returnOnInvestment'
+  | 'initial'
+  | 'currentValue'
+  | 'period'
+  | 'contactBroker'
+  | 'startYourSuccess'
+  | 'connectWithBroker';
 
 // Create the context with proper typing and default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -291,6 +303,7 @@ export const useLanguage = () => {
       elitePackage: "Elite",
       elitePackageDesc: "For serious investors who want maximum performance",
       customPackageTitle: "Need a custom package?",
+      customPackageDesc: "Contact us for a personalized investment solution tailored to your specific needs",
       testimonialTitle: "What our clients say",
       testimonialSubtitle: "Discover the real experiences of investors who have chosen our platform",
       testimonialUser1: "Alexandru M.",
@@ -339,7 +352,19 @@ export const useLanguage = () => {
       topRated: "Top Rated",
       asSeenIn: "As Seen In",
       ourPartners: "Our Partners",
-      trustedPartners: "Our Trusted Partners"
+      trustedPartners: "Our Trusted Partners",
+      realResults: "Real Results",
+      successStories: "Success Stories",
+      successStoriesSubheading: "See how our clients have grown their investments",
+      successStory1: "I was skeptical at first, but the results speak for themselves. My broker helped me navigate the volatile crypto market with confidence.",
+      successStory2: "The AI strategies identified opportunities I would never have found on my own. Very impressed with the consistent returns.",
+      returnOnInvestment: "Return on Investment",
+      initial: "Initial",
+      currentValue: "Current Value",
+      period: "Period",
+      contactBroker: "Contact Broker",
+      startYourSuccess: "Ready to start your success story?",
+      connectWithBroker: "Connect with a broker today"
     },
     it: {
       combineHumanAI: "Combiniamo intelligenza umana e artificiale per far crescere il tuo patrimonio",
@@ -494,7 +519,19 @@ export const useLanguage = () => {
       topRated: "Altamente Valutato",
       asSeenIn: "Come Visto Su",
       ourPartners: "I nostri partner",
-      trustedPartners: "I nostri partner fidati"
+      trustedPartners: "I nostri partner fidati",
+      realResults: "Risultati Reali",
+      successStories: "Storie di successo",
+      successStoriesSubheading: "Vedi come i nostri clienti hanno fatto crescere i loro investimenti",
+      successStory1: "Ero scettico all'inizio, ma i risultati parlano da soli. Il mio broker mi ha aiutato a navigare nel volatile mercato delle criptovalute con fiducia.",
+      successStory2: "Le strategie AI hanno identificato opportunità che non avrei mai trovato da solo. Molto colpito dai rendimenti costanti.",
+      returnOnInvestment: "Ritorno sull'Investimento",
+      initial: "Iniziale",
+      currentValue: "Valore Attuale",
+      period: "Periodo",
+      contactBroker: "Contatta Broker",
+      startYourSuccess: "Pronto a iniziare la tua storia di successo?",
+      connectWithBroker: "Connettiti con un broker oggi"
     }
   };
 
