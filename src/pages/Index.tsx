@@ -13,6 +13,7 @@ import TrustSignals from '../components/TrustSignals';
 import InvestmentPackages from '../components/InvestmentPackages';
 import FAQ from '../components/FAQ';
 import BottomCTA from '../components/BottomCTA';
+import Partners from '../components/Partners';
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
         <TrustSignals />
         <HowItWorks />
         <InvestmentPackages />
+        <Partners />
         <Testimonials />
         <FAQ />
         <AIChat />

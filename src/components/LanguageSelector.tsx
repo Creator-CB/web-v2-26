@@ -159,7 +159,9 @@ type TranslationKey =
   | 'awardWinning'
   | 'awardWinningDesc'
   | 'topRated'
-  | 'asSeenIn';
+  | 'asSeenIn'
+  | 'ourPartners'
+  | 'trustedPartners';
 
 // Create the context with proper typing and default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -336,7 +338,9 @@ export const useLanguage = () => {
       awardWinning: "Award Winning",
       awardWinningDesc: "Recognized for excellence in AI trading",
       topRated: "Top Rated",
-      asSeenIn: "As Seen In"
+      asSeenIn: "As Seen In",
+      ourPartners: "Our Partners",
+      trustedPartners: "Our Trusted Partners"
     },
     it: {
       combineHumanAI: "Combiniamo intelligenza umana e artificiale per far crescere il tuo patrimonio",
@@ -489,7 +493,9 @@ export const useLanguage = () => {
       awardWinning: "Premiato",
       awardWinningDesc: "Riconosciuto per l'eccellenza nel trading con AI",
       topRated: "Altamente Valutato",
-      asSeenIn: "Come Visto Su"
+      asSeenIn: "Come Visto Su",
+      ourPartners: "I nostri partner",
+      trustedPartners: "I nostri partner fidati"
     }
   };
 
