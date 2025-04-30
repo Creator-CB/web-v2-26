@@ -81,16 +81,9 @@ const Hero = () => {
                 </Badge>
               </div>
               
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl md:leading-tight">
-                <span 
-                  className={`block text-gradient bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                >
-                  {typingText}
-                  <span className={`animate-pulse inline-block w-1 h-[1em] bg-amber-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
-                </span>
-                <span className="block text-xl font-normal mt-6 text-gray-300">
-                  {t('subheadline')}
-                </span>
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+                <span className="block">Invest Smarter with</span>
+                <span className="block gradient-text mt-3">AI-Powered Intelligence</span>
               </h1>
               
               <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
