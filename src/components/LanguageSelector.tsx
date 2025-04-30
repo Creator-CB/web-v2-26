@@ -156,7 +156,6 @@ type TranslationKey =
   | 'portfolioDiversification'
   | 'emergingMarkets'
   | 'sustainableInvesting'
-  | 'regulatedDesc'
   | 'awardWinning'
   | 'awardWinningDesc'
   | 'topRated'
