@@ -505,7 +505,8 @@ export const useLanguage = () => {
         return translations[language][key as TranslationKey] || key;
       }
       return key;
-    } 
+    },
+    language: language 
   };
 };
 
