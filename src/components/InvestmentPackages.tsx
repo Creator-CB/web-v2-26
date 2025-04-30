@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, ArrowRight, Bitcoin, HandCoins } from 'lucide-react';
+import { Check, ArrowRight, EuroIcon, Users, Robot, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from './LanguageSelector';
@@ -11,7 +11,7 @@ const InvestmentPackages = () => {
   const packages = [
     {
       name: t('starterPackage'),
-      price: '$100',
+      price: '270 €',
       description: t('starterDesc'),
       features: [
         t('feature1Starter'),
@@ -20,12 +20,12 @@ const InvestmentPackages = () => {
         t('feature4Starter')
       ],
       recommended: false,
-      icon: <Bitcoin className="h-8 w-8 text-amber-500" />,
+      icon: <EuroIcon className="h-8 w-8 text-amber-500" />,
       returnRate: '12-15%'
     },
     {
       name: t('growthPackage'),
-      price: '$500',
+      price: '500 €',
       description: t('growthDesc'),
       features: [
         t('feature1Growth'),
@@ -35,12 +35,12 @@ const InvestmentPackages = () => {
         t('feature5Growth')
       ],
       recommended: true,
-      icon: <HandCoins className="h-8 w-8 text-purple-500" />,
+      icon: <Users className="h-8 w-8 text-purple-500" />,
       returnRate: '18-22%'
     },
     {
       name: t('premiumPackage'),
-      price: '$2,000',
+      price: '2.000 €',
       description: t('premiumDesc'),
       features: [
         t('feature1Premium'),
@@ -51,7 +51,7 @@ const InvestmentPackages = () => {
         t('feature6Premium')
       ],
       recommended: false,
-      icon: <Bitcoin className="h-8 w-8 text-blue-500" />,
+      icon: <Robot className="h-8 w-8 text-blue-500" />,
       returnRate: '22-28%'
     }
   ];
@@ -119,7 +119,7 @@ const InvestmentPackages = () => {
                   onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <span className="flex items-center">
-                    {t('startInvesting')}
+                    {pkg.recommended ? t('startInvesting') : `Inizia con ${pkg.price}`}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </span>
                 </Button>
@@ -131,13 +131,21 @@ const InvestmentPackages = () => {
         <div className="mt-12 bg-gray-50 p-6 rounded-lg border border-gray-100 text-center">
           <h3 className="text-xl font-semibold mb-3">{t('customPackage')}</h3>
           <p className="text-gray-600 mb-4">{t('customPackageDesc')}</p>
-          <Button 
-            variant="outline"
-            className="border-amber-500 text-amber-500 hover:bg-amber-500/5"
-            onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {t('contactUs')}
-          </Button>
+          <div className="flex justify-center gap-4">
+            <Button 
+              variant="outline"
+              className="border-amber-500 text-amber-500 hover:bg-amber-500/5"
+              onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {t('contactUs')}
+            </Button>
+            <Button 
+              className="bg-blue-600 hover:bg-blue-700"
+              onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Parla con il tuo broker personale
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bitcoin, Wallet, ChartLine, Shield, Zap } from "lucide-react";
+import { ArrowRight, Users, Robot, ChartLine, Shield, Headphones, EuroIcon } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 import { Badge } from "@/components/ui/badge";
 
@@ -9,7 +10,7 @@ const Hero = () => {
   const [typingText, setTypingText] = useState("");
   const [typingComplete, setTypingComplete] = useState(false);
   const { t } = useLanguage();
-  const fullText = t("forModernInvestors");
+  const fullText = t("combineHumanAI");
   
   useEffect(() => {
     // Show content with a slight delay for better loading effect
@@ -27,7 +28,7 @@ const Hero = () => {
         clearInterval(typeInterval);
         setTypingComplete(true);
       }
-    }, 100);
+    }, 50);
     
     return () => {
       clearTimeout(timer);
@@ -77,7 +78,7 @@ const Hero = () => {
                 className={`flex items-center justify-center lg:justify-start mb-6 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               >
                 <Badge className="rounded-full bg-gradient-to-r from-amber-400/10 to-amber-500/20 text-amber-600 border-amber-200 px-3 py-1">
-                  <Bitcoin className="h-4 w-4 mr-1" /> {t("cryptoInvestmentPlatform")}
+                  <EuroIcon className="h-4 w-4 mr-1" /> {t("investmentPlatform")}
                 </Badge>
               </div>
               
@@ -85,32 +86,50 @@ const Hero = () => {
                 <span 
                   className={`block text-gray-800 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 >
-                  {t("growWealthFaster")}
+                  Ogni utente ha il proprio broker personale e strategie AI per guadagni rapidi
                 </span>
-                <span className="block bg-gradient-to-r from-orange-500 via-amber-500 to-blue-400 bg-clip-text text-transparent mt-3 overflow-hidden h-[1.2em]">
+                <span className="block text-base font-normal mt-2 text-gray-600">Each user gets a personal broker and AI strategies for fast income</span>
+                <span className="block bg-gradient-to-r from-orange-500 via-amber-500 to-blue-400 bg-clip-text text-transparent mt-4 overflow-hidden h-[1.2em]">
                   {typingText}
                   <span className={`animate-pulse inline-block w-1 h-[1em] bg-orange-500 ml-1 align-middle ${typingComplete ? 'opacity-0' : 'opacity-100'}`}></span>
                 </span>
+                <span className="block text-base font-normal mt-2 text-gray-600">We combine human and artificial intelligence to grow your wealth.</span>
               </h1>
               
-              <p 
-                className={`mt-6 text-base text-gray-600 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-              >
-                {t("cryptoReturnsHigher")}
-              </p>
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
+                <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="p-2 rounded-full bg-amber-100">
+                    <Users className="h-8 w-8 text-amber-600" />
+                  </div>
+                  <h3 className="font-bold mt-3 text-gray-800">Personal Broker</h3>
+                  <p className="text-sm text-gray-600 text-center lg:text-left">Dedicated expert to guide your investment journey</p>
+                </div>
+                
+                <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="p-2 rounded-full bg-blue-100">
+                    <Robot className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold mt-3 text-gray-800">AI Algorithm</h3>
+                  <p className="text-sm text-gray-600 text-center lg:text-left">Intelligent trading strategies to maximize returns</p>
+                </div>
+                
+                <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
+                  <div className="p-2 rounded-full bg-green-100">
+                    <ChartLine className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h3 className="font-bold mt-3 text-gray-800">Fast Growth</h3>
+                  <p className="text-sm text-gray-600 text-center lg:text-left">Automated bot for quick and consistent profits</p>
+                </div>
+              </div>
 
-              <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
-                <div className="flex items-center text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
-                  <ChartLine className="h-4 w-4 mr-1" />
-                  <span>{t("averagePerformance")}</span> <span className="font-bold ml-1">+206.4%</span>
-                </div>
-                <div className="flex items-center text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
+              <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">
+                <div className="flex items-center text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-medium">
                   <Shield className="h-4 w-4 mr-1" />
-                  <span>{t("securedInvestments")}</span>
+                  <span>Secure & Compliant</span>
                 </div>
-                <div className="flex items-center text-purple-600 bg-purple-50 rounded-full px-3 py-1 text-sm font-medium mb-2">
-                  <Zap className="h-4 w-4 mr-1" />
-                  <span>{t("startWithJust")} $300</span>
+                <div className="flex items-center text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-medium">
+                  <Headphones className="h-4 w-4 mr-1" />
+                  <span>24/7 Support</span>
                 </div>
               </div>
               
@@ -120,11 +139,11 @@ const Hero = () => {
                 <Button 
                   size="lg"
                   className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-md px-8 py-6 text-base font-medium shadow-md relative overflow-hidden button-hover group"
-                  onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('investment-packages')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <span className="relative z-10 flex items-center">
-                    {t("growMyWealthNow")}
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <EuroIcon className="mr-2 h-5 w-5" />
+                    Inizia con 270 €
                   </span>
                 </Button>
                 
@@ -132,9 +151,9 @@ const Hero = () => {
                   variant="outline"
                   size="lg"
                   className="rounded-md px-8 py-6 text-base font-medium border-amber-500 text-amber-500 hover:bg-amber-500/5 shadow-sm"
-                  onClick={() => document.getElementById('investment-packages')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  {t("seeInvestmentOpportunities")}
+                  Parla con il tuo broker personale
                 </Button>
               </div>
 
@@ -144,7 +163,7 @@ const Hero = () => {
                   {t("regulatedPlatform")}
                 </div>
                 <div className="flex items-center">
-                  <Wallet className="h-4 w-4 mr-1 text-gray-400" />
+                  <EuroIcon className="h-4 w-4 mr-1 text-gray-400" />
                   {t("cryptoInsured")}
                 </div>
               </div>

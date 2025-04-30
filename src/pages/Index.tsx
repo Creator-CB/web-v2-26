@@ -21,7 +21,7 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Helmet>
         <title>NovaTrust Invest | Expert-Curated Cryptocurrency Investment Platform with Personal Brokers</title>
-        <meta name="description" content="Grow your wealth with dedicated personal broker assistance. Expert-curated crypto investments with average returns 25% higher than market. Start with just $100." />
+        <meta name="description" content="Grow your wealth with dedicated personal broker assistance. Expert-curated crypto investments with average returns 25% higher than market. Start with just €270." />
       </Helmet>
       
       <Header />
@@ -30,13 +30,13 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <TrustSignals />
-        <Features />
         <HowItWorks />
-        <SuccessStories />
+        <Features />
         <InvestmentPackages />
-        <TrustedPartners />
+        <SuccessStories />
         <AboutUs />
         <Testimonials />
+        <TrustedPartners />
         <AIChat />
         <RegisterForm />
       </main>

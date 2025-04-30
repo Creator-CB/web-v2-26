@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;
@@ -99,6 +99,32 @@ button, .button {
   transform: translateY(-2px);
 }
 
+/* Feature cards */
+.feature-card {
+  @apply bg-white border border-gray-100 rounded-xl p-5 transition-all duration-300;
+  box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Trust feature styling */
+.trust-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.trust-feature-icon {
+  @apply bg-blue-50 text-blue-600 p-2 rounded-full;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Section styling */
 .section-divider {
   height: 1px;
@@ -124,4 +150,38 @@ button, .button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a0a0a0;
+}
+
+/* Euro symbol styling */
+.euro-badge {
+  @apply inline-flex items-center justify-center rounded-full bg-amber-50 p-1;
+  color: #e6a700;
+}
+
+/* AI element styling */
+.ai-element {
+  @apply bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-element::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  animation: rotateGradient 3s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
