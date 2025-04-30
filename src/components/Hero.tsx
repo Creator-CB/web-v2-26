@@ -107,7 +107,7 @@ const Hero = () => {
                 
                 <div className="flex flex-col items-center lg:items-start p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
                   <div className="p-2 rounded-full bg-blue-100">
-                    <Robot className="h-8 w-8 text-blue-600" />
+                    <Bot className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="font-bold mt-3 text-gray-800">AI Algorithm</h3>
                   <p className="text-sm text-gray-600 text-center lg:text-left">Intelligent trading strategies to maximize returns</p>
