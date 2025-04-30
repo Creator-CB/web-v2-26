@@ -154,7 +154,12 @@ type TranslationKey =
   | 'cryptoSpecialist'
   | 'portfolioDiversification'
   | 'emergingMarkets'
-  | 'sustainableInvesting';
+  | 'sustainableInvesting'
+  | 'regulatedDesc'
+  | 'awardWinning'
+  | 'awardWinningDesc'
+  | 'topRated'
+  | 'asSeenIn';
 
 // Create the context with proper typing and default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -256,6 +261,7 @@ export const useLanguage = () => {
       secure: "Secure & Regulated",
       support: "24/7 Support",
       regulated: "Regulated Platform",
+      regulatedDesc: "Fully compliant with financial regulations",
       insured: "Insured Investments",
       step1Title: "Sign up with €270",
       step1Desc: "Your initial investment opens access to our complete automated trading platform.",
@@ -326,7 +332,11 @@ export const useLanguage = () => {
       cryptoSpecialist: "Crypto Specialist",
       portfolioDiversification: "Portfolio Diversification",
       emergingMarkets: "Emerging Markets",
-      sustainableInvesting: "Sustainable Investing"
+      sustainableInvesting: "Sustainable Investing",
+      awardWinning: "Award Winning",
+      awardWinningDesc: "Recognized for excellence in AI trading",
+      topRated: "Top Rated",
+      asSeenIn: "As Seen In"
     },
     it: {
       combineHumanAI: "Combiniamo intelligenza umana e artificiale per far crescere il tuo patrimonio",
@@ -404,6 +414,7 @@ export const useLanguage = () => {
       secure: "Sicuro & Regolamentato",
       support: "Supporto 24/7",
       regulated: "Piattaforma Regolamentata",
+      regulatedDesc: "Pienamente conforme alle normative finanziarie",
       insured: "Investimenti Assicurati",
       step1Title: "Iscriviti con 270 €",
       step1Desc: "Il tuo investimento iniziale apre l'accesso alla nostra piattaforma completa di trading automatizzato.",
@@ -474,7 +485,11 @@ export const useLanguage = () => {
       cryptoSpecialist: "Specialista Crypto",
       portfolioDiversification: "Diversificazione del Portafoglio",
       emergingMarkets: "Mercati Emergenti",
-      sustainableInvesting: "Investimenti Sostenibili"
+      sustainableInvesting: "Investimenti Sostenibili",
+      awardWinning: "Premiato",
+      awardWinningDesc: "Riconosciuto per l'eccellenza nel trading con AI",
+      topRated: "Altamente Valutato",
+      asSeenIn: "Come Visto Su"
     }
   };
 
