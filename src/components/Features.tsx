@@ -53,11 +53,7 @@ const Features = () => {
       title: t("marketInsights"),
       description: t("marketInsightsDesc")
     },
-    {
-      icon: <BarChart3 className="h-10 w-10 text-indigo-500" />,
-      title: t("marketInsights"),
-      description: t("marketInsightsDesc")
-    },
+    
   ];
 
   return (
