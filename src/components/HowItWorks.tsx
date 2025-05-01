@@ -113,23 +113,11 @@ const HowItWorks = () => {
           ))}
         </div>
         
-        <div className="mt-16 flex justify-center">
-          <div className="max-w-3xl bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8">
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <div className="rounded-full bg-green-500/20 p-3">
-                <Check className="h-6 w-6 text-green-400" />
-              </div>
-              <div className="rounded-full bg-blue-500/20 p-3">
-                <Check className="h-6 w-6 text-blue-400" />
-              </div>
-              <div className="rounded-full bg-amber-500/20 p-3">
-                <Check className="h-6 w-6 text-amber-400" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-center mb-4">{t('secureTitle')}</h3>
-            <p className="text-center text-gray-300">
-              {t('secureDesc')}
-            </p>
+        
+            ))}
+          </div>
+          
+         
           </div>
         </div>
       </div>
