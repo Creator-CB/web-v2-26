@@ -129,47 +129,47 @@ const Hero = () => {
               
               {/* Limited time offer banner with stat cards in line */}
               <div className="mt-8">
-                {/* Limited time offer banner */}
-                <div className="bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/20 rounded-md p-3 max-w-2xl mx-auto lg:mx-0 mb-4">
-                  <div className="flex items-center">
-                    <span className="animate-pulse text-amber-300">⚡</span>
-                    <p className="ml-2 text-sm font-medium text-amber-300">
-                      Limited offer: Start investing today and get a <span className="font-bold">€50 bonus</span> on your first investment
-                    </p>
+                {/* Limited time offer banner with inline stat cards */}
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-3 max-w-full">
+                  {/* Limited time offer */}
+                  <div className="bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/20 rounded-md p-3 flex-shrink-0 max-w-full">
+                    <div className="flex items-center">
+                      <span className="animate-pulse text-amber-300">⚡</span>
+                      <p className="ml-2 text-sm font-medium text-amber-300">
+                        Limited offer: Start investing today and get a <span className="font-bold">€50 bonus</span>
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Stat cards in a horizontal row */}
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-6 max-w-2xl mx-auto lg:mx-0">
-                  {/* First card - Rendimenti Annuali */}
-                  <Card className="glass-card p-3 shadow-md border border-amber-500/20 bg-black/40 backdrop-blur-md opacity-70 hover:opacity-90 transition-all duration-300 transform hover:scale-105 w-auto">
-                    <div className="text-xs font-medium text-gray-300">Rendimenti Annuali</div>
-                    <div className="text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
-                      +24.8%
-                      <span className="text-green-400 text-xs ml-1">↗</span>
-                    </div>
-                    <div className="text-[10px] text-gray-400 mt-1">Rendimento medio investimenti</div>
-                  </Card>
-                  
-                  {/* Second card - Precisione Algoritmica */}
-                  <Card className="glass-card p-3 shadow-md border border-blue-500/20 bg-black/40 backdrop-blur-md opacity-70 hover:opacity-90 transition-all duration-300 transform hover:scale-105 w-auto">
-                    <div className="text-xs font-medium text-gray-300">Precisione Algoritmica</div>
-                    <div className="text-lg font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
-                      93.5%
-                      <span className="text-blue-400 text-xs ml-2">✓</span>
-                    </div>
-                    <div className="text-[10px] text-gray-400 mt-1">Precisione predizioni di mercato</div>
-                  </Card>
-                  
-                  {/* Third card - Soddisfazione Clienti */}
-                  <Card className="glass-card p-3 shadow-md border border-purple-500/20 bg-black/40 backdrop-blur-md opacity-70 hover:opacity-90 transition-all duration-300 transform hover:scale-105 w-auto">
-                    <div className="text-xs font-medium text-gray-300">Soddisfazione Clienti</div>
-                    <div className="text-lg font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
-                      98.2%
-                      <span className="text-amber-300 text-xs ml-2">★</span>
-                    </div>
-                    <div className="text-[10px] text-gray-400 mt-1">Soddisfazione investitori globali</div>
-                  </Card>
+                  {/* Stat cards in a horizontal row */}
+                  <div className="flex flex-wrap gap-2 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    {/* First card - Rendimenti Annuali */}
+                    <Card className="glass-card p-2 shadow-md border border-amber-500/20 bg-black/40 backdrop-blur-md transition-all duration-300 transform hover:scale-105 w-auto">
+                      <div className="text-xs font-medium text-gray-300">Rendimenti Annuali</div>
+                      <div className="text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
+                        +24.8%
+                        <span className="text-green-400 text-xs ml-1">↗</span>
+                      </div>
+                    </Card>
+                    
+                    {/* Second card - Precisione Algoritmica */}
+                    <Card className="glass-card p-2 shadow-md border border-blue-500/20 bg-black/40 backdrop-blur-md transition-all duration-300 transform hover:scale-105 w-auto">
+                      <div className="text-xs font-medium text-gray-300">Precisione Algoritmica</div>
+                      <div className="text-lg font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
+                        93.5%
+                        <span className="text-blue-400 text-xs ml-2">✓</span>
+                      </div>
+                    </Card>
+                    
+                    {/* Third card - Soddisfazione Clienti */}
+                    <Card className="glass-card p-2 shadow-md border border-purple-500/20 bg-black/40 backdrop-blur-md transition-all duration-300 transform hover:scale-105 w-auto">
+                      <div className="text-xs font-medium text-gray-300">Soddisfazione Clienti</div>
+                      <div className="text-lg font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
+                        98.2%
+                        <span className="text-amber-300 text-xs ml-2">★</span>
+                      </div>
+                    </Card>
+                  </div>
                 </div>
               </div>
               
