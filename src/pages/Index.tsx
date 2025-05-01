@@ -15,6 +15,7 @@ import FAQ from '../components/FAQ';
 import BottomCTA from '../components/BottomCTA';
 import Partners from '../components/Partners';
 import SuccessStories from '../components/SuccessStories';
+import Features from '../components/Features';
 import { useLanguage } from '../components/LanguageSelector';
 
 const Index = () => {
@@ -39,6 +40,9 @@ const Index = () => {
         </section>
         <section id="how-it-works">
           <HowItWorks />
+        </section>
+        <section id="features">
+          <Features />
         </section>
         <section id="investment-packages">
           <InvestmentPackages />
