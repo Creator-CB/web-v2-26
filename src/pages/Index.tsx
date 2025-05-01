@@ -16,7 +16,6 @@ import BottomCTA from '../components/BottomCTA';
 import Partners from '../components/Partners';
 import SuccessStories from '../components/SuccessStories';
 import { useLanguage } from '../components/LanguageSelector';
-import Features from '../components/Features';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -40,9 +39,6 @@ const Index = () => {
         </section>
         <section id="how-it-works">
           <HowItWorks />
-        </section>
-        <section id="features">
-          <Features />
         </section>
         <section id="investment-packages">
           <InvestmentPackages />
