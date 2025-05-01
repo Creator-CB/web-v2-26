@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, TrendingUp, Award, Briefcase, ChartBar } from 'lucide-react';
+import { ArrowRight, TrendingUp, Award, Briefcase, ChartBar, Star, DollarSign } from 'lucide-react';
 import { useLanguage } from './LanguageSelector';
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -64,7 +64,7 @@ const SuccessStories = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100"
+              className="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="relative h-56">
                 <img 
@@ -100,7 +100,7 @@ const SuccessStories = () => {
                 
                 <div className="mt-6 flex justify-between items-center">
                   <div className="flex items-center gap-2">
-                    <Briefcase className="h-4 w-4 text-amber-600" />
+                    <Star className="h-4 w-4 text-amber-600" />
                     <span className="text-sm text-gray-600">{t('aiDrivenPortfolios')}</span>
                   </div>
                   <Button 
@@ -123,16 +123,16 @@ const SuccessStories = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="max-w-3xl mx-auto bg-amber-50 border border-amber-100 rounded-xl p-8">
+          <div className="max-w-3xl mx-auto bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-100 rounded-xl p-8 shadow-md">
             <div className="inline-block p-3 bg-amber-500/10 rounded-full mb-4">
-              <TrendingUp className="h-8 w-8 text-amber-600" />
+              <DollarSign className="h-8 w-8 text-amber-600" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-4">{t('aiTechnologyAdvantage')}</h3>
             <p className="text-gray-600 mb-6">{t('aiTechnologyDescription')}</p>
             <div className="flex justify-center">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-full"
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg"
                 onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <span className="flex items-center">
