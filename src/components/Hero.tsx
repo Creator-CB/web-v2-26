@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon } from "lucide-react";
+import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3 } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 import { Badge } from "@/components/ui/badge";
 
@@ -34,7 +34,7 @@ const Hero = () => {
       clearInterval(typeInterval);
     };
   }, [t]);
-
+  
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 py-24 min-h-[90vh] flex items-center text-white">
       {/* Enhanced subtle grid background */}
@@ -83,7 +83,7 @@ const Hero = () => {
               
               <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
                 <span className="block">Invest Smarter with</span>
-                <span className="block gradient-text mt-3">AI-Powered Intelligence</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600 mt-3">AI-Powered Intelligence</span>
               </h1>
               
               <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">

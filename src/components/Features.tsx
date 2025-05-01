@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award } from "lucide-react";
+import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award, BarChart3 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from './LanguageSelector';
 
@@ -28,6 +27,16 @@ const Features = () => {
       title: t("cryptoDiversification"),
       description: t("cryptoDiversificationDesc")
     },
+    {
+      icon: <ChartLine className="h-10 w-10 text-orange-500" />,
+      title: t("performanceTracking"),
+      description: t("performanceTrackingDesc")
+    },
+    {
+      icon: <BarChart3 className="h-10 w-10 text-indigo-500" />,
+      title: t("marketInsights"),
+      description: t("marketInsightsDesc")
+    },
   ];
 
   return (
@@ -46,7 +55,7 @@ const Features = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature, index) => (
             <Card key={index} className="card-hover border-t-2 border-t-amber-400 bg-white/80 backdrop-blur-sm h-full premium-card shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
