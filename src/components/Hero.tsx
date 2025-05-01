@@ -30,7 +30,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <div id="hero" className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-24 min-h-[90vh] flex items-center text-white">
+    <div id="hero" className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-12 pb-24 min-h-[90vh] flex items-center text-white">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 bg-grid-lines bg-[length:30px_30px] opacity-[0.05]"></div>
       
@@ -74,10 +74,10 @@ const Hero = () => {
       
       <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:pb-28">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <main className="mt-0 mx-auto max-w-7xl px-4 sm:mt-4 sm:px-6 md:mt-8 lg:mt-12 lg:px-8 xl:mt-18">
             <div className="text-center lg:text-left">
               <div 
-                className={`flex items-center justify-center lg:justify-start mb-6 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                className={`flex items-center justify-center lg:justify-start mb-4 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               >
                 <Badge className="rounded-full bg-gradient-to-r from-amber-400/20 to-amber-500/30 text-amber-300 border-amber-600/20 px-3 py-1 text-xs sm:text-sm">
                   <EuroIcon className="h-4 w-4 mr-1" /> {t('investmentPlatform')} • <TrendingUp className="h-3 w-3 mx-1 text-green-400" /> {opportunityTexts[currentIndex]}
@@ -181,40 +181,40 @@ const Hero = () => {
             </div>
           </main>
 
-          {/* Stat cards - fixed positioning and improved visibility */}
-          <div className="hidden lg:block absolute top-1/2 right-10 transform -translate-y-1/2 z-20">
-            <div className="relative">
+          {/* Stat cards in a circle formation - smaller and more transparent */}
+          <div className="absolute top-12 right-10 hidden lg:block">
+            <div className="relative w-64 h-64">
               {/* First card */}
-              <div className="absolute top-[-200px] right-0 transform hover:scale-105 transition-all duration-300">
-                <Card className="glass-card p-5 animate-float shadow-xl border border-amber-500/30 bg-black/70 backdrop-blur-lg w-72">
-                  <div className="text-sm font-medium text-gray-300">{t('annualReturns')}</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 transform scale-75 hover:scale-90 transition-all duration-300">
+                <Card className="glass-card p-4 animate-float shadow-md border border-amber-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+                  <div className="text-xs font-medium text-gray-300">{t('annualReturns')}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
                     +24.8% 
-                    <span className="text-green-400 text-sm ml-2">↗</span>
+                    <span className="text-green-400 text-xs ml-2">↗</span>
                   </div>
                   <div className="text-xs text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
                 </Card>
               </div>
               
-              {/* Second card */}
-              <div className="absolute top-0 right-[50px] transform hover:scale-105 transition-all duration-300">
-                <Card className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-xl border border-blue-500/30 bg-black/70 backdrop-blur-lg w-72">
-                  <div className="text-sm font-medium text-gray-300">{t('algorithmPrecision')}</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
+              {/* Second card - positioned at bottom right of the circle */}
+              <div className="absolute top-[75%] right-0 transform scale-75 hover:scale-90 transition-all duration-300">
+                <Card className="glass-card p-4 animate-float [animation-delay:1000ms] shadow-md border border-blue-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+                  <div className="text-xs font-medium text-gray-300">{t('algorithmPrecision')}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
                     93.5%
-                    <span className="text-blue-400 text-sm ml-2">✓</span>
+                    <span className="text-blue-400 text-xs ml-2">✓</span>
                   </div>
                   <div className="text-xs text-gray-400 mt-1">{t('cryptoMarketPrediction')}</div>
                 </Card>
               </div>
               
-              {/* Third card */}
-              <div className="absolute top-[200px] right-0 transform hover:scale-105 transition-all duration-300">
-                <Card className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-xl border border-purple-500/30 bg-black/70 backdrop-blur-lg w-72">
-                  <div className="text-sm font-medium text-gray-300">{t('clientSatisfaction')}</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
+              {/* Third card - positioned at bottom left of the circle */}
+              <div className="absolute top-[75%] left-0 transform scale-75 hover:scale-90 transition-all duration-300">
+                <Card className="glass-card p-4 animate-float [animation-delay:2000ms] shadow-md border border-purple-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+                  <div className="text-xs font-medium text-gray-300">{t('clientSatisfaction')}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
                     98.2%
-                    <span className="text-amber-300 text-sm ml-2">★</span>
+                    <span className="text-amber-300 text-xs ml-2">★</span>
                   </div>
                   <div className="text-xs text-gray-400 mt-1">{t('globalCryptoInvestors')}</div>
                 </Card>
