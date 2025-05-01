@@ -14,8 +14,7 @@ import InvestmentPackages from '../components/InvestmentPackages';
 import FAQ from '../components/FAQ';
 import BottomCTA from '../components/BottomCTA';
 import Partners from '../components/Partners';
-import SuccessStories from '../components/SuccessStories';
-import MeetOurBrokers from '../components/MeetOurBrokers';
+import AboutUs from '../components/AboutUs';
 import { useLanguage } from '../components/LanguageSelector';
 
 const Index = () => {
@@ -37,8 +36,7 @@ const Index = () => {
         <HowItWorks />
         <InvestmentPackages />
         <Partners />
-        <SuccessStories />
-        <MeetOurBrokers />
+        <AboutUs />
         <Testimonials />
         <FAQ />
         <AIChat />

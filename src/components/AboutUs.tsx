@@ -1,8 +1,12 @@
 
 import React from 'react';
-import { Star, Award, TrendingUp, Globe, Users, Briefcase, Trophy, Building, Check, BarChart, ArrowRight } from "lucide-react";
+import { Star, Award, TrendingUp, Globe, Users, Briefcase, Trophy, Check, BarChart, ArrowRight } from "lucide-react";
+import { useLanguage } from './LanguageSelector';
+import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
+  const { t } = useLanguage();
+  
   const experts = [
     {
       name: "Dr. Sophia Lindström",
@@ -54,10 +58,8 @@ const AboutUs = () => {
     }
   ];
   
-  // Removing testimonials section as requested
-  
   return (
-    <section id="about-us" className="section-padding bg-gradient-to-b from-slate-50 to-slate-100 relative overflow-hidden">
+    <section id="about-us" className="section-padding bg-gradient-to-b from-slate-50 to-slate-100 relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
       {/* Enhanced background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -77,20 +79,20 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 px-3 py-1 mb-4">
-            <span className="text-sm font-medium uppercase tracking-wider text-pink-600">About Us</span>
+            <span className="text-sm font-medium uppercase tracking-wider text-pink-600">{t('aboutUs')}</span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl mb-4">European Investment Excellence</h2>
+          <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl mb-4">{t('europeanInvestmentExcellence')}</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-            Our platform combines advanced AI technologies with decades of European market expertise
+            {t('platformCombinesAI')}
           </p>
           <div className="mt-6 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
           </div>
         </div>
         
-        {/* Why Choose Our Platform - NEW SECTION */}
+        {/* Why Choose Our Platform */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Why Our Platform Generates Profits</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">{t('whyPlatformGeneratesProfits')}</h3>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100 relative overflow-hidden group">
@@ -99,11 +101,11 @@ const AboutUs = () => {
                 <div className="mb-4 text-pink-500">
                   <Trophy className="h-8 w-8" />
                 </div>
-                <h4 className="text-lg font-semibold mb-3 text-gray-800">Market-Beating Returns</h4>
+                <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('marketBeatingReturns')}</h4>
                 <p className="text-gray-600">
-                  Our AI systems have consistently outperformed traditional investment approaches with up to 500% annual returns for aggressive portfolios.
+                  {t('aiSystemsOutperform')}
                 </p>
-                <p className="mt-3 text-sm font-medium text-pink-500">Average return: 206.4%</p>
+                <p className="mt-3 text-sm font-medium text-pink-500">{t('averageReturn')}: 206.4%</p>
               </div>
             </div>
             
@@ -113,11 +115,11 @@ const AboutUs = () => {
                 <div className="mb-4 text-pink-500">
                   <Users className="h-8 w-8" />
                 </div>
-                <h4 className="text-lg font-semibold mb-3 text-gray-800">Expert-Backed Strategies</h4>
+                <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('expertBackedStrategies')}</h4>
                 <p className="text-gray-600">
-                  Every AI-generated recommendation is reviewed by our team of European financial experts, combining technology with human insight.
+                  {t('aiRecommendationsReviewed')}
                 </p>
-                <p className="mt-3 text-sm font-medium text-pink-500">98.7% client satisfaction</p>
+                <p className="mt-3 text-sm font-medium text-pink-500">{t('clientSatisfactionRate')}: 98.7%</p>
               </div>
             </div>
             
@@ -127,11 +129,11 @@ const AboutUs = () => {
                 <div className="mb-4 text-pink-500">
                   <Briefcase className="h-8 w-8" />
                 </div>
-                <h4 className="text-lg font-semibold mb-3 text-gray-800">Diverse Asset Classes</h4>
+                <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('diverseAssetClasses')}</h4>
                 <p className="text-gray-600">
-                  From traditional stocks and bonds to cryptocurrencies and alternative investments, our platform provides access to multiple wealth-building opportunities.
+                  {t('multipleInvestmentOptions')}
                 </p>
-                <p className="mt-3 text-sm font-medium text-pink-500">2,800+ investment options</p>
+                <p className="mt-3 text-sm font-medium text-pink-500">{t('investmentCount')}: 2,800+</p>
               </div>
             </div>
           </div>
@@ -139,108 +141,95 @@ const AboutUs = () => {
         
         {/* Company stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
+          <div className="bg-white rounded-lg p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Globe className="h-6 w-6 text-pink-500" />
               </div>
             </div>
             <div className="text-3xl font-bold text-pink-500 mb-1">18</div>
-            <p className="text-sm text-gray-500">European Markets</p>
+            <p className="text-sm text-gray-500">{t('europeanMarkets')}</p>
           </div>
           
-          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
+          <div className="bg-white rounded-lg p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-6 w-6 text-pink-500" />
               </div>
             </div>
             <div className="text-3xl font-bold text-pink-500 mb-1">16.4%</div>
-            <p className="text-sm text-gray-500">Average Returns</p>
+            <p className="text-sm text-gray-500">{t('averageReturns')}</p>
           </div>
           
-          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
+          <div className="bg-white rounded-lg p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Award className="h-6 w-6 text-pink-500" />
               </div>
             </div>
             <div className="text-3xl font-bold text-pink-500 mb-1">11+</div>
-            <p className="text-sm text-gray-500">Industry Awards</p>
+            <p className="text-sm text-gray-500">{t('industryAwards')}</p>
           </div>
           
-          <div className="glass-card p-6 text-center group hover:shadow-lg transition-all duration-300">
+          <div className="bg-white rounded-lg p-6 text-center group hover:shadow-lg transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Star className="h-6 w-6 text-pink-500" />
               </div>
             </div>
             <div className="text-3xl font-bold text-pink-500 mb-1">98.7%</div>
-            <p className="text-sm text-gray-500">Client Satisfaction</p>
+            <p className="text-sm text-gray-500">{t('clientSatisfaction')}</p>
           </div>
         </div>
         
-        {/* Why Choose Us */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Why European Investors Choose Us</h3>
+        {/* Our Experts Section */}
+        <div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">{t('meetOurExperts')}</h3>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg font-semibold mb-3 text-pink-600">European Market Focus</h4>
-              <p className="text-gray-600">
-                Our AI algorithms are specifically trained on European markets, considering regional regulations, economic patterns, and cultural factors that global platforms often miss.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg font-semibold mb-3 text-pink-600">Quantum AI Technology</h4>
-              <p className="text-gray-600">
-                Unlike traditional investment platforms, our proprietary quantum computing algorithms can process vastly more variables to identify opportunities with remarkable precision.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg font-semibold mb-3 text-pink-600">Human + AI Collaboration</h4>
-              <p className="text-gray-600">
-                We believe in the power of augmented intelligence—combining the computational power of AI with the nuanced judgment of experienced European market specialists.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        {/* Our Experts - with optimized images */}
-        <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Meet Our European Experts</h3>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {experts.map((expert, index) => (
-            <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
-              <div className="relative overflow-hidden h-56">
-                <img 
-                  src={expert.image} 
-                  alt={expert.name} 
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-block bg-white/80 backdrop-blur-sm text-pink-600 px-3 py-1 text-xs font-medium rounded-full">
-                      {expert.location}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {experts.slice(0, 6).map((expert, index) => (
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+                <div className="relative overflow-hidden h-56">
+                  <img 
+                    src={expert.image} 
+                    alt={expert.name} 
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                    <div className="absolute bottom-4 left-4">
+                      <span className="inline-block bg-white/80 backdrop-blur-sm text-pink-600 px-3 py-1 text-xs font-medium rounded-full">
+                        {expert.location}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-5">
+                  <h4 className="text-lg font-semibold text-gray-800">{expert.name}</h4>
+                  <p className="text-pink-500 text-sm mb-3">{expert.role}</p>
+                  <p className="text-gray-600 text-sm mb-3">{expert.bio}</p>
+                  <div className="flex items-center">
+                    <span className="text-xs font-medium text-white bg-gradient-to-r from-pink-500 to-purple-500 px-3 py-1 rounded-full shadow-sm">
+                      {expert.specialty}
                     </span>
                   </div>
                 </div>
               </div>
-              
-              <div className="p-5">
-                <h4 className="text-lg font-semibold text-gray-800">{expert.name}</h4>
-                <p className="text-pink-500 text-sm mb-3">{expert.role}</p>
-                <p className="text-gray-600 text-sm mb-3">{expert.bio}</p>
-                <div className="flex items-center">
-                  <span className="text-xs font-medium text-white bg-gradient-to-r from-pink-500 to-purple-500 px-3 py-1 rounded-full shadow-sm">
-                    {expert.specialty}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Button
+              size="lg" 
+              className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8"
+              onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <span className="flex items-center">
+                {t('startInvestingToday')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </span>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
