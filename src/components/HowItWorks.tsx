@@ -113,11 +113,48 @@ const HowItWorks = () => {
           ))}
         </div>
         
-        
+        {/* Benefits Section */}
+        <div className="pt-12 border-t border-white/10">
+          <h2 className="text-3xl font-bold text-center mb-16">
+            {t('whyChooseTitle')}
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-amber-500/30 hover:bg-white/10 transition-all"
+              >
+                <div className="mb-4 bg-amber-500/10 rounded-full w-12 h-12 flex items-center justify-center">
+                  <Check className="h-6 w-6 text-amber-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-gray-300">{benefit.description}</p>
+              </motion.div>
             ))}
           </div>
           
-         
+          <div className="mt-16 flex justify-center">
+            <div className="max-w-3xl bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8">
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <div className="rounded-full bg-green-500/20 p-3">
+                  <Check className="h-6 w-6 text-green-400" />
+                </div>
+                <div className="rounded-full bg-blue-500/20 p-3">
+                  <Check className="h-6 w-6 text-blue-400" />
+                </div>
+                <div className="rounded-full bg-amber-500/20 p-3">
+                  <Check className="h-6 w-6 text-amber-400" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4">{t('secureTitle')}</h3>
+              <p className="text-center text-gray-300">
+                {t('secureDesc')}
+              </p>
+            </div>
           </div>
         </div>
       </div>
