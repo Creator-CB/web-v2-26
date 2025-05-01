@@ -12,7 +12,7 @@ const Hero = () => {
   const { t } = useLanguage();
   
   const opportunityTexts = [
-    "24.8% Annual Returns",
+    "+1000% Annual Returns",
     "Market-Beating Performance",
     "AI-Powered Wealth Growth"
   ];
@@ -182,17 +182,17 @@ const Hero = () => {
           </main>
 
           {/* Stat cards in a circle formation - smaller and more transparent */}
-          <div className="absolute top-12 right-10 hidden lg:block">
-            <div className="relative w-64 h-64">
+          <div className="absolute top-20 right-16 hidden lg:block">
+            <div className="relative w-48 h-48">
               {/* First card */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 transform scale-75 hover:scale-90 transition-all duration-300">
-                <Card className="glass-card p-4 animate-float shadow-md border border-amber-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+              <div className="absolute -top-6 right-0 transform scale-65 hover:scale-75 transition-all duration-300">
+                <Card className="glass-card p-3 animate-float shadow-md border border-amber-500/20 bg-black/40 backdrop-blur-md w-40 opacity-60 hover:opacity-85">
                   <div className="text-xs font-medium text-gray-300">{t('annualReturns')}</div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
-                    +24.8% 
-                    <span className="text-green-400 text-xs ml-2">↗</span>
+                  <div className="text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
+                    +1000% 
+                    <span className="text-green-400 text-xs ml-1">↗</span>
                   </div>
-                  <div className="text-xs text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
+                  <div className="text-[10px] text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
                 </Card>
               </div>
               
