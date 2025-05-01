@@ -31,17 +31,39 @@ const Index = () => {
       <Navbar />
       
       <main className="flex-grow">
-        <Hero />
-        <TrustSignals />
-        <HowItWorks />
-        <InvestmentPackages />
-        <Partners />
-        <SuccessStories />
-        <Testimonials />
-        <FAQ />
-        <AIChat />
-        <BottomCTA />
-        <RegisterForm />
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="trust-signals">
+          <TrustSignals />
+        </section>
+        <section id="how-it-works">
+          <HowItWorks />
+        </section>
+        <section id="investment-packages">
+          <InvestmentPackages />
+        </section>
+        <section id="partners">
+          <Partners />
+        </section>
+        <section id="success-stories">
+          <SuccessStories />
+        </section>
+        <section id="testimonials">
+          <Testimonials />
+        </section>
+        <section id="faq">
+          <FAQ />
+        </section>
+        <section id="ai-assistant">
+          <AIChat />
+        </section>
+        <section id="bottom-cta">
+          <BottomCTA />
+        </section>
+        <section id="register">
+          <RegisterForm />
+        </section>
       </main>
       
       <Footer />
