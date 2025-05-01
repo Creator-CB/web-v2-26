@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3, Star, Award, TrendingUp } from "lucide-react";
@@ -30,31 +31,31 @@ const Hero = () => {
   
   return (
     <div id="hero" className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-24 min-h-[90vh] flex items-center text-white">
-      {/* Smaller, localized background elements in top right */}
+      {/* Enhanced animated background elements */}
       <div className="absolute inset-0 bg-grid-lines bg-[length:30px_30px] opacity-[0.05]"></div>
       
-      {/* Smaller gradient orbs positioned in top right */}
-      <div className="absolute top-[10%] right-[5%] w-40 h-40 bg-amber-500/20 rounded-full blur-2xl animate-pulse-slow"></div>
-      <div className="absolute top-[15%] right-[15%] w-32 h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse-slow animation-delay-1000"></div>
-      <div className="absolute top-[8%] right-[25%] w-24 h-24 bg-purple-500/10 rounded-full blur-xl animate-pulse-slow animation-delay-2000"></div>
+      {/* Enhanced gradient orbs with more vibrant colors */}
+      <div className="absolute top-1/4 right-[10%] w-80 h-80 bg-amber-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
+      <div className="absolute top-1/3 left-[15%] w-40 h-40 bg-purple-500/10 rounded-full blur-2xl animate-pulse-slow animation-delay-2000"></div>
       
-      {/* Smaller circular element */}
-      <div className="absolute top-[20%] right-[10%] w-48 h-48 opacity-30">
+      {/* Enhanced circular element */}
+      <div className="absolute bottom-[10%] right-[5%] w-96 h-96 opacity-30">
         <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-500/50 animate-spin-slow"></div>
-        <div className="absolute inset-4 rounded-full border border-blue-500/30 animate-spin-slow [animation-direction:reverse]"></div>
-        <div className="absolute inset-8 rounded-full border border-purple-400/20 animate-spin-slow [animation-duration:10s]"></div>
+        <div className="absolute inset-8 rounded-full border border-blue-500/30 animate-spin-slow [animation-direction:reverse]"></div>
+        <div className="absolute inset-16 rounded-full border border-purple-400/20 animate-spin-slow [animation-duration:10s]"></div>
       </div>
       
-      {/* Bitcoin/crypto animated icon in top right corner */}
-      <div className="absolute top-[5%] right-[30%] opacity-20 animate-float">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Bitcoin/crypto animated icon in background */}
+      <div className="absolute top-[10%] left-[8%] opacity-20 animate-float">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.5 6.5V17.5M14.5 6.5V17.5M12 3.5V20.5M3.5 12H20.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/>
         </svg>
       </div>
       
-      {/* Smaller crypto chart visualization */}
-      <div className="absolute top-[12%] right-[8%] w-36 h-24 opacity-40 hidden lg:block">
+      {/* Crypto chart visualization - enhanced with better animation */}
+      <div className="absolute top-[15%] right-[18%] w-72 h-48 opacity-40 hidden lg:block">
         <svg viewBox="0 0 200 100" className="w-full h-full">
           <path d="M0,80 C10,70 20,60 30,50 C40,70 50,20 60,30 C70,50 80,10 90,15 C100,30 110,5 120,20 C130,40 140,10 150,40 C160,30 170,60 180,50 C190,40 200,60 210,50" 
                 fill="none" 
@@ -180,26 +181,54 @@ const Hero = () => {
             </div>
           </main>
 
-          {/* Reduced stat cards - removed from absolute position */}
-          <div className="hidden lg:flex absolute top-[5%] right-[5%] gap-4 z-10">
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <Card className="glass-card p-3 shadow-md border border-amber-500/30 bg-black/70 backdrop-blur-lg w-40">
-                <div className="text-xs font-medium text-gray-300">{t('annualReturns')}</div>
-                <div className="text-xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
-                  +24.8% 
-                  <span className="text-green-400 text-xs ml-1">↗</span>
-                </div>
-              </Card>
+          {/* Stat cards - fixed positioning and improved visibility */}
+          <div className="hidden lg:block absolute top-1/2 right-10 transform -translate-y-1/2 z-20">
+            <div className="relative">
+              {/* First card */}
+              <div className="absolute top-[-200px] right-0 transform hover:scale-105 transition-all duration-300">
+                <Card className="glass-card p-5 animate-float shadow-xl border border-amber-500/30 bg-black/70 backdrop-blur-lg w-72">
+                  <div className="text-sm font-medium text-gray-300">{t('annualReturns')}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
+                    +24.8% 
+                    <span className="text-green-400 text-sm ml-2">↗</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
+                </Card>
+              </div>
+              
+              {/* Second card */}
+              <div className="absolute top-0 right-[50px] transform hover:scale-105 transition-all duration-300">
+                <Card className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-xl border border-blue-500/30 bg-black/70 backdrop-blur-lg w-72">
+                  <div className="text-sm font-medium text-gray-300">{t('algorithmPrecision')}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
+                    93.5%
+                    <span className="text-blue-400 text-sm ml-2">✓</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{t('cryptoMarketPrediction')}</div>
+                </Card>
+              </div>
+              
+              {/* Third card */}
+              <div className="absolute top-[200px] right-0 transform hover:scale-105 transition-all duration-300">
+                <Card className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-xl border border-purple-500/30 bg-black/70 backdrop-blur-lg w-72">
+                  <div className="text-sm font-medium text-gray-300">{t('clientSatisfaction')}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
+                    98.2%
+                    <span className="text-amber-300 text-sm ml-2">★</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{t('globalCryptoInvestors')}</div>
+                </Card>
+              </div>
             </div>
           </div>
-          
-          {/* Active investors counter - kept but smaller */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-md shadow-lg rounded-full px-4 py-2 flex items-center gap-2 border border-amber-500/30">
+
+          {/* Active investors counter with increased visibility */}
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex items-center gap-3 border border-amber-500/30">
             <div className="relative">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
             </div>
-            <span className="font-medium text-gray-300 text-sm">{t('activeInvestors')}: <span className="text-amber-400">783</span></span>
+            <span className="font-medium text-gray-300">{t('activeInvestors')}: <span className="text-amber-400">783</span> <span className="text-gray-500 text-xs">investing now</span></span>
           </div>
         </div>
       </div>
