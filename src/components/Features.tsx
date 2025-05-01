@@ -1,10 +1,26 @@
+
 import React from 'react';
-import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award, BarChart3 } from "lucide-react";
+import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award, BarChart3, PhoneCall } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from './LanguageSelector';
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const Features = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+
+  const handleCallBroker = () => {
+    // Use the tel: protocol to initiate a phone call
+    window.location.href = "tel:+222222";
+    
+    // Show toast notification
+    toast({
+      title: t("callingBroker"),
+      description: t("connectingYouToBroker"),
+      duration: 3000,
+    });
+  };
 
   const features = [
     {
@@ -65,9 +81,18 @@ const Features = () => {
                 <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 text-base">
+                <CardDescription className="text-gray-600 text-base mb-4">
                   {feature.description}
                 </CardDescription>
+                <Button 
+                  variant="call" 
+                  size="sm" 
+                  className="w-full mt-2"
+                  onClick={handleCallBroker}
+                >
+                  <PhoneCall className="h-4 w-4 mr-1" />
+                  {t("contactBroker")}
+                </Button>
               </CardContent>
             </Card>
           ))}

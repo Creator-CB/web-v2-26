@@ -1,12 +1,26 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, EuroIcon } from "lucide-react";
+import { ArrowRight, EuroIcon, PhoneCall } from "lucide-react";
 import { motion } from 'framer-motion';
 import { useLanguage } from './LanguageSelector';
+import { useToast } from "@/hooks/use-toast";
 
 const BottomCTA = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  
+  const handleCallBroker = () => {
+    // Use the tel: protocol to initiate a phone call
+    window.location.href = "tel:+222222";
+    
+    // Show toast notification
+    toast({
+      title: t("callingBroker"),
+      description: t("connectingYouToBroker"),
+      duration: 3000,
+    });
+  };
   
   return (
     <section className="section-padding bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
@@ -49,8 +63,9 @@ const BottomCTA = () => {
               variant="outline"
               size="lg"
               className="rounded-md px-8 py-6 text-lg font-medium border-amber-400/30 text-amber-400 hover:bg-amber-500/10 shadow-sm w-full sm:w-auto"
-              onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={handleCallBroker}
             >
+              <PhoneCall className="mr-2 h-5 w-5" />
               {t('freeConsultation')}
             </Button>
           </div>
