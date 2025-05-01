@@ -181,23 +181,23 @@ const Hero = () => {
             </div>
           </main>
 
-          {/* Enhanced stats floating cards with better visibility */}
+          {/* Enhanced stats floating cards with fixed positioning to ensure text visibility */}
           <div 
-            className={`hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 space-y-7 w-72 transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
+            className={`hidden lg:flex flex-col gap-7 absolute right-10 top-1/3 z-10 w-72 transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
           >
-            <Card className="glass-card p-5 animate-float shadow-lg border border-amber-500/20 bg-black/40 backdrop-blur-md z-10 relative">
+            <Card className="glass-card p-5 animate-float shadow-lg border border-amber-500/20 bg-black/40 backdrop-blur-md">
               <div className="text-sm font-medium text-gray-400">{t('annualReturns')}</div>
               <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">+24.8%</div>
               <div className="text-xs text-gray-500 mt-1">{t('averageCryptoReturns')}</div>
             </Card>
             
-            <Card className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-blue-500/20 bg-black/40 backdrop-blur-md z-10 relative">
+            <Card className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-lg border border-blue-500/20 bg-black/40 backdrop-blur-md">
               <div className="text-sm font-medium text-gray-400">{t('algorithmPrecision')}</div>
               <div className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent">93.5%</div>
               <div className="text-xs text-gray-500 mt-1">{t('cryptoMarketPrediction')}</div>
             </Card>
             
-            <Card className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-purple-500/20 bg-black/40 backdrop-blur-md z-10 relative">
+            <Card className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-lg border border-purple-500/20 bg-black/40 backdrop-blur-md">
               <div className="text-sm font-medium text-gray-400">{t('clientSatisfaction')}</div>
               <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">98.2%</div>
               <div className="text-xs text-gray-500 mt-1">{t('globalCryptoInvestors')}</div>
