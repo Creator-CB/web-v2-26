@@ -48,7 +48,7 @@ const HowItWorks = () => {
     {
       title: t('benefit5Title'),
       description: t('benefit5Desc')
-    }
+    },
     {
       title: t('benefit6Title'),
       description: t('benefit5Desc')
