@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3, Star, Award, TrendingUp } from "lucide-react";
@@ -39,11 +38,47 @@ const Hero = () => {
       <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
       <div className="absolute top-1/3 left-[15%] w-40 h-40 bg-purple-500/10 rounded-full blur-2xl animate-pulse-slow animation-delay-2000"></div>
       
-      {/* Enhanced circular element */}
-      <div className="absolute bottom-[10%] right-[5%] w-96 h-96 opacity-30">
-        <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-500/50 animate-spin-slow"></div>
-        <div className="absolute inset-8 rounded-full border border-blue-500/30 animate-spin-slow [animation-direction:reverse]"></div>
-        <div className="absolute inset-16 rounded-full border border-purple-400/20 animate-spin-slow [animation-duration:10s]"></div>
+      {/* Circular animation container for the stat cards */}
+      <div className="absolute top-[15%] right-[10%] w-80 h-80 opacity-40">
+        <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-500/30 animate-spin-slow"></div>
+        <div className="absolute inset-8 rounded-full border border-blue-500/20 animate-spin-slow [animation-direction:reverse]"></div>
+        <div className="absolute inset-16 rounded-full border border-purple-400/10 animate-spin-slow [animation-duration:10s]"></div>
+        
+        {/* First stat card - positioned at top of circle */}
+        <div className="absolute top-[-60px] left-[50%] transform -translate-x-1/2 animate-float [animation-delay:0ms]">
+          <Card className="glass-card p-3 shadow-xl border border-amber-500/20 bg-black/40 backdrop-blur-lg w-52 hover:scale-105 transition-all duration-300">
+            <div className="text-xs font-medium text-gray-300">{t('annualReturns')}</div>
+            <div className="text-xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
+              +24.8% 
+              <span className="text-green-400 text-sm ml-2">↗</span>
+            </div>
+            <div className="text-xs text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
+          </Card>
+        </div>
+        
+        {/* Second stat card - positioned on right side of circle */}
+        <div className="absolute top-[50%] right-[-60px] transform -translate-y-1/2 animate-float [animation-delay:1000ms]">
+          <Card className="glass-card p-3 shadow-xl border border-blue-500/20 bg-black/40 backdrop-blur-lg w-52 hover:scale-105 transition-all duration-300">
+            <div className="text-xs font-medium text-gray-300">{t('algorithmPrecision')}</div>
+            <div className="text-xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
+              93.5%
+              <span className="text-blue-400 text-sm ml-2">✓</span>
+            </div>
+            <div className="text-xs text-gray-400 mt-1">{t('cryptoMarketPrediction')}</div>
+          </Card>
+        </div>
+        
+        {/* Third stat card - positioned at bottom of circle */}
+        <div className="absolute bottom-[-60px] left-[50%] transform -translate-x-1/2 animate-float [animation-delay:2000ms]">
+          <Card className="glass-card p-3 shadow-xl border border-purple-500/20 bg-black/40 backdrop-blur-lg w-52 hover:scale-105 transition-all duration-300">
+            <div className="text-xs font-medium text-gray-300">{t('clientSatisfaction')}</div>
+            <div className="text-xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
+              98.2%
+              <span className="text-amber-300 text-sm ml-2">★</span>
+            </div>
+            <div className="text-xs text-gray-400 mt-1">{t('globalCryptoInvestors')}</div>
+          </Card>
+        </div>
       </div>
       
       {/* Bitcoin/crypto animated icon in background */}
