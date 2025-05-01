@@ -140,22 +140,7 @@ const InvestmentPackages = () => {
         
         <div className="mt-12 bg-white/5 backdrop-blur-md p-6 rounded-lg border border-white/10 text-center">
           <h3 className="text-xl font-semibold mb-3">{t('customPackageTitle')}</h3>
-          <p className="text-gray-300 mb-4">{t('customPackageDesc')}</p>
-          <div className="flex justify-center gap-4">
-            <Button 
-              variant="outline"
-              className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10"
-              onClick={() => document.getElementById('ai-assistant')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {t('contactUs')}
-            </Button>
-            <Button 
-              className="bg-blue-600 hover:bg-blue-700"
-              onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {t('talkToBroker')}
-            </Button>
-          </div>
+          <p className="text-gray-300">{t('customPackageDesc')}</p>
         </div>
       </div>
     </section>
