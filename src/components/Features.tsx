@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award, BarChart3, PhoneCall } from "lucide-react";
+import { Check, TrendingUp, Shield, Bot, Brain, Bitcoin, Wallet, ChartLine, HandCoins, Award, BarChart3, PhoneCall, Lock } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from './LanguageSelector';
 import { Button } from "@/components/ui/button";
@@ -53,7 +52,12 @@ const Features = () => {
       title: t("marketInsights"),
       description: t("marketInsightsDesc")
     },
-    
+    // New card for platform security
+    {
+      icon: <Lock className="h-10 w-10 text-red-500" />,
+      title: "Piattaforma sicura",
+      description: "Sistema di crittografia avanzata per proteggere tutte le transazioni e i dati personali dei clienti."
+    },
   ];
 
   return (
@@ -72,7 +76,7 @@ const Features = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <Card key={index} className="card-hover border-t-2 border-t-amber-400 bg-white/80 backdrop-blur-sm h-full premium-card shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
