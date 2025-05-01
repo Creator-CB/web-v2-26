@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3, Star, Award, TrendingUp } from "lucide-react";
+import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3, Star, Award, TrendingUp, Lock } from "lucide-react";
 import { useLanguage } from './LanguageSelector';
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -28,6 +28,39 @@ const Hero = () => {
     
     return () => clearInterval(interval);
   }, []);
+  
+  // Feature cards data
+  const features = [
+    {
+      icon: <Users className="h-8 w-8 text-amber-400" />,
+      title: t('personalBroker'),
+      description: t('personalBrokerDesc'),
+      bgColor: "bg-amber-500/20",
+      borderColor: "border-amber-500/40",
+    },
+    {
+      icon: <Bot className="h-8 w-8 text-blue-400" />,
+      title: t('aiAlgorithm'),
+      description: t('aiAlgorithmDesc'),
+      bgColor: "bg-blue-500/20",
+      borderColor: "border-blue-500/40",
+    },
+    {
+      icon: <ChartLine className="h-8 w-8 text-green-400" />,
+      title: t('fastGrowth'),
+      description: t('fastGrowthDesc'),
+      bgColor: "bg-green-500/20",
+      borderColor: "border-green-500/40",
+    },
+    // New argument card added here
+    {
+      icon: <Lock className="h-8 w-8 text-purple-400" />,
+      title: "Advanced Security",
+      description: "Military-grade encryption and security protocols protecting your investments and personal data.",
+      bgColor: "bg-purple-500/20",
+      borderColor: "border-purple-500/40",
+    }
+  ];
   
   return (
     <div id="hero" className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-12 pb-24 min-h-[90vh] flex items-center text-white">
@@ -93,30 +126,19 @@ const Hero = () => {
                 Our AI-driven algorithm delivered <span className="text-green-400 font-bold">24.8% returns</span> last year when traditional markets struggled. Join thousands of investors who are already profiting.
               </p>
               
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
-                <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-amber-500/40 hover:bg-white/10 transition-all duration-300">
-                  <div className="p-3 rounded-full bg-amber-500/20 mb-4">
-                    <Users className="h-8 w-8 text-amber-400" />
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
+                {features.map((feature, index) => (
+                  <div 
+                    key={index} 
+                    className={`flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:${feature.borderColor} hover:bg-white/10 transition-all duration-300 ${index === 3 ? 'animate-fade-in' : ''}`}
+                  >
+                    <div className={`p-3 rounded-full ${feature.bgColor} mb-4`}>
+                      {feature.icon}
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 text-white">{feature.title}</h3>
+                    <p className="text-gray-300 text-center lg:text-left">{feature.description}</p>
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">{t('personalBroker')}</h3>
-                  <p className="text-gray-300 text-center lg:text-left">{t('personalBrokerDesc')}</p>
-                </div>
-                
-                <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/40 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="p-3 rounded-full bg-blue-500/20 mb-4">
-                    <Bot className="h-8 w-8 text-blue-400" />
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">{t('aiAlgorithm')}</h3>
-                  <p className="text-gray-300 text-center lg:text-left">{t('aiAlgorithmDesc')}</p>
-                </div>
-                
-                <div className="flex flex-col items-center lg:items-start p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-green-500/40 hover:bg-white/10 transition-all duration-300">
-                  <div className="p-3 rounded-full bg-green-500/20 mb-4">
-                    <ChartLine className="h-8 w-8 text-green-400" />
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">{t('fastGrowth')}</h3>
-                  <p className="text-gray-300 text-center lg:text-left">{t('fastGrowthDesc')}</p>
-                </div>
+                ))}
               </div>
 
               <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">
