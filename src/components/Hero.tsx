@@ -181,13 +181,12 @@ const Hero = () => {
             </div>
           </main>
 
-          {/* Stats cards - improved positioning and cooler animations */}
-          <div 
-            className={`hidden lg:block absolute right-10 top-20 z-20 transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
-          >
-            <div className="flex flex-col gap-6">
-              <div className="transform hover:scale-105 transition-transform duration-300">
-                <Card className="glass-card p-5 animate-float shadow-xl border border-amber-500/30 bg-black/70 backdrop-blur-lg hover:shadow-amber-500/20">
+          {/* Stat cards - fixed positioning and improved visibility */}
+          <div className="hidden lg:block absolute top-1/2 right-10 transform -translate-y-1/2 z-20">
+            <div className="relative">
+              {/* First card */}
+              <div className="absolute top-[-200px] right-0 transform hover:scale-105 transition-all duration-300">
+                <Card className="glass-card p-5 animate-float shadow-xl border border-amber-500/30 bg-black/70 backdrop-blur-lg w-72">
                   <div className="text-sm font-medium text-gray-300">{t('annualReturns')}</div>
                   <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
                     +24.8% 
@@ -197,8 +196,9 @@ const Hero = () => {
                 </Card>
               </div>
               
-              <div className="transform hover:scale-105 transition-transform duration-300 translate-x-8">
-                <Card className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-xl border border-blue-500/30 bg-black/70 backdrop-blur-lg hover:shadow-blue-500/20">
+              {/* Second card */}
+              <div className="absolute top-0 right-[50px] transform hover:scale-105 transition-all duration-300">
+                <Card className="glass-card p-5 animate-float [animation-delay:1000ms] shadow-xl border border-blue-500/30 bg-black/70 backdrop-blur-lg w-72">
                   <div className="text-sm font-medium text-gray-300">{t('algorithmPrecision')}</div>
                   <div className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
                     93.5%
@@ -208,8 +208,9 @@ const Hero = () => {
                 </Card>
               </div>
               
-              <div className="transform hover:scale-105 transition-transform duration-300">
-                <Card className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-xl border border-purple-500/30 bg-black/70 backdrop-blur-lg hover:shadow-purple-500/20">
+              {/* Third card */}
+              <div className="absolute top-[200px] right-0 transform hover:scale-105 transition-all duration-300">
+                <Card className="glass-card p-5 animate-float [animation-delay:2000ms] shadow-xl border border-purple-500/30 bg-black/70 backdrop-blur-lg w-72">
                   <div className="text-sm font-medium text-gray-300">{t('clientSatisfaction')}</div>
                   <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
                     98.2%
