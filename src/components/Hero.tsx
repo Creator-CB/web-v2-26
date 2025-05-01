@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3, Star, Award, TrendingUp } from "lucide-react";
@@ -38,13 +37,6 @@ const Hero = () => {
       <div className="absolute top-1/4 right-[10%] w-80 h-80 bg-amber-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
       <div className="absolute top-1/3 left-[15%] w-40 h-40 bg-purple-500/10 rounded-full blur-2xl animate-pulse-slow animation-delay-2000"></div>
-      
-      {/* Enhanced circular element */}
-      <div className="absolute bottom-[10%] right-[5%] w-96 h-96 opacity-30">
-        <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-500/50 animate-spin-slow"></div>
-        <div className="absolute inset-8 rounded-full border border-blue-500/30 animate-spin-slow [animation-direction:reverse]"></div>
-        <div className="absolute inset-16 rounded-full border border-purple-400/20 animate-spin-slow [animation-duration:10s]"></div>
-      </div>
       
       {/* Bitcoin/crypto animated icon in background */}
       <div className="absolute top-[10%] left-[8%] opacity-20 animate-float">
