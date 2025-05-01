@@ -39,6 +39,13 @@ const Hero = () => {
       <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"></div>
       <div className="absolute top-1/3 left-[15%] w-40 h-40 bg-purple-500/10 rounded-full blur-2xl animate-pulse-slow animation-delay-2000"></div>
       
+      {/* Enhanced circular element */}
+      <div className="absolute bottom-[10%] right-[5%] w-96 h-96 opacity-30">
+        <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-500/50 animate-spin-slow"></div>
+        <div className="absolute inset-8 rounded-full border border-blue-500/30 animate-spin-slow [animation-direction:reverse]"></div>
+        <div className="absolute inset-16 rounded-full border border-purple-400/20 animate-spin-slow [animation-duration:10s]"></div>
+      </div>
+      
       {/* Bitcoin/crypto animated icon in background */}
       <div className="absolute top-[10%] left-[8%] opacity-20 animate-float">
         <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,42 +181,44 @@ const Hero = () => {
             </div>
           </main>
 
-          {/* Stat cards - REDESIGNED: positioned in a horizontal line with increased opacity */}
-          <div className="absolute top-8 right-0 left-0 flex justify-center gap-4 lg:justify-end lg:right-8 lg:left-auto lg:w-auto">
-            {/* First card - Annual Returns */}
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <Card className="glass-card p-3 animate-float shadow-md border border-amber-500/20 bg-black/70 backdrop-blur-md w-32 opacity-70 hover:opacity-85">
-                <div className="text-xs font-medium text-gray-300">{t('annualReturns')}</div>
-                <div className="text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
-                  +24.8% 
-                  <span className="text-green-400 text-xs ml-1">↗</span>
-                </div>
-                <div className="text-[10px] text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
-              </Card>
-            </div>
-            
-            {/* Second card - Algorithm Precision */}
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <Card className="glass-card p-3 animate-float [animation-delay:1000ms] shadow-md border border-blue-500/20 bg-black/70 backdrop-blur-md w-32 opacity-70 hover:opacity-85">
-                <div className="text-xs font-medium text-gray-300">{t('algorithmPrecision')}</div>
-                <div className="text-lg font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
-                  93.5%
-                  <span className="text-blue-400 text-xs ml-1">✓</span>
-                </div>
-                <div className="text-[10px] text-gray-400 mt-1">{t('cryptoMarketPrediction')}</div>
-              </Card>
-            </div>
-            
-            {/* Third card - Client Satisfaction */}
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <Card className="glass-card p-3 animate-float [animation-delay:2000ms] shadow-md border border-purple-500/20 bg-black/70 backdrop-blur-md w-32 opacity-70 hover:opacity-85">
-                <div className="text-xs font-medium text-gray-300">{t('clientSatisfaction')}</div>
-                <div className="text-lg font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
-                  98.2%
-                  <span className="text-amber-300 text-xs ml-1">★</span>
-                </div>
-                <div className="text-[10px] text-gray-400 mt-1">{t('globalCryptoInvestors')}</div>
-              </Card>
+          {/* Stat cards in a circle formation - smaller and more transparent */}
+          <div className="absolute top-12 right-10 hidden lg:block">
+            <div className="relative w-64 h-64">
+              {/* First card */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 transform scale-75 hover:scale-90 transition-all duration-300">
+                <Card className="glass-card p-4 animate-float shadow-md border border-amber-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+                  <div className="text-xs font-medium text-gray-300">{t('annualReturns')}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent flex items-center">
+                    +24.8% 
+                    <span className="text-green-400 text-xs ml-2">↗</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{t('averageCryptoReturns')}</div>
+                </Card>
+              </div>
+              
+              {/* Second card - positioned at bottom right of the circle */}
+              <div className="absolute top-[75%] right-0 transform scale-75 hover:scale-90 transition-all duration-300">
+                <Card className="glass-card p-4 animate-float [animation-delay:1000ms] shadow-md border border-blue-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+                  <div className="text-xs font-medium text-gray-300">{t('algorithmPrecision')}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent flex items-center">
+                    93.5%
+                    <span className="text-blue-400 text-xs ml-2">✓</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{t('cryptoMarketPrediction')}</div>
+                </Card>
+              </div>
+              
+              {/* Third card - positioned at bottom left of the circle */}
+              <div className="absolute top-[75%] left-0 transform scale-75 hover:scale-90 transition-all duration-300">
+                <Card className="glass-card p-4 animate-float [animation-delay:2000ms] shadow-md border border-purple-500/20 bg-black/40 backdrop-blur-md w-56 opacity-70 hover:opacity-90">
+                  <div className="text-xs font-medium text-gray-300">{t('clientSatisfaction')}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent flex items-center">
+                    98.2%
+                    <span className="text-amber-300 text-xs ml-2">★</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{t('globalCryptoInvestors')}</div>
+                </Card>
+              </div>
             </div>
           </div>
 
