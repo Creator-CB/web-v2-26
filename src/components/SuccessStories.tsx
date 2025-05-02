@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, TrendingUp, Award, Briefcase, ChartBar, Check } from 'lucide-react';
+import { ArrowRight, TrendingUp, Award, Briefcase, ChartBar } from 'lucide-react';
 import { useLanguage } from './LanguageSelector';
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -233,10 +233,6 @@ const SuccessStories = () => {
                     </span>
                   </Button>
                 </div>
-              </div>
-              
-             
-                ))}
               </div>
             </div>
           </div>
