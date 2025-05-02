@@ -174,7 +174,28 @@ type TranslationKey =
   | 'startYourSuccess'
   | 'connectWithBroker'
   | 'pageTitle'
-  | 'pageTitleDescription';
+  | 'pageTitleDescription'
+  | 'innovationInInvesting'
+  | 'ourAIInvestmentExperts'
+  | 'aiExpertsDescription'
+  | 'brokerAchievement1'
+  | 'brokerAchievement2'
+  | 'brokerAchievement3'
+  | 'over3Years'
+  | 'over2Years'
+  | 'over18Months'
+  | 'algorithmicTrading'
+  | 'predictiveAnalytics'
+  | 'machineLearningSolutions'
+  | 'hoverCardExpertiseDesc'
+  | 'aiDrivenPortfolios'
+  | 'learnStrategy'
+  | 'seniorAIStrategist'
+  | 'AIInvestmentDirector'
+  | 'quantAnalysisHead'
+  | 'aiTechnologyAdvantage'
+  | 'aiTechnologyDescription'
+  | 'startAIInvesting';
 
 // Create the context with proper typing and default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -367,7 +388,28 @@ export const useLanguage = () => {
       startYourSuccess: "Ready to start your success story?",
       connectWithBroker: "Connect with a broker today",
       pageTitle: "NovaTrust Invest | Elite Crypto Investment Platform with AI-Powered Strategies",
-      pageTitleDescription: "Transform your financial future with NovaTrust Invest. Expert brokers and AI algorithms working together to maximize your crypto investments."
+      pageTitleDescription: "Transform your financial future with NovaTrust Invest. Expert brokers and AI algorithms working together to maximize your crypto investments.",
+      innovationInInvesting: "Innovation in Investing",
+      ourAIInvestmentExperts: "Our AI Investment Experts",
+      aiExpertsDescription: "Meet our team of investment experts who combine human expertise with advanced AI to deliver exceptional results",
+      brokerAchievement1: "Pioneered algorithmic trading strategies that consistently outperform traditional market approaches",
+      brokerAchievement2: "Developed predictive models that identified major market shifts weeks before they occurred",
+      brokerAchievement3: "Created machine learning systems that adapt to changing market conditions in real-time",
+      over3Years: "over 3 years",
+      over2Years: "over 2 years",
+      over18Months: "over 18 months",
+      algorithmicTrading: "Algorithmic Trading",
+      predictiveAnalytics: "Predictive Analytics",
+      machineLearningSolutions: "Machine Learning Solutions",
+      hoverCardExpertiseDesc: "Specialized knowledge in developing and implementing AI-driven investment strategies",
+      aiDrivenPortfolios: "AI-Driven Portfolios",
+      learnStrategy: "Learn Strategy",
+      seniorAIStrategist: "Senior AI Strategist",
+      AIInvestmentDirector: "AI Investment Director",
+      quantAnalysisHead: "Head of Quantitative Analysis",
+      aiTechnologyAdvantage: "Our AI Technology Advantage",
+      aiTechnologyDescription: "Our proprietary algorithms analyze millions of data points to identify the most profitable investment opportunities",
+      startAIInvesting: "Start AI Investing"
     },
     it: {
       combineHumanAI: "Combiniamo intelligenza umana e artificiale per far crescere il tuo patrimonio",
@@ -535,7 +577,28 @@ export const useLanguage = () => {
       startYourSuccess: "Pronto a iniziare la tua storia di successo?",
       connectWithBroker: "Connettiti con un broker oggi",
       pageTitle: "NovaTrust Invest | Piattaforma d'Elite per Investimenti Crypto con Strategie Potenziate dall'AI",
-      pageTitleDescription: "Trasforma il tuo futuro finanziario con NovaTrust Invest. Broker esperti e algoritmi AI che lavorano insieme per massimizzare i tuoi investimenti crypto."
+      pageTitleDescription: "Trasforma il tuo futuro finanziario con NovaTrust Invest. Broker esperti e algoritmi AI che lavorano insieme per massimizzare i tuoi investimenti crypto.",
+      innovationInInvesting: "Innovazione negli Investimenti",
+      ourAIInvestmentExperts: "I Nostri Esperti di Investimenti AI",
+      aiExpertsDescription: "Incontra il nostro team di esperti di investimento che combinano competenza umana con AI avanzata per risultati eccezionali",
+      brokerAchievement1: "Ha creato strategie di trading algoritmico che superano costantemente gli approcci tradizionali di mercato",
+      brokerAchievement2: "Ha sviluppato modelli predittivi che hanno identificato importanti cambiamenti di mercato settimane prima che si verificassero",
+      brokerAchievement3: "Ha creato sistemi di machine learning che si adattano in tempo reale alle condizioni di mercato in evoluzione",
+      over3Years: "in 3 anni",
+      over2Years: "in 2 anni",
+      over18Months: "in 18 mesi",
+      algorithmicTrading: "Trading Algoritmico",
+      predictiveAnalytics: "Analisi Predittiva",
+      machineLearningSolutions: "Soluzioni di Machine Learning",
+      hoverCardExpertiseDesc: "Conoscenze specializzate nello sviluppo e implementazione di strategie di investimento basate su AI",
+      aiDrivenPortfolios: "Portafogli guidati da AI",
+      learnStrategy: "Scopri la Strategia",
+      seniorAIStrategist: "Stratega Senior AI",
+      AIInvestmentDirector: "Direttore Investimenti AI",
+      quantAnalysisHead: "Responsabile Analisi Quantitativa",
+      aiTechnologyAdvantage: "Il Nostro Vantaggio Tecnologico AI",
+      aiTechnologyDescription: "I nostri algoritmi proprietari analizzano milioni di dati per identificare le opportunità di investimento più redditizie",
+      startAIInvesting: "Inizia a Investire con AI"
     }
   };
 

@@ -1,90 +1,90 @@
 
 import React from 'react';
+import { Phone, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, EuroIcon, PhoneCall } from "lucide-react";
-import { motion } from 'framer-motion';
 import { useLanguage } from './LanguageSelector';
-import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 const BottomCTA = () => {
   const { t } = useLanguage();
-  const { toast } = useToast();
   
-  const handleCallBroker = () => {
-    // Use the tel: protocol to initiate a phone call
-    window.location.href = "tel:+222222";
-    
-    // Show toast notification
-    toast({
-      title: t("callingBroker"),
-      description: t("connectingYouToBroker"),
-      duration: 3000,
-    });
-  };
+  const features = [
+    { text: t('fastRegistration'), color: 'text-green-400' },
+    { text: t('instantBroker'), color: 'text-amber-400' },
+    { text: t('sameDay'), color: 'text-blue-400' }
+  ];
   
   return (
-    <section className="section-padding bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.15),transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.1),transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,158,11,0.05),transparent_70%)]"></div>
+      <div className="absolute inset-0 opacity-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <pattern id="bottom-cta-grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#bottom-cta-grid-pattern)" />
+        </svg>
+      </div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"></div>
-      <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"></div>
-      
-      <div className="max-w-5xl mx-auto relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-            {t('ctaTitle')} <span className="text-gradient">strategie e supporto reale?</span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-white sm:text-5xl mb-6 text-gradient">
+            {t('ctaTitle')}
           </h2>
-          
-          <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             {t('ctaSubtitle')}
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button 
+        </div>
+        
+        <div className="flex flex-col md:flex-row justify-center gap-6 mb-12">
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            className="group"
+          >
+            <Button
               size="lg"
-              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-md px-8 py-6 text-lg font-medium shadow-md relative overflow-hidden button-hover group w-full sm:w-auto"
+              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-amber-500/20 transition-all duration-300 w-full md:w-auto"
               onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="relative z-10 flex items-center">
-                <EuroIcon className="mr-2 h-5 w-5" />
+              <span className="flex items-center">
+                <span className="mr-2">€</span>
                 {t('startToday')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
-            
-            <Button 
-              variant="outline"
-              size="lg"
-              className="rounded-md px-8 py-6 text-lg font-medium border-amber-400/30 text-amber-400 hover:bg-amber-500/10 shadow-sm w-full sm:w-auto"
-              onClick={handleCallBroker}
-            >
-              <PhoneCall className="mr-2 h-5 w-5" />
-              {t('freeConsultation')}
-            </Button>
-          </div>
+          </motion.div>
           
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-400">
-            <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-              {t('fastRegistration')}
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            className="group"
+          >
+            <Button
+              size="lg"
+              variant="call"
+              className="bg-white hover:bg-white/90 text-slate-900 px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-white/20 transition-all duration-300 w-full md:w-auto"
+              onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <span className="flex items-center">
+                <Phone className="mr-2 h-5 w-5" />
+                {t('freeConsultation')}
+              </span>
+            </Button>
+          </motion.div>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-4 md:gap-10">
+          {features.map((feature, index) => (
+            <div key={index} className="flex items-center">
+              <div className="h-2 w-2 rounded-full bg-white/80 mr-2"></div>
+              <span className={`text-sm md:text-base ${feature.color}`}>{feature.text}</span>
             </div>
-            <div className="flex items-center">
-              <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
-              {t('instantBroker')}
-            </div>
-            <div className="flex items-center">
-              <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-              {t('sameDay')}
-            </div>
-          </div>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
