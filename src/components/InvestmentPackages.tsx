@@ -12,7 +12,7 @@ const InvestmentPackages = () => {
   const packages = [
     {
       name: t('startPackage'),
-      price: '270 €',
+      price: '299 €',
       description: t('startPackageDesc'),
       features: [
         t('personalBroker'),
