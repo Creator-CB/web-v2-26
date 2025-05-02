@@ -139,7 +139,7 @@ const Hero = () => {
                 <div className="flex items-center">
                   <span className="animate-pulse text-amber-300">⚡</span>
                   <p className="ml-2 text-sm font-medium text-amber-300">
-                    Limited offer: Start investing today and get a <span className="font-bold">€50 bonus</span> on your first investment
+                    Limited offer: Start investing today and get a <span className="font-bold">100% bonus on your first deposit!</span> on your first investment
                   </p>
                 </div>
               </div>
