@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -156,7 +155,7 @@ const RegisterForm = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.firstName ? 'border-red-500' : ''}`}
+                className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.firstName ? 'border-red-500' : ''} text-black`}
               />
               {errors.firstName && <p className="text-xs text-red-500">{errors.firstName}</p>}
             </div>
@@ -168,7 +167,7 @@ const RegisterForm = () => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.lastName ? 'border-red-500' : ''}`}
+                className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.lastName ? 'border-red-500' : ''} text-black`}
               />
               {errors.lastName && <p className="text-xs text-red-500">{errors.lastName}</p>}
             </div>
@@ -196,7 +195,7 @@ const RegisterForm = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.email ? 'border-red-500' : ''}`}
+              className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.email ? 'border-red-500' : ''} text-black`}
             />
             {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
           </div>
@@ -209,7 +208,7 @@ const RegisterForm = () => {
               type="tel"
               value={formData.phone}
               onChange={handleChange}
-              className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.phone ? 'border-red-500' : ''}`}
+              className={`bg-white/80 backdrop-blur-sm focus-visible:ring-pink-500 ${errors.phone ? 'border-red-500' : ''} text-black`}
             />
             {errors.phone && <p className="text-xs text-red-500">{errors.phone}</p>}
           </div>
