@@ -16,7 +16,6 @@ const SuccessStories = () => {
       title: t('seniorAIStrategist'),
       achievement: t('brokerAchievement1'),
       stats: '842%',
-      period: t('over3Years'),
       expertise: t('algorithmicTrading'),
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
       icon: <ChartBar className="h-6 w-6 text-amber-500" />
@@ -26,7 +25,6 @@ const SuccessStories = () => {
       title: t('AIInvestmentDirector'),
       achievement: t('brokerAchievement2'),
       stats: '573%',
-      period: t('over2Years'),
       expertise: t('predictiveAnalytics'),
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
       icon: <TrendingUp className="h-6 w-6 text-amber-500" />
@@ -36,7 +34,6 @@ const SuccessStories = () => {
       title: t('quantAnalysisHead'),
       achievement: t('brokerAchievement3'),
       stats: '398%',
-      period: t('over18Months'),
       expertise: t('machineLearningSolutions'),
       image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
       icon: <Award className="h-6 w-6 text-amber-500" />
@@ -136,7 +133,6 @@ const SuccessStories = () => {
                         <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 opacity-30 rounded-full blur-sm"></div>
                         <p className="relative text-3xl font-bold text-transparent bg-gradient-to-r from-green-400 to-green-600 bg-clip-text">{broker.stats}</p>
                       </div>
-                      <p className="text-gray-300 text-sm">{broker.period}</p>
                     </div>
                   </div>
                   
@@ -169,3 +165,4 @@ const SuccessStories = () => {
 };
 
 export default SuccessStories;
+
