@@ -14,7 +14,6 @@ const SuccessStories = () => {
     {
       name: 'Michael Thompson',
       title: t('seniorAIStrategist'),
-      achievement: t('brokerAchievement1'),
       stats: '842%',
       expertise: t('algorithmicTrading'),
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
@@ -23,7 +22,6 @@ const SuccessStories = () => {
     {
       name: 'Sarah Johnson',
       title: t('AIInvestmentDirector'),
-      achievement: t('brokerAchievement2'),
       stats: '573%',
       expertise: t('predictiveAnalytics'),
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
@@ -32,7 +30,6 @@ const SuccessStories = () => {
     {
       name: 'David Chen',
       title: t('quantAnalysisHead'),
-      achievement: t('brokerAchievement3'),
       stats: '398%',
       expertise: t('machineLearningSolutions'),
       image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
@@ -136,10 +133,6 @@ const SuccessStories = () => {
                     </div>
                   </div>
                   
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-gray-300">{broker.achievement}</p>
-                  </div>
-                  
                   <div className="mt-6 flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       <Briefcase className="h-4 w-4 text-amber-500" />
@@ -165,4 +158,3 @@ const SuccessStories = () => {
 };
 
 export default SuccessStories;
-
