@@ -90,7 +90,7 @@ const Hero = () => {
               </h1>
               
               <p className="mt-4 text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                Our AI-driven algorithm delivered <span className="text-green-400 font-bold">24.8% returns</span> last year when traditional markets struggled. Join thousands of investors who are already profiting.
+                Our AI-driven algorithm delivered <span className="text-green-400 font-bold">924.8% returns</span> last year when traditional markets struggled. Join thousands of investors who are already profiting.
               </p>
               
               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto lg:mx-0 lg:max-w-none">
