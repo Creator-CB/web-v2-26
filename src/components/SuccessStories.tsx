@@ -18,8 +18,7 @@ const SuccessStories = () => {
       stats: '842%',
       expertise: t('algorithmicTrading'),
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
-      icon: <ChartBar className="h-6 w-6 text-amber-500" />,
-      description: "Pioneered algorithmic trading strategies that consistently outperform traditional market approaches"
+      icon: <ChartBar className="h-6 w-6 text-amber-500" />
     },
     {
       name: 'Sarah Johnson',
@@ -28,8 +27,7 @@ const SuccessStories = () => {
       stats: '573%',
       expertise: t('predictiveAnalytics'),
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
-      icon: <TrendingUp className="h-6 w-6 text-amber-500" />,
-      description: "Developed predictive models that identified major market shifts weeks before they occurred"
+      icon: <TrendingUp className="h-6 w-6 text-amber-500" />
     },
     {
       name: 'David Chen',
@@ -38,8 +36,7 @@ const SuccessStories = () => {
       stats: '398%',
       expertise: t('machineLearningSolutions'),
       image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80',
-      icon: <Award className="h-6 w-6 text-amber-500" />,
-      description: "Created machine learning systems that adapt to changing market conditions in real-time"
+      icon: <Award className="h-6 w-6 text-amber-500" />
     }
   ];
 
@@ -146,7 +143,11 @@ const SuccessStories = () => {
                   <div className="mt-6">
                     <div className="flex items-start">
                       <Briefcase className="h-5 w-5 text-amber-500 mt-1 flex-shrink-0" />
-                      <p className="ml-3 text-gray-300">{broker.description}</p>
+                      <p className="ml-3 text-gray-300">
+                        {index === 0 && "Pioneered algorithmic trading strategies that consistently outperform traditional market approaches"}
+                        {index === 1 && "Developed predictive models that identified major market shifts weeks before they occurred"}
+                        {index === 2 && "Created machine learning systems that adapt to changing market conditions in real-time"}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
