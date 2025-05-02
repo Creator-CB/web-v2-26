@@ -143,7 +143,7 @@ const SuccessStories = () => {
                   <div className="mt-6 flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       <Briefcase className="h-4 w-4 text-amber-500" />
-                      <span className="text-sm text-gray-300">{t('aiDrivenPortfolios')}</span>
+                      {/* Removed the text "Portafogli guidati da AI" */}
                     </div>
                     {/* Removed the "Portafogli guidati da AI, Scopri la Strategia" text/button here */}
                   </div>
