@@ -105,7 +105,7 @@ const AIChat = () => {
                     className={`px-4 py-3 rounded-2xl ${
                       message.sender === 'user' 
                         ? 'bg-gradient-to-r from-invest-purple to-invest-blue text-white ml-2' 
-                        : 'bg-white shadow-md border border-gray-100'
+                        : 'bg-white shadow-md border border-gray-100 text-black'
                     }`}
                   >
                     {message.text}
