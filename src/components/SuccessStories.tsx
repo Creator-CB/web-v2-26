@@ -145,14 +145,7 @@ const SuccessStories = () => {
                       <Briefcase className="h-4 w-4 text-amber-500" />
                       <span className="text-sm text-gray-300">{t('aiDrivenPortfolios')}</span>
                     </div>
-                    <Button 
-                      variant="link"
-                      className="text-amber-500 hover:text-amber-400 p-0 h-auto flex items-center text-sm font-medium"
-                      onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                      {t('learnStrategy')}
-                      <ArrowRight className="h-3 w-3 ml-1" />
-                    </Button>
+                    {/* Removed the "Portafogli guidati da AI, Scopri la Strategia" text/button here */}
                   </div>
                 </CardContent>
               </Card>
