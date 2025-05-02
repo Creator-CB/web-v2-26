@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Bot, ChartLine, Shield, Headphones, EuroIcon, BarChart3, Star, Award, TrendingUp } from "lucide-react";
@@ -46,13 +45,7 @@ const Hero = () => {
         <div className="absolute inset-16 rounded-full border border-purple-400/20 animate-spin-slow [animation-duration:10s]"></div>
       </div>
       
-      {/* Bitcoin/crypto animated icon in background */}
-      <div className="absolute top-[10%] left-[8%] opacity-20 animate-float">
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9.5 6.5V17.5M14.5 6.5V17.5M12 3.5V20.5M3.5 12H20.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/>
-        </svg>
-      </div>
+      {/* Removed Bitcoin/crypto animated icon in background */}
       
       {/* Crypto chart visualization - enhanced with better animation */}
       <div className="absolute top-[15%] right-[18%] w-72 h-48 opacity-40 hidden lg:block">
