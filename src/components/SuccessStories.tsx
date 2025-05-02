@@ -235,16 +235,7 @@ const SuccessStories = () => {
                 </div>
               </div>
               
-              {/* Key benefits - small highlight cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-10">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="bg-white/5 p-4 rounded-lg border border-white/10">
-                    <div className="flex items-center mb-2">
-                      <Check className="h-4 w-4 text-amber-500 mr-2" />
-                      <h5 className="text-sm font-medium text-white">{t(`keyBenefit${i}Title`)}</h5>
-                    </div>
-                    <p className="text-xs text-gray-400">{t(`keyBenefit${i}Desc`)}</p>
-                  </div>
+             
                 ))}
               </div>
             </div>
