@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, ArrowRight, EuroIcon, Users, Bot, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -49,7 +48,6 @@ const InvestmentPackages = () => {
         t('personalBroker'),
         t('aiAlgorithm'),
         '+ Bot auto-trading',
-        '+ 1-on-1',
         t('marketUpdates'),
         t('support')
       ],
