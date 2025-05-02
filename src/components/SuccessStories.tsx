@@ -43,13 +43,6 @@ const SuccessStories = () => {
     }
   ];
 
-  // Performance metrics for the radial indicators
-  const performanceMetrics = [
-    { label: t('aiAccuracy'), value: 96 },
-    { label: t('clientSatisfaction'), value: 94 },
-    { label: t('marketPrediction'), value: 91 },
-  ];
-
   return (
     <section id="broker-achievements" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background elements */}
@@ -170,73 +163,6 @@ const SuccessStories = () => {
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20"
-        >
-          <div className="relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-orange-500/10"></div>
-            <div className="max-w-4xl mx-auto glass-card p-10 relative z-10">
-              {/* Performance metrics with circular indicators */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                {performanceMetrics.map((metric, idx) => (
-                  <div key={idx} className="flex flex-col items-center">
-                    <div className="relative w-24 h-24 mb-4">
-                      <svg className="w-24 h-24" viewBox="0 0 100 100">
-                        <circle 
-                          cx="50" cy="50" r="40" 
-                          fill="none" 
-                          stroke="rgba(245, 158, 11, 0.2)" 
-                          strokeWidth="8"
-                        />
-                        <circle 
-                          cx="50" cy="50" r="40" 
-                          fill="none" 
-                          stroke="url(#gradient-circle)" 
-                          strokeWidth="8" 
-                          strokeLinecap="round"
-                          strokeDasharray={`${2 * Math.PI * 40}`} 
-                          strokeDashoffset={`${2 * Math.PI * 40 * (1 - metric.value/100)}`} 
-                          className="animate-draw-path"
-                        />
-                        <defs>
-                          <linearGradient id="gradient-circle" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#f59e0b" />
-                            <stop offset="100%" stopColor="#f97316" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-white">{metric.value}%</span>
-                      </div>
-                    </div>
-                    <h4 className="text-lg font-medium text-gray-200">{metric.label}</h4>
-                  </div>
-                ))}
-              </div>
-            
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">{t('aiTechnologyAdvantage')}</h3>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">{t('aiTechnologyDescription')}</p>
-                <div className="flex justify-center">
-                  <Button 
-                    size="lg"
-                    className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-amber-500/20 transition-all duration-300 group"
-                    onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    <span className="flex items-center">
-                      {t('startAIInvesting')}
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
