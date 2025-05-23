@@ -59,10 +59,12 @@ const Hero = () => {
                 </div>
               </div>
               
+              {/* On mobile, render the active investors component after the regulated/insured text */}
               {isMobile && <HeroActiveInvestors />}
             </div>
           </main>
 
+          {/* On desktop, render the active investors component at the bottom */}
           {!isMobile && <HeroActiveInvestors />}
         </div>
       </div>
