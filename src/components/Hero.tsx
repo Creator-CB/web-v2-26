@@ -8,10 +8,12 @@ import HeroButtons from './Hero/HeroButtons';
 import HeroActiveInvestors from './Hero/HeroActiveInvestors';
 import OpportunityText from './Hero/OpportunityText';
 import { Shield, EuroIcon } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     // Show content immediately without delay
@@ -56,10 +58,12 @@ const Hero = () => {
                   {t('insured')}
                 </div>
               </div>
+              
+              {isMobile && <HeroActiveInvestors />}
             </div>
           </main>
 
-          <HeroActiveInvestors />
+          {!isMobile && <HeroActiveInvestors />}
         </div>
       </div>
     </div>
