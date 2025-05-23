@@ -15,7 +15,7 @@ const BottomCTA = () => {
   ];
   
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-16 sm:py-20 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.1),transparent_70%)]"></div>
@@ -33,55 +33,55 @@ const BottomCTA = () => {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-white sm:text-5xl mb-6 text-gradient">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 text-gradient px-2">
             {t('ctaTitle')}
           </h2>
-          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="mt-4 text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 px-2">
             {t('ctaSubtitle')}
           </p>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-center gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 px-4">
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="group"
+            className="group w-full sm:w-auto"
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-amber-500/20 transition-all duration-300 w-full md:w-auto"
+              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg hover:shadow-amber-500/20 transition-all duration-300 w-full sm:w-auto"
               onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="flex items-center">
+              <span className="flex items-center justify-center">
                 <span className="mr-2">€</span>
                 {t('startToday')}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
           </motion.div>
           
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="group"
+            className="group w-full sm:w-auto"
           >
             <Button
               size="lg"
               variant="call"
-              className="bg-white hover:bg-white/90 text-slate-900 px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-white/20 transition-all duration-300 w-full md:w-auto"
+              className="bg-white hover:bg-white/90 text-slate-900 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg hover:shadow-white/20 transition-all duration-300 w-full sm:w-auto"
               onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="flex items-center">
-                <Phone className="mr-2 h-5 w-5" />
+              <span className="flex items-center justify-center">
+                <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 {t('freeConsultation')}
               </span>
             </Button>
           </motion.div>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-4 md:gap-10">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 md:gap-10 px-4">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center">
+            <div key={index} className="flex items-center justify-center sm:justify-start">
               <div className="h-2 w-2 rounded-full bg-white/80 mr-2"></div>
-              <span className={`text-sm md:text-base ${feature.color}`}>{feature.text}</span>
+              <span className={`text-sm sm:text-base ${feature.color}`}>{feature.text}</span>
             </div>
           ))}
         </div>
